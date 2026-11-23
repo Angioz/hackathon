@@ -5,6 +5,8 @@ demo) never stalls. Every decision it makes is tagged brain='offline' in the log
 """
 from __future__ import annotations
 
+import re
+
 from cast import AGENT_BY_ID, ENDING_BY_ID, TWIST_BY_ID
 
 PITCH = {
@@ -34,8 +36,8 @@ LINES = {
 
 
 def _short(feature: dict) -> str:
-    words = (feature.get("title") or "the new feature").split()
-    return " ".join(words[:6])
+    title = re.sub(r"^\w+(\([^)]*\))?!?:\s*", "", feature.get("title") or "") or "the new feature"
+    return " ".join(title.split()[:6]).rstrip(",.;:")
 
 
 def _files(feature: dict) -> str:
