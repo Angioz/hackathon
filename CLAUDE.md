@@ -193,9 +193,10 @@ Type checking and test suites verify code correctness, not feature correctness. 
 
 ## VIDEO METHOD (HARD)
 - All video work runs through the `content-production-pipeline-local` stage skills (`~\projects\content-production-pipeline-local\.claude\skills\`: 00-pipeline-entry, 00-setup, 08, 10, 11, 12, 13, 14, 15, 18, 19.5, 20-visual-story-arc, 20.5-director, 26-voice, 34-visualization). No freestyle.
-- Planning here: invoke the needed stage skill individually and follow its method.
-- Via `/jarvis-foreman`: the ticket names the pipeline path + stage skill.
-- Voice = Stage 26 on Colab Chatterbox; verify Colab is up before any render or demo.
+- FATAL HALT: this Hack session NEVER writes a script, scene, visual, storyboard or film code itself (no LLM-room script, no hand-built Remotion film).
+- MUST: every creative job runs as a `/jarvis-foreman` sub-session inside `content-production-pipeline-local`, its ticket naming the stage skill: script = `3d-explainer-script-writer` + `18-script`; visuals = `19.5`, `20-visual-story-arc`, `20.5-director`, `34-visualization`.
+- This session only dispatches, verifies on disk, and wires the result into the demo (merge trigger, Bruin, decision log).
+- Voice = ElevenLabs (owner decision 2026-11-23), fed to the pipeline in its `full_script_audio.wav` + `voice_words.json` format.
 
 ## PROJECT-SPECIFIC SECTION (customize per project)
 
