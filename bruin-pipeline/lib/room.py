@@ -45,7 +45,7 @@ def feature_brief(f: dict) -> str:
     files = ", ".join(f.get("changed_files", [])[:12]) or "(not listed)"
     return (f"COMMIT {f['commit_sha'][:7]} by {f.get('author', '?')}\nTITLE: {f['title']}\n"
             f"BODY: {f.get('body') or '-'}\nFILES: {files}\nSTAT: {f.get('diff_summary', '')}\n"
-            f"DIFF EXCERPT:\n{(f.get('diff_excerpt') or '')[:2500]}")
+            f"DIFF EXCERPT:\n{(f.get('diff_excerpt') or '')[:7000]}")
 
 
 def memory_hint(mem: dict) -> str:

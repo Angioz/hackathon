@@ -7,7 +7,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-MAX_DIFF_CHARS = 4000
+MAX_DIFF_CHARS = 7000
 SHA_RE = re.compile(r"^[0-9a-fA-F]{4,40}$|^HEAD(~\d+)?$")
 
 
