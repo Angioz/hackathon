@@ -1,0 +1,1668 @@
+[
+ {
+  "word": "Page",
+  "start": 0.0,
+  "end": 0.29,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "forty",
+  "start": 0.337,
+  "end": 0.615,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "of",
+  "start": 0.662,
+  "end": 0.72,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "an",
+  "start": 0.766,
+  "end": 0.824,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "endless",
+  "start": 0.871,
+  "end": 1.184,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "article.",
+  "start": 1.242,
+  "end": 1.683,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "You're",
+  "start": 2.124,
+  "end": 2.333,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "lost.",
+  "start": 2.38,
+  "end": 2.89,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "No",
+  "start": 3.065,
+  "end": 3.204,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "map.",
+  "start": 3.285,
+  "end": 3.692,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "No",
+  "start": 3.808,
+  "end": 3.935,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "exit.",
+  "start": 4.017,
+  "end": 4.551,
+  "speaker_agent_id": "Growth",
+  "line_id": "L01"
+ },
+ {
+  "word": "Or",
+  "start": 4.851,
+  "end": 5.083,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "page",
+  "start": 5.153,
+  "end": 5.455,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "one",
+  "start": 5.501,
+  "end": 5.675,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "of",
+  "start": 5.699,
+  "end": 5.757,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "Smart",
+  "start": 5.815,
+  "end": 6.093,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "Scroll.",
+  "start": 6.151,
+  "end": 6.697,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "A",
+  "start": 7.022,
+  "end": 7.115,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "progress",
+  "start": 7.196,
+  "end": 7.661,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "bar",
+  "start": 7.719,
+  "end": 7.997,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "and",
+  "start": 8.055,
+  "end": 8.148,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "section",
+  "start": 8.206,
+  "end": 8.531,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "links.",
+  "start": 8.601,
+  "end": 8.868,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "That's",
+  "start": 8.891,
+  "end": 9.147,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "it.",
+  "start": 9.216,
+  "end": 9.681,
+  "speaker_agent_id": "Dev",
+  "line_id": "L02"
+ },
+ {
+  "word": "Freeze.",
+  "start": 9.981,
+  "end": 10.515,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "Thin",
+  "start": 10.608,
+  "end": 10.852,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "bar",
+  "start": 10.921,
+  "end": 11.131,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "up",
+  "start": 11.177,
+  "end": 11.258,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "top.",
+  "start": 11.316,
+  "end": 11.699,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "Watch",
+  "start": 11.792,
+  "end": 12.048,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "it",
+  "start": 12.094,
+  "end": 12.164,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "fill",
+  "start": 12.21,
+  "end": 12.396,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "green.",
+  "start": 12.466,
+  "end": 12.918,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "That's",
+  "start": 13.035,
+  "end": 13.278,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "our",
+  "start": 13.313,
+  "end": 13.429,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "opening",
+  "start": 13.476,
+  "end": 13.766,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "shot.",
+  "start": 13.824,
+  "end": 14.346,
+  "speaker_agent_id": "Director",
+  "line_id": "L03"
+ },
+ {
+  "word": "One",
+  "start": 14.646,
+  "end": 14.832,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "file,",
+  "start": 14.89,
+  "end": 15.343,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "index.html.",
+  "start": 15.621,
+  "end": 17.107,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "Six-pixel",
+  "start": 17.258,
+  "end": 17.92,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "fixed",
+  "start": 18.001,
+  "end": 18.245,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "header,",
+  "start": 18.28,
+  "end": 18.593,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "a",
+  "start": 18.64,
+  "end": 18.721,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "bar,",
+  "start": 18.791,
+  "end": 19.15,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "four",
+  "start": 19.243,
+  "end": 19.464,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "sections.",
+  "start": 19.522,
+  "end": 20.265,
+  "speaker_agent_id": "Dev",
+  "line_id": "L04"
+ },
+ {
+  "word": "Readers",
+  "start": 20.565,
+  "end": 20.913,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "see",
+  "start": 20.948,
+  "end": 21.111,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "how",
+  "start": 21.157,
+  "end": 21.308,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "far",
+  "start": 21.378,
+  "end": 21.598,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "they",
+  "start": 21.656,
+  "end": 21.784,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "are",
+  "start": 21.842,
+  "end": 22.016,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "and",
+  "start": 22.051,
+  "end": 22.155,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "jump",
+  "start": 22.225,
+  "end": 22.469,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "anywhere.",
+  "start": 22.527,
+  "end": 23.061,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "Headline",
+  "start": 23.386,
+  "end": 23.839,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "writes",
+  "start": 23.862,
+  "end": 24.129,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "itself.",
+  "start": 24.187,
+  "end": 24.884,
+  "speaker_agent_id": "Growth",
+  "line_id": "L05"
+ },
+ {
+  "word": "No",
+  "start": 25.184,
+  "end": 25.37,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "AI.",
+  "start": 25.463,
+  "end": 25.997,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "No",
+  "start": 26.171,
+  "end": 26.322,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "saved",
+  "start": 26.403,
+  "end": 26.717,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "position.",
+  "start": 26.763,
+  "end": 27.297,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "'Smart'",
+  "start": 27.344,
+  "end": 27.878,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "is",
+  "start": 27.901,
+  "end": 27.971,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "just",
+  "start": 28.029,
+  "end": 28.203,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "the",
+  "start": 28.238,
+  "end": 28.307,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "name.",
+  "start": 28.365,
+  "end": 28.899,
+  "speaker_agent_id": "Dev",
+  "line_id": "L06"
+ },
+ {
+  "word": "Adorable.",
+  "start": 29.2,
+  "end": 29.873,
+  "speaker_agent_id": "Critic",
+  "line_id": "L07"
+ },
+ {
+  "word": "Now",
+  "start": 30.082,
+  "end": 30.21,
+  "speaker_agent_id": "Critic",
+  "line_id": "L07"
+ },
+ {
+  "word": "watch",
+  "start": 30.245,
+  "end": 30.431,
+  "speaker_agent_id": "Critic",
+  "line_id": "L07"
+ },
+ {
+  "word": "me",
+  "start": 30.477,
+  "end": 30.582,
+  "speaker_agent_id": "Critic",
+  "line_id": "L07"
+ },
+ {
+  "word": "break",
+  "start": 30.628,
+  "end": 30.837,
+  "speaker_agent_id": "Critic",
+  "line_id": "L07"
+ },
+ {
+  "word": "it.",
+  "start": 30.907,
+  "end": 31.243,
+  "speaker_agent_id": "Critic",
+  "line_id": "L07"
+ },
+ {
+  "word": "Old",
+  "start": 31.543,
+  "end": 31.764,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "page:",
+  "start": 31.822,
+  "end": 32.298,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "bar",
+  "start": 32.449,
+  "end": 32.704,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "stuck",
+  "start": 32.774,
+  "end": 32.994,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "at",
+  "start": 33.041,
+  "end": 33.099,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "width",
+  "start": 33.145,
+  "end": 33.331,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "zero.",
+  "start": 33.378,
+  "end": 33.935,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "Nav",
+  "start": 34.213,
+  "end": 34.434,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "styles,",
+  "start": 34.48,
+  "end": 34.98,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "but",
+  "start": 35.015,
+  "end": 35.131,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "no",
+  "start": 35.177,
+  "end": 35.27,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "nav",
+  "start": 35.34,
+  "end": 35.514,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "element.",
+  "start": 35.56,
+  "end": 36.187,
+  "speaker_agent_id": "Critic",
+  "line_id": "L08"
+ },
+ {
+  "word": "That's",
+  "start": 36.487,
+  "end": 36.754,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "the",
+  "start": 36.8,
+  "end": 36.87,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "removed",
+  "start": 36.94,
+  "end": 37.288,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "line.",
+  "start": 37.346,
+  "end": 37.764,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "The",
+  "start": 38.008,
+  "end": 38.135,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "added",
+  "start": 38.182,
+  "end": 38.426,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "line's",
+  "start": 38.484,
+  "end": 38.786,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "excerpt",
+  "start": 38.844,
+  "end": 39.273,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "cuts",
+  "start": 39.331,
+  "end": 39.563,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "off",
+  "start": 39.622,
+  "end": 39.772,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "early.",
+  "start": 39.83,
+  "end": 40.388,
+  "speaker_agent_id": "Dev",
+  "line_id": "L09"
+ },
+ {
+  "word": "So",
+  "start": 40.688,
+  "end": 40.827,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "nobody",
+  "start": 40.885,
+  "end": 41.164,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "can",
+  "start": 41.199,
+  "end": 41.303,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "say",
+  "start": 41.35,
+  "end": 41.477,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "it's",
+  "start": 41.512,
+  "end": 41.652,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "broken.",
+  "start": 41.687,
+  "end": 42.139,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "Ship",
+  "start": 42.29,
+  "end": 42.557,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "it!",
+  "start": 42.615,
+  "end": 42.917,
+  "speaker_agent_id": "Growth",
+  "line_id": "L10"
+ },
+ {
+  "word": "Nobody",
+  "start": 43.217,
+  "end": 43.542,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "can",
+  "start": 43.577,
+  "end": 43.693,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "say",
+  "start": 43.739,
+  "end": 43.867,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "it",
+  "start": 43.902,
+  "end": 43.972,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "works,",
+  "start": 44.006,
+  "end": 44.309,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "either.",
+  "start": 44.343,
+  "end": 44.668,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "Truncated",
+  "start": 44.726,
+  "end": 45.237,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "isn't",
+  "start": 45.284,
+  "end": 45.458,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "verified.",
+  "start": 45.493,
+  "end": 46.282,
+  "speaker_agent_id": "Critic",
+  "line_id": "L11"
+ },
+ {
+  "word": "Something",
+  "start": 46.582,
+  "end": 46.907,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "moves",
+  "start": 46.965,
+  "end": 47.221,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "that",
+  "start": 47.255,
+  "end": 47.395,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "bar.",
+  "start": 47.464,
+  "end": 47.905,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "Something",
+  "start": 48.509,
+  "end": 48.846,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "we",
+  "start": 48.88,
+  "end": 48.95,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "haven't",
+  "start": 48.997,
+  "end": 49.264,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "seen.",
+  "start": 49.298,
+  "end": 49.821,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "Hidden",
+  "start": 50.634,
+  "end": 50.901,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "dependency,",
+  "start": 50.947,
+  "end": 51.504,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "folks.",
+  "start": 51.539,
+  "end": 52.294,
+  "speaker_agent_id": "Critic",
+  "line_id": "L12"
+ },
+ {
+  "word": "Cut-off",
+  "start": 52.594,
+  "end": 52.977,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "excerpt",
+  "start": 53.047,
+  "end": 53.476,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "isn't",
+  "start": 53.534,
+  "end": 53.755,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "a",
+  "start": 53.801,
+  "end": 53.824,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "dependency.",
+  "start": 53.871,
+  "end": 54.637,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "One",
+  "start": 55.02,
+  "end": 55.252,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "file,",
+  "start": 55.299,
+  "end": 55.705,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "no",
+  "start": 55.74,
+  "end": 55.879,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "imports",
+  "start": 55.949,
+  "end": 56.332,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "visible.",
+  "start": 56.367,
+  "end": 56.82,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "Don't",
+  "start": 56.994,
+  "end": 57.214,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "invent",
+  "start": 57.249,
+  "end": 57.528,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "villains.",
+  "start": 57.574,
+  "end": 58.259,
+  "speaker_agent_id": "Dev",
+  "line_id": "L13"
+ },
+ {
+  "word": "Then",
+  "start": 58.56,
+  "end": 58.792,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "settle",
+  "start": 58.873,
+  "end": 59.152,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "it",
+  "start": 59.187,
+  "end": 59.257,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "on",
+  "start": 59.303,
+  "end": 59.396,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "camera.",
+  "start": 59.454,
+  "end": 59.999,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "Critic,",
+  "start": 60.278,
+  "end": 60.684,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "open",
+  "start": 60.731,
+  "end": 60.963,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "the",
+  "start": 61.009,
+  "end": 61.079,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "whole",
+  "start": 61.114,
+  "end": 61.323,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "file.",
+  "start": 61.369,
+  "end": 61.845,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "Hunt.",
+  "start": 61.961,
+  "end": 62.6,
+  "speaker_agent_id": "Director",
+  "line_id": "L14"
+ },
+ {
+  "word": "Launch",
+  "start": 62.9,
+  "end": 63.306,
+  "speaker_agent_id": "Growth",
+  "line_id": "L15"
+ },
+ {
+  "word": "is",
+  "start": 63.353,
+  "end": 63.434,
+  "speaker_agent_id": "Growth",
+  "line_id": "L15"
+ },
+ {
+  "word": "holding",
+  "start": 63.492,
+  "end": 63.771,
+  "speaker_agent_id": "Growth",
+  "line_id": "L15"
+ },
+ {
+  "word": "its",
+  "start": 63.806,
+  "end": 63.922,
+  "speaker_agent_id": "Growth",
+  "line_id": "L15"
+ },
+ {
+  "word": "breath,",
+  "start": 63.968,
+  "end": 64.294,
+  "speaker_agent_id": "Growth",
+  "line_id": "L15"
+ },
+ {
+  "word": "people!",
+  "start": 64.317,
+  "end": 64.897,
+  "speaker_agent_id": "Growth",
+  "line_id": "L15"
+ },
+ {
+  "word": "Scrolling.",
+  "start": 65.197,
+  "end": 65.777,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "The",
+  "start": 65.824,
+  "end": 65.94,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "bar's",
+  "start": 65.975,
+  "end": 66.195,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "filling.",
+  "start": 66.265,
+  "end": 66.671,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "Section",
+  "start": 66.88,
+  "end": 67.205,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "link:",
+  "start": 67.263,
+  "end": 67.542,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "jump",
+  "start": 67.623,
+  "end": 67.82,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "to",
+  "start": 67.867,
+  "end": 67.913,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "'Clarity.'",
+  "start": 67.936,
+  "end": 68.459,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "Landed.",
+  "start": 68.529,
+  "end": 69.144,
+  "speaker_agent_id": "Critic",
+  "line_id": "L16"
+ },
+ {
+  "word": "Progress",
+  "start": 69.444,
+  "end": 69.943,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "bar",
+  "start": 70.001,
+  "end": 70.245,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "plus",
+  "start": 70.315,
+  "end": 70.558,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "section",
+  "start": 70.616,
+  "end": 70.93,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "navigation.",
+  "start": 70.988,
+  "end": 71.626,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "Exactly",
+  "start": 71.87,
+  "end": 72.404,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "what",
+  "start": 72.439,
+  "end": 72.578,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "the",
+  "start": 72.625,
+  "end": 72.695,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "commit",
+  "start": 72.741,
+  "end": 73.008,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "claims.",
+  "start": 73.066,
+  "end": 73.658,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "Nothing",
+  "start": 73.832,
+  "end": 74.123,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "more.",
+  "start": 74.192,
+  "end": 74.784,
+  "speaker_agent_id": "Dev",
+  "line_id": "L17"
+ },
+ {
+  "word": "I",
+  "start": 75.085,
+  "end": 75.143,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "swung",
+  "start": 75.224,
+  "end": 75.445,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "my",
+  "start": 75.503,
+  "end": 75.573,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "hammer",
+  "start": 75.631,
+  "end": 75.874,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "and",
+  "start": 75.921,
+  "end": 76.014,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "found...",
+  "start": 76.072,
+  "end": 76.641,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "nothing",
+  "start": 77.338,
+  "end": 77.605,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "to",
+  "start": 77.663,
+  "end": 77.709,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "hit.",
+  "start": 77.767,
+  "end": 78.104,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "Ugh.",
+  "start": 78.255,
+  "end": 78.557,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "It's",
+  "start": 79.16,
+  "end": 79.369,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "good.",
+  "start": 79.416,
+  "end": 79.915,
+  "speaker_agent_id": "Critic",
+  "line_id": "L18"
+ },
+ {
+  "word": "Bar",
+  "start": 80.215,
+  "end": 80.401,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "lands",
+  "start": 80.447,
+  "end": 80.714,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "full",
+  "start": 80.749,
+  "end": 80.912,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "on",
+  "start": 80.97,
+  "end": 81.039,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "'The",
+  "start": 81.063,
+  "end": 81.167,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "Future.'",
+  "start": 81.214,
+  "end": 81.655,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "Hard",
+  "start": 81.678,
+  "end": 81.899,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "cut.",
+  "start": 81.945,
+  "end": 82.397,
+  "speaker_agent_id": "Director",
+  "line_id": "L19"
+ },
+ {
+  "word": "Long",
+  "start": 82.697,
+  "end": 82.894,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "article?",
+  "start": 82.941,
+  "end": 83.463,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "Watch",
+  "start": 84.16,
+  "end": 84.392,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "the",
+  "start": 84.45,
+  "end": 84.554,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "bar,",
+  "start": 84.601,
+  "end": 84.914,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "jump",
+  "start": 84.972,
+  "end": 85.146,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "to",
+  "start": 85.193,
+  "end": 85.239,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "any",
+  "start": 85.297,
+  "end": 85.472,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "section.",
+  "start": 85.541,
+  "end": 86.145,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "Loudest",
+  "start": 86.656,
+  "end": 87.016,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "fan,",
+  "start": 87.05,
+  "end": 87.271,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "reluctantly.",
+  "start": 87.306,
+  "end": 88.084,
+  "speaker_agent_id": "Critic",
+  "line_id": "L20"
+ },
+ {
+  "word": "Smart",
+  "start": 88.384,
+  "end": 88.674,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "Scroll:",
+  "start": 88.721,
+  "end": 89.15,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "see",
+  "start": 89.359,
+  "end": 89.51,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "how",
+  "start": 89.545,
+  "end": 89.684,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "far",
+  "start": 89.742,
+  "end": 89.893,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "you've",
+  "start": 89.939,
+  "end": 90.125,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "come,",
+  "start": 90.148,
+  "end": 90.45,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "skip",
+  "start": 90.566,
+  "end": 90.822,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "to",
+  "start": 90.88,
+  "end": 90.926,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "what",
+  "start": 90.973,
+  "end": 91.112,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "matters.",
+  "start": 91.17,
+  "end": 91.82,
+  "speaker_agent_id": "Growth",
+  "line_id": "L21"
+ },
+ {
+  "word": "Progress",
+  "start": 92.121,
+  "end": 92.562,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "bar.",
+  "start": 92.609,
+  "end": 92.992,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "Section",
+  "start": 93.317,
+  "end": 93.7,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "links.",
+  "start": 93.747,
+  "end": 94.141,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "Merged",
+  "start": 94.466,
+  "end": 94.838,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "in",
+  "start": 94.896,
+  "end": 95.001,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "ee441a6.",
+  "start": 95.151,
+  "end": 96.997,
+  "speaker_agent_id": "Dev",
+  "line_id": "L22"
+ },
+ {
+  "word": "That's",
+  "start": 97.297,
+  "end": 97.529,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ },
+ {
+  "word": "a",
+  "start": 97.564,
+  "end": 97.587,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ },
+ {
+  "word": "wrap.",
+  "start": 97.622,
+  "end": 97.994,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ },
+ {
+  "word": "Go",
+  "start": 98.145,
+  "end": 98.272,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ },
+ {
+  "word": "read",
+  "start": 98.342,
+  "end": 98.539,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ },
+ {
+  "word": "something",
+  "start": 98.585,
+  "end": 98.864,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ },
+ {
+  "word": "long.",
+  "start": 98.922,
+  "end": 99.433,
+  "speaker_agent_id": "Director",
+  "line_id": "L23"
+ }
+]

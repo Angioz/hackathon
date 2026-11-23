@@ -1,0 +1,134 @@
+[
+ {
+  "line_id": "L01",
+  "speaker_agent_id": "Growth",
+  "start": 0.0,
+  "end": 5.759
+ },
+ {
+  "line_id": "L02",
+  "speaker_agent_id": "Critic",
+  "start": 6.059,
+  "end": 8.009
+ },
+ {
+  "line_id": "L03",
+  "speaker_agent_id": "Director",
+  "start": 8.309,
+  "end": 12.21
+ },
+ {
+  "line_id": "L04",
+  "speaker_agent_id": "Dev",
+  "start": 12.51,
+  "end": 18.594
+ },
+ {
+  "line_id": "L05",
+  "speaker_agent_id": "Dev",
+  "start": 18.894,
+  "end": 21.355
+ },
+ {
+  "line_id": "L06",
+  "speaker_agent_id": "Growth",
+  "start": 21.655,
+  "end": 24.488
+ },
+ {
+  "line_id": "L07",
+  "speaker_agent_id": "Dev",
+  "start": 24.788,
+  "end": 29.757
+ },
+ {
+  "line_id": "L08",
+  "speaker_agent_id": "Growth",
+  "start": 30.057,
+  "end": 33.308
+ },
+ {
+  "line_id": "L09",
+  "speaker_agent_id": "Critic",
+  "start": 33.608,
+  "end": 38.484
+ },
+ {
+  "line_id": "L10",
+  "speaker_agent_id": "Dev",
+  "start": 38.784,
+  "end": 43.892
+ },
+ {
+  "line_id": "L11",
+  "speaker_agent_id": "Director",
+  "start": 44.192,
+  "end": 47.815
+ },
+ {
+  "line_id": "L12",
+  "speaker_agent_id": "Critic",
+  "start": 48.115,
+  "end": 52.341
+ },
+ {
+  "line_id": "L13",
+  "speaker_agent_id": "Growth",
+  "start": 52.641,
+  "end": 55.288
+ },
+ {
+  "line_id": "L14",
+  "speaker_agent_id": "Critic",
+  "start": 55.588,
+  "end": 59.674
+ },
+ {
+  "line_id": "L15",
+  "speaker_agent_id": "Dev",
+  "start": 59.974,
+  "end": 65.083
+ },
+ {
+  "line_id": "L16",
+  "speaker_agent_id": "Director",
+  "start": 65.383,
+  "end": 70.166
+ },
+ {
+  "line_id": "L17",
+  "speaker_agent_id": "Dev",
+  "start": 70.466,
+  "end": 76.132
+ },
+ {
+  "line_id": "L18",
+  "speaker_agent_id": "Critic",
+  "start": 76.432,
+  "end": 78.429
+ },
+ {
+  "line_id": "L19",
+  "speaker_agent_id": "Growth",
+  "start": 78.729,
+  "end": 81.654
+ },
+ {
+  "line_id": "L20",
+  "speaker_agent_id": "Growth",
+  "start": 81.954,
+  "end": 85.437
+ },
+ {
+  "line_id": "L21",
+  "speaker_agent_id": "Critic",
+  "start": 85.737,
+  "end": 88.617
+ },
+ {
+  "line_id": "L22",
+  "speaker_agent_id": "Director",
+  "start": 88.917,
+  "end": 91.146
+ }
+]
