@@ -40,8 +40,8 @@ Every decision is written to the `decision_log` table with **what** was decided 
 | Different runs, different outcomes | Memory bans recent twists and the last ending; trust weights shift the vote. Same commit, two runs: different twist **and** ending (tested) | [Run comparison](#run-comparison), [side-by-side viewer screenshot](docs/evidence/decision-log-run1-vs-run2.png), `tests/test_outputs.py::test_run1_and_run2_differ` |
 | Agent memory and adaptive behaviour (bonus) | `agent_memory` rows per run: reflection, alliance weights, twist and ending history. Visible in run 2: the Director cites her trust in Dev (0.75) and avoids run 1's ending | [run 2 decision log](docs/evidence/run_2/decision_log.json) |
 | Visual characters with movement and interaction | Every scripted line carries a stage move, a look-at target, a prop interaction and a pose | [sample story bible](bruin-pipeline/contracts/sample/story_bible.json); renderer: *pending (Lane A)* |
-| 1-3 minute film | Script is checked for 60-180 s by a Bruin quality check and a test (runs 1 and 2: about 107 s and 106 s) | [story bible](docs/evidence/run_1/story_bible.json); *final MP4 pending (Lane A)* |
-| Voice (bonus) | 4 distinct ElevenLabs voices (Dev, Growth male; Critic, Director female) with word timestamps, cached | [`voice/`](voice/); *real audio pending the ElevenLabs key ([status](docs/PARTNER-STATUS.md))* |
+| 1-3 minute film | Script is checked for 60-180 s by a Bruin quality check and a test Real voiced audio: run 1 **91.1 s**, run 2 **99.4 s** | [run 1 audio](docs/evidence/run_1/full_script_audio.wav), [run 2 audio](docs/evidence/run_2/full_script_audio.wav); *final MP4 pending (Lane A)* |
+| Voice (bonus) | 4 distinct ElevenLabs voices: Dev = Adam, Growth = Antoni (male); Critic = Jessica, Director = Sarah (female). Every word timed (243/243 and 238/238) | [run 1 audio](docs/evidence/run_1/full_script_audio.wav), [word timings](docs/evidence/run_1/voice_words.json), [`voice/`](voice/) |
 | Zero human in the loop | A `git merge` in the demo repo fires a post-merge hook that runs the whole pipeline with zero prompts (79 s); also one CLI command or a signed GitHub webhook | [`launch/`](launch/), [`scripts/create_demo_repo.py`](scripts/create_demo_repo.py), [`scripts/install_post_merge.py`](scripts/install_post_merge.py) |
 | Demo video with AdaL | | *pending* |
 
@@ -86,7 +86,7 @@ Same merge commit (`ee441a6`, the Smart Scroll merge in the demo repo), every de
 | Title | *Smart Scroll: What the Diff Can Prove* | *Smart Scroll: Nothing to Hit* |
 | Plot twist (Critic) | Users use it wrong: a reader jumps straight to section 04 | Hidden dependency: "something moves that bar" |
 | Ending (Director) | Honest launch with a caveat (weighted vote 4.50 vs 1.50) | The Critic is converted (3.25 vs 1.75); run 1's ending banned by memory |
-| Film length (script) | about 107 s | about 106 s |
+| Voiced audio | 91.1 s ([listen](docs/evidence/run_1/full_script_audio.wav)) | 99.4 s ([listen](docs/evidence/run_2/full_script_audio.wav)) |
 | Evidence | [`docs/evidence/run_1/`](docs/evidence/run_1/) | [`docs/evidence/run_2/`](docs/evidence/run_2/) |
 
 ![Run 1 vs run 2 in the decision viewer](docs/evidence/decision-log-run1-vs-run2.png)
