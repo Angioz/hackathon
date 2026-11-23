@@ -47,17 +47,24 @@ def tts(voice_id: str, model: str, text: str) -> dict:
     if path.exists():
         data = json.loads(path.read_text(encoding="utf-8"))
     else:
-        api_key = os.environ.get("ELEVENLABS_API_KEY")
-        if not api_key:
+        keys = [k for k in (os.environ.get("ELEVENLABS_API_KEY"), os.environ.get("ELEVENLABS_API_KEY_2")) if k]
+        if not keys:
             raise SystemExit("ELEVENLABS_API_KEY missing in .env.local (and line not cached).")
         body = json.dumps({"text": text, "model_id": model}).encode()
-        req = urllib.request.Request(API.format(voice_id=voice_id), data=body, method="POST",
-                                     headers={"xi-api-key": api_key, "Content-Type": "application/json"})
-        try:
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                data = json.loads(resp.read())
-        except urllib.error.HTTPError as exc:
-            raise SystemExit(f"ElevenLabs {exc.code}: {exc.read().decode(errors='replace')[:300]}")
+        data = None
+        for n, api_key in enumerate(keys, start=1):
+            req = urllib.request.Request(API.format(voice_id=voice_id), data=body, method="POST",
+                                         headers={"xi-api-key": api_key, "Content-Type": "application/json"})
+            try:
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    data = json.loads(resp.read())
+                break
+            except urllib.error.HTTPError as exc:
+                detail = exc.read().decode(errors="replace")[:300]
+                if "quota" in detail.lower() and n < len(keys):  # key n out of credits: try the next
+                    print(f"[voice] ElevenLabs key {n} out of credits; switching to key {n + 1}")
+                    continue
+                raise SystemExit(f"ElevenLabs {exc.code} (key {n}): {detail}")
         CACHE.mkdir(exist_ok=True)
         path.write_text(json.dumps(data), encoding="utf-8")
     al = data.get("alignment") or data.get("normalized_alignment") or {}
