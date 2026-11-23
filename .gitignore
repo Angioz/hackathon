@@ -36,3 +36,14 @@ Thumbs.db
 *.swo
 .vscode/
 .idea/
+
+# Hack local-only
+remotion-project/public
+tools/colab_multivoice/output/
+tools/colab_multivoice/refs/
+.foreman/
+.repowise/
+.serena/
+*.stackdump
+
+.bruin.yml
