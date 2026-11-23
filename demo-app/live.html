@@ -9,11 +9,12 @@
         --gold:#ffbd69;--ok:#4ade80;--run:#60a5fa;--bad:#f87171;
         --Dev:#22D3EE;--Growth:#FF6B5B;--Critic:#A3E635;--Director:#DC2626}
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,Segoe UI,sans-serif;height:100vh;overflow:hidden}
+  html{line-height:1.45}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,"Segoe UI",sans-serif;font-size:16px;line-height:1.45;height:100vh;overflow:hidden}
   header{display:flex;align-items:center;gap:20px;padding:16px 28px;border-bottom:1px solid var(--line)}
   .merge{flex:1;min-width:0}
-  .merge small{color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-size:12px}
-  .merge h1{margin:2px 0 0;font-size:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  h1,h2,.round,.count,.avatar,.idle{line-height:1.3}
+  .merge h1{margin:0;font-size:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .merge .meta{color:var(--muted);font-size:14px}
   .stages{display:flex;gap:8px}
   .stage{padding:8px 14px;border-radius:999px;background:var(--card);color:var(--muted);font-weight:600;font-size:14px;white-space:nowrap}
@@ -51,7 +52,7 @@
 </head>
 <body>
 <header>
-  <div class="merge"><small id="kicker">Waiting for a merge</small><h1 id="title">Merge a feature to start the writers' room</h1><div class="meta" id="meta"></div></div>
+  <div class="merge"><h1 id="title">Waiting for a merge</h1><div class="meta" id="meta">Merge a feature in the demo repo to start the writers' room</div></div>
   <div class="stages">
     <div class="stage" id="s-merge">Merge</div><div class="stage" id="s-agents">Agents argue</div>
     <div class="stage" id="s-checks">Bruin checks</div><div class="stage" id="s-story">Story ready</div>
@@ -87,8 +88,8 @@ function stage(name,cls){$("s-"+name).className="stage "+cls}
 function speak(id){document.querySelectorAll(".agent").forEach(a=>a.classList.remove("speaking"));const a=$("a-"+id);if(a)a.classList.add("speaking")}
 function apply(e){
   if(e.type==="run_start"){resetUI();state.run=e.run_id;$("feed").innerHTML="";
-    $("kicker").textContent="Merge detected · commit "+(e.commit_sha||"").slice(0,7);$("title").textContent=e.title||"";
-    $("meta").textContent=(e.author?"by "+e.author+" · ":"")+(e.changed_files||[]).join(", ");stage("merge","done");stage("agents","on");}
+    $("title").textContent=e.title||"Merge detected";
+    $("meta").textContent="Merged commit "+(e.commit_sha||"").slice(0,7)+(e.author?" by "+e.author:"")+" · "+(e.changed_files||[]).join(", ");stage("merge","done");stage("agents","on");}
   else if(e.type==="round"){$("round").innerHTML=`<em>Round ${e.round}</em>${esc(e.label)}`}
   else if(e.type==="decision"){speak(e.agent_id);if(e.dialogue)$("b-"+e.agent_id).textContent="“"+e.dialogue+"”";
     const twist=e.plot_twist_flag&&e.action_type==="propose_twist";
