@@ -14,7 +14,7 @@ import hack_common as hc  # noqa: E402
 
 LOG_COLS = ["decision_id", "run_id", "round", "beat_id", "agent_id", "action_type", "target_agent",
             "decision_summary", "reasoning_why", "dialogue", "emotion", "stance", "choice",
-            "plot_twist_flag", "accepted", "brain", "memory_refs", "created_at"]
+            "plot_twist_flag", "accepted", "llm_mode", "memory_refs", "created_at"]
 
 
 def rewritten_script(bible: dict) -> dict:

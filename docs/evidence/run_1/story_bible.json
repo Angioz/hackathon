@@ -1,0 +1,869 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_20261123T225226_ee441a6_599b",
+  "commit_sha": "ee441a68a16c5249cdb8a61f3c47b23c55ecf828",
+  "feature_title": "Merge feat/smart-scroll: Smart Scroll",
+  "title": "Smart Scroll: What the Diff Can Prove",
+  "logline": "A writers' room turns a one-line merge into a film about a reading progress bar and section links, and a skeptic's jump to section 04 forces an honest launch.",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "layout": "16:9_split_stage",
+    "stage_coords": "x,y normalized 0-1 within the left 70% stage; z depth -1..1"
+  },
+  "llm_modes": [
+    "llm"
+  ],
+  "cast": [
+    {
+      "agent_id": "Dev",
+      "display_name": "Dev",
+      "role": "Pragmatic Staff Engineer",
+      "gender": "male",
+      "voice_profile": "male_1_calm",
+      "avatar_rig_id": "rig_dev",
+      "color": "#22D3EE",
+      "prop": "git_diff_cube",
+      "home": {
+        "x": 0.18,
+        "y": 0.78,
+        "z": 0.0
+      }
+    },
+    {
+      "agent_id": "Growth",
+      "display_name": "Growth",
+      "role": "Hype Marketing Director",
+      "gender": "male",
+      "voice_profile": "male_2_bright",
+      "avatar_rig_id": "rig_growth",
+      "color": "#FF6B5B",
+      "prop": "megaphone",
+      "home": {
+        "x": 0.4,
+        "y": 0.78,
+        "z": 0.0
+      }
+    },
+    {
+      "agent_id": "Critic",
+      "display_name": "Critic",
+      "role": "Skeptical User and Chaos QA",
+      "gender": "female",
+      "voice_profile": "female_2_dry",
+      "avatar_rig_id": "rig_critic",
+      "color": "#A3E635",
+      "prop": "bug_hammer",
+      "home": {
+        "x": 0.62,
+        "y": 0.78,
+        "z": 0.0
+      }
+    },
+    {
+      "agent_id": "Director",
+      "display_name": "Director",
+      "role": "Showrunner and Arbiter",
+      "gender": "female",
+      "voice_profile": "female_1_deep",
+      "avatar_rig_id": "rig_director",
+      "color": "#DC2626",
+      "prop": "clapperboard",
+      "home": {
+        "x": 0.84,
+        "y": 0.78,
+        "z": 0.0
+      }
+    }
+  ],
+  "plot_twist": {
+    "twist_id": "user_misuse",
+    "label": "Users use it wrong",
+    "description": "The first real user does something nobody designed for, exposing an edge case.",
+    "proposed_by": "Critic",
+    "decision_id": "d05"
+  },
+  "ending": {
+    "ending_id": "honest_caveat",
+    "label": "Honest launch with a caveat",
+    "description": "It ships, with the limitation said out loud. Trust wins.",
+    "decided_by": "Director",
+    "votes": {
+      "Dev": "honest_caveat",
+      "Growth": "critic_converted",
+      "Critic": "honest_caveat",
+      "Director": "honest_caveat"
+    },
+    "weighted_tally": {
+      "honest_caveat": 4.5,
+      "critic_converted": 1.5
+    }
+  },
+  "total_target_duration_sec": 107.19,
+  "timing_note": "est_* values assume 2.6 words/sec; the Voice Spine's real timestamps override them.",
+  "scenes": [
+    {
+      "scene_id": "S1",
+      "beat": "hook",
+      "setting": "An endless scrolling article in a beige void, a tiny reader adrift between paragraphs",
+      "est_start_sec": 0.0,
+      "est_duration_sec": 14.36,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Critic": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d01",
+        "d04"
+      ],
+      "lines": [
+        {
+          "line_id": "L01",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Paragraph forty. No map. No exit. Ever been lost inside a long article?",
+          "emotion": "excited",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "megaphone",
+            "from": {
+              "x": 0.4,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.4,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 0.5,
+          "est_duration_sec": 5.0
+        },
+        {
+          "line_id": "L02",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Every day. Usually right before the point.",
+          "emotion": "amused",
+          "pose": "idle",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Growth",
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.62,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.62,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Growth"
+          },
+          "est_start_sec": 5.85,
+          "est_duration_sec": 2.69
+        },
+        {
+          "line_id": "L03",
+          "speaker_agent_id": "Director",
+          "dialogue": "Cut! Freeze the lost reader. Now, Dev, what did we actually ship?",
+          "emotion": "excited",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": "Dev",
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 8.89,
+          "est_duration_sec": 4.62
+        }
+      ]
+    },
+    {
+      "scene_id": "S2",
+      "beat": "setup",
+      "setting": "Dev's workstation, one long minified line of index.html glowing on the monitor",
+      "est_start_sec": 14.36,
+      "est_duration_sec": 19.33,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Critic": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d02"
+      ],
+      "lines": [
+        {
+          "line_id": "L04",
+          "speaker_agent_id": "Dev",
+          "dialogue": "One file, one changed line. index.html. Commit says a reading progress bar.",
+          "emotion": "neutral",
+          "pose": "inspect_code",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Director",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Director"
+          },
+          "est_start_sec": 14.86,
+          "est_duration_sec": 4.62
+        },
+        {
+          "line_id": "L05",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Plus links to four sections. Jump to any of them.",
+          "emotion": "proud",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": "Director",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Director"
+          },
+          "est_start_sec": 19.83,
+          "est_duration_sec": 3.85
+        },
+        {
+          "line_id": "L06",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Smart Scroll! Smart! That's the headline right there!",
+          "emotion": "excited",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": "Dev",
+            "prop": "megaphone",
+            "from": {
+              "x": 0.4,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.4,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 24.03,
+          "est_duration_sec": 3.08
+        },
+        {
+          "line_id": "L07",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Smart is the branch name. No AI. No personalization. Just a bar and links.",
+          "emotion": "skeptical",
+          "pose": "debate",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Growth",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Growth"
+          },
+          "est_start_sec": 27.46,
+          "est_duration_sec": 5.38
+        }
+      ]
+    },
+    {
+      "scene_id": "S3",
+      "beat": "conflict",
+      "setting": "The writers' room table, the truncated diff projected on the wall ending at '<!doct'",
+      "est_start_sec": 33.69,
+      "est_duration_sec": 20.86,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.148
+        },
+        "Critic": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d03"
+      ],
+      "lines": [
+        {
+          "line_id": "L08",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Never get lost in a long read again. Billboards!",
+          "emotion": "excited",
+          "pose": "talk",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": "Director",
+            "prop": "megaphone",
+            "from": {
+              "x": 0.4,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": -0.148
+            },
+            "look_at": "Director"
+          },
+          "est_start_sec": 34.19,
+          "est_duration_sec": 3.46
+        },
+        {
+          "line_id": "L09",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Never? The diff is truncated at doctype. We can't even see the script.",
+          "emotion": "skeptical",
+          "pose": "debate",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Dev",
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.62,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.62,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 38.0,
+          "est_duration_sec": 5.0
+        },
+        {
+          "line_id": "L10",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Correct. Old line styled the bar at width zero. New markup is cut off.",
+          "emotion": "neutral",
+          "pose": "inspect_code",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Critic",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 43.35,
+          "est_duration_sec": 5.38
+        },
+        {
+          "line_id": "L11",
+          "speaker_agent_id": "Director",
+          "dialogue": "So we show the bar and the links. Nothing more. Next scene.",
+          "emotion": "neutral",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": null
+          },
+          "est_start_sec": 49.08,
+          "est_duration_sec": 4.62
+        }
+      ]
+    },
+    {
+      "scene_id": "S4",
+      "beat": "twist",
+      "setting": "The article page at the very top, a thin bar across the header, section links below",
+      "est_start_sec": 54.55,
+      "est_duration_sec": 20.1,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.148
+        },
+        "Critic": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.085
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d05",
+        "d06",
+        "d07",
+        "d08"
+      ],
+      "lines": [
+        {
+          "line_id": "L12",
+          "speaker_agent_id": "Critic",
+          "dialogue": "First user. I skip everything and jump straight to oh-four, The Future.",
+          "emotion": "amused",
+          "pose": "talk",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": null,
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.62,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "look_at": null
+          },
+          "est_start_sec": 55.05,
+          "est_duration_sec": 4.62
+        },
+        {
+          "line_id": "L13",
+          "speaker_agent_id": "Growth",
+          "dialogue": "That's not misuse! Jumping to sections is the feature!",
+          "emotion": "angry",
+          "pose": "debate",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Critic",
+            "prop": "megaphone",
+            "from": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": -0.148
+            },
+            "to": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": -0.148
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 60.02,
+          "est_duration_sec": 3.46
+        },
+        {
+          "line_id": "L14",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Fine. Then does the bar keep up after the jump? Prove it.",
+          "emotion": "skeptical",
+          "pose": "debate",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Dev",
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 63.83,
+          "est_duration_sec": 4.62
+        },
+        {
+          "line_id": "L15",
+          "speaker_agent_id": "Dev",
+          "dialogue": "I can't. The jump to oh-four is real. The bar's response isn't shown.",
+          "emotion": "worried",
+          "pose": "inspect_code",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Critic",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 68.8,
+          "est_duration_sec": 5.0
+        }
+      ]
+    },
+    {
+      "scene_id": "S5",
+      "beat": "resolution",
+      "setting": "Freeze frame on '04 / The future', the thin header bar visible above it",
+      "est_start_sec": 74.65,
+      "est_duration_sec": 18.94,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.148
+        },
+        "Critic": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.085
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d09",
+        "d10",
+        "d11",
+        "d12",
+        "d13"
+      ],
+      "lines": [
+        {
+          "line_id": "L16",
+          "speaker_agent_id": "Director",
+          "dialogue": "Freeze on section oh-four. Bar visible. We ship, and we say it plainly.",
+          "emotion": "proud",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": null
+          },
+          "est_start_sec": 75.15,
+          "est_duration_sec": 5.0
+        },
+        {
+          "line_id": "L17",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Shipped: a progress bar and four section links. Unproven: tracking after a direct jump.",
+          "emotion": "neutral",
+          "pose": "talk",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Director",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Director"
+          },
+          "est_start_sec": 80.5,
+          "est_duration_sec": 5.38
+        },
+        {
+          "line_id": "L18",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Honest. I hate how much I like that.",
+          "emotion": "amused",
+          "pose": "idle",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Dev",
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 86.23,
+          "est_duration_sec": 3.08
+        },
+        {
+          "line_id": "L19",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Fine. Trust is a headline too. Smaller billboard.",
+          "emotion": "amused",
+          "pose": "idle",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "megaphone",
+            "from": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": -0.148
+            },
+            "to": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": -0.148
+            },
+            "look_at": null
+          },
+          "est_start_sec": 89.66,
+          "est_duration_sec": 3.08
+        }
+      ]
+    },
+    {
+      "scene_id": "S6",
+      "beat": "cta",
+      "setting": "Plain caveat card over the article, a 'View the writers' room' link glowing at the bottom",
+      "est_start_sec": 93.59,
+      "est_duration_sec": 13.6,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.088
+        },
+        "Critic": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.085
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d13"
+      ],
+      "lines": [
+        {
+          "line_id": "L20",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Long read ahead? Watch your progress, jump to any section.",
+          "emotion": "excited",
+          "pose": "talk",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": null,
+            "prop": "megaphone",
+            "from": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": -0.148
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": -0.088
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 94.09,
+          "est_duration_sec": 3.85
+        },
+        {
+          "line_id": "L21",
+          "speaker_agent_id": "Critic",
+          "dialogue": "And if you deep-link to oh-four, tell us what the bar does.",
+          "emotion": "amused",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.085
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 98.29,
+          "est_duration_sec": 4.62
+        },
+        {
+          "line_id": "L22",
+          "speaker_agent_id": "Director",
+          "dialogue": "That's a wrap. Make room for what matters.",
+          "emotion": "proud",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "interact",
+            "target_agent": null,
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 103.26,
+          "est_duration_sec": 3.08
+        }
+      ]
+    }
+  ]
+}

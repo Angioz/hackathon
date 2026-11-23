@@ -62,11 +62,11 @@ def write_script(room, outcome: dict) -> tuple[dict, str]:
             "action: move_to (walk toward target_agent or centre), interact (hand/strike a prop with "
             "target_agent), look_at, or gesture. Use each agent's own prop.")
     ctx = {"rng": room.rng, "feature": room.feature, "twist": outcome["twist"], "ending": outcome["ending"]}
-    script, used = brain.think("script", system, user, script_schema(), ctx)
-    if used == "claude" and not _valid(script):
-        print("[staging] Claude script failed structure checks; using offline script template.")
+    script, used = brain.think("script", system, user, script_schema(), ctx, "Director")
+    if used in ("bruin", "llm") and not _valid(script):
+        print("[staging] Live script failed structure checks; using offline script template.")
         import stub_brain
-        script, used = stub_brain.generate("script", ctx), "offline"
+        script, used = stub_brain.generate("script", ctx), "offline_fallback"
     return script, used
 
 
@@ -112,14 +112,14 @@ def stage(script: dict, room, outcome: dict) -> dict:
 
 def build_story_bible(room, outcome: dict, script: dict, script_brain: str) -> dict:
     staged = stage(script, room, outcome)
-    brains = sorted({d["brain"] for d in room.decisions} | {script_brain})
+    brains = sorted({d["llm_mode"] for d in room.decisions} | {script_brain})
     return {
         "schema_version": SCHEMA_VERSION, "run_id": room.run_id,
         "commit_sha": room.feature["commit_sha"], "feature_title": room.feature["title"],
         "title": script["title"], "logline": script["logline"],
         "canvas": {"width": 1280, "height": 720, "fps": 30, "layout": "16:9_split_stage",
                    "stage_coords": "x,y normalized 0-1 within the left 70% stage; z depth -1..1"},
-        "brain_modes": brains,
+        "llm_modes": brains,
         "cast": [{k: a[k] for k in ("agent_id", "display_name", "role", "gender", "voice_profile",
                                      "avatar_rig_id", "color", "prop")} |
                  {"home": {"x": a["home_x"], "y": 0.78, "z": 0.0}} for a in AGENTS],

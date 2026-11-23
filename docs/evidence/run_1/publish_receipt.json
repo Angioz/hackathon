@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-11-23T22:53:45+00:00",
+  "run_id": "run_20261123T225226_ee441a6_599b",
+  "commit_sha": "ee441a68a16c5249cdb8a61f3c47b23c55ecf828",
+  "mode": "dry-run",
+  "target_channels": [
+    "webhook_sink"
+  ],
+  "rejected_channels": [],
+  "caption": "Smart Scroll: What the Diff Can Prove\n\nA writers' room turns a one-line merge into a film about a reading progress bar and section links, and a skeptic's jump to section 04 forces an honest launch.\n\nPlot twist chosen by the Critic agent: Users use it wrong. Ending decided by the Director agent: Honest launch with a caveat.\nCommit ee441a6. Written by 4 AI agents in a Bruin pipeline, zero humans.\n#BuildInPublic #AIagents #Bruin",
+  "video_path": "C:\\Users\\ChrisKrpt\\Projects\\Hackathon\\output\\run_20261123T225226_ee441a6_599b\\final_video.mp4",
+  "video_exists": false,
+  "delivery_status": "dry_run",
+  "http_status": null
+}

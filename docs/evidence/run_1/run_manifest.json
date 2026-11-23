@@ -1,0 +1,18 @@
+{
+  "run_id": "run_20261123T225226_ee441a6_599b",
+  "commit_sha": "ee441a68a16c5249cdb8a61f3c47b23c55ecf828",
+  "timings_sec": {
+    "1. feature payload": 0.2,
+    "2. bruin pipeline": 79.0,
+    "3. render": 0.0,
+    "4. publish": 0.0
+  },
+  "render": "skipped",
+  "artifacts": [
+    "decision_log.json",
+    "feature_payload.json",
+    "publish_receipt.json",
+    "rewritten_script.json",
+    "story_bible.json"
+  ]
+}

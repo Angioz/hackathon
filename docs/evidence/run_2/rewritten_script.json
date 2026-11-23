@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_20261123T225347_ee441a6_cbc9",
+  "title": "Smart Scroll: Nothing to Hit",
+  "source": "bruin-pipeline/export_pipeline_inputs",
+  "human_gate": "none (zero-HITL; replaces Stage 18 gate G-3)",
+  "voices": {
+    "Dev": "male_1_calm",
+    "Growth": "male_2_bright",
+    "Critic": "female_2_dry",
+    "Director": "female_1_deep"
+  },
+  "word_count": 238,
+  "full_text": "Growth: Page forty of an endless article. You're lost. No map. No exit.\nDev: Or page one of Smart Scroll. A progress bar and section links. That's it.\nDirector: Freeze. Thin bar up top. Watch it fill green. That's our opening shot.\nDev: One file, index.html. Six-pixel fixed header, a bar, four sections.\nGrowth: Readers see how far they are and jump anywhere. Headline writes itself.\nDev: No AI. No saved position. 'Smart' is just the name.\nCritic: Adorable. Now watch me break it.\nCritic: Old page: bar stuck at width zero. Nav styles, but no nav element.\nDev: That's the removed line. The added line's excerpt cuts off early.\nGrowth: So nobody can say it's broken. Ship it!\nCritic: Nobody can say it works, either. Truncated isn't verified.\nCritic: Something moves that bar. Something we haven't seen. Hidden dependency, folks.\nDev: Cut-off excerpt isn't a dependency. One file, no imports visible. Don't invent villains.\nDirector: Then settle it on camera. Critic, open the whole file. Hunt.\nGrowth: Launch is holding its breath, people!\nCritic: Scrolling. The bar's filling. Section link: jump to 'Clarity.' Landed.\nDev: Progress bar plus section navigation. Exactly what the commit claims. Nothing more.\nCritic: I swung my hammer and found... nothing to hit. Ugh. It's good.\nDirector: Bar lands full on 'The Future.' Hard cut.\nCritic: Long article? Watch the bar, jump to any section. Loudest fan, reluctantly.\nGrowth: Smart Scroll: see how far you've come, skip to what matters.\nDev: Progress bar. Section links. Merged in ee441a6.\nDirector: That's a wrap. Go read something long.",
+  "lines": [
+    {
+      "line_id": "L01",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Page forty of an endless article. You're lost. No map. No exit.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L02",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Or page one of Smart Scroll. A progress bar and section links. That's it.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L03",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Freeze. Thin bar up top. Watch it fill green. That's our opening shot.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L04",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "One file, index.html. Six-pixel fixed header, a bar, four sections.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Director",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L05",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Readers see how far they are and jump anywhere. Headline writes itself.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L06",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "No AI. No saved position. 'Smart' is just the name.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L07",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Adorable. Now watch me break it.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": null,
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L08",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Old page: bar stuck at width zero. Nav styles, but no nav element.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L09",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "That's the removed line. The added line's excerpt cuts off early.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L10",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "So nobody can say it's broken. Ship it!",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L11",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Nobody can say it works, either. Truncated isn't verified.",
+      "emotion": "angry",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L12",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Something moves that bar. Something we haven't seen. Hidden dependency, folks.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L13",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Cut-off excerpt isn't a dependency. One file, no imports visible. Don't invent villains.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L14",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Then settle it on camera. Critic, open the whole file. Hunt.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L15",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Launch is holding its breath, people!",
+      "emotion": "worried",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L16",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Scrolling. The bar's filling. Section link: jump to 'Clarity.' Landed.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": null,
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L17",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Progress bar plus section navigation. Exactly what the commit claims. Nothing more.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L18",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "I swung my hammer and found... nothing to hit. Ugh. It's good.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L19",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Bar lands full on 'The Future.' Hard cut.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L20",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Long article? Watch the bar, jump to any section. Loudest fan, reluctantly.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.01
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L21",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Smart Scroll: see how far you've come, skip to what matters.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L22",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Progress bar. Section links. Merged in ee441a6.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Growth",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L23",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "That's a wrap. Go read something long.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    }
+  ]
+}
