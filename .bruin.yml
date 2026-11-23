@@ -1,0 +1,8 @@
+# Local connections only. No secrets here (API keys live in .env.local, never committed).
+default_environment: default
+environments:
+  default:
+    connections:
+      duckdb:
+        - name: "duckdb-default"
+          path: "bruin-pipeline/hack_agents.duckdb"

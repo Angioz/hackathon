@@ -1,0 +1,2 @@
+duckdb==1.5.2  # must match the DuckDB engine bundled with Bruin CLI (ADBC v1.5.2)
+anthropic>=0.70

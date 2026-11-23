@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_20261123T213956_af9eb87_ca55",
+  "commit_sha": "af9eb87f2ca8465539ddfe9d64eb1f8779c9a431",
+  "feature_title": "docs: partner handoff, pipeline method mandate, reuse report, expert question batch",
+  "title": "docs: partner handoff, pipeline method mandate,: The Launch Room",
+  "logline": "Four agents fight over how to launch docs: partner handoff, pipeline method mandate,, until competitor ships a clone forces the truth.",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "layout": "16:9_split_stage",
+    "stage_coords": "x,y normalized 0-1 within the left 70% stage; z depth -1..1"
+  },
+  "brain_modes": [
+    "offline",
+    "rule"
+  ],
+  "cast": [
+    {
+      "agent_id": "Dev",
+      "display_name": "Dev",
+      "role": "Pragmatic Staff Engineer",
+      "gender": "male",
+      "voice_profile": "male_1_calm",
+      "avatar_rig_id": "rig_dev",
+      "color": "#22D3EE",
+      "prop": "git_diff_cube",
+      "home": {
+        "x": 0.18,
+        "y": 0.78,
+        "z": 0.0
+      }
+    },
+    {
+      "agent_id": "Growth",
+      "display_name": "Growth",
+      "role": "Hype Marketing Director",
+      "gender": "female",
+      "voice_profile": "female_1_bright",
+      "avatar_rig_id": "rig_growth",
+      "color": "#FF6B5B",
+      "prop": "megaphone",
+      "home": {
+        "x": 0.4,
+        "y": 0.78,
+        "z": 0.0
+      }
+    },
+    {
+      "agent_id": "Critic",
+      "display_name": "Critic",
+      "role": "Skeptical User and Chaos QA",
+      "gender": "female",
+      "voice_profile": "female_2_dry",
+      "avatar_rig_id": "rig_critic",
+      "color": "#A3E635",
+      "prop": "bug_hammer",
+      "home": {
+        "x": 0.62,
+        "y": 0.78,
+        "z": 0.0
+      }
+    },
+    {
+      "agent_id": "Director",
+      "display_name": "Director",
+      "role": "Showrunner and Arbiter",
+      "gender": "male",
+      "voice_profile": "male_2_deep",
+      "avatar_rig_id": "rig_director",
+      "color": "#DC2626",
+      "prop": "clapperboard",
+      "home": {
+        "x": 0.84,
+        "y": 0.78,
+        "z": 0.0
+      }
+    }
+  ],
+  "plot_twist": {
+    "twist_id": "competitor_clone",
+    "label": "Competitor ships a clone",
+    "description": "A rival announces the same feature an hour earlier; the team must show what is really different.",
+    "proposed_by": "Critic",
+    "decision_id": "d05"
+  },
+  "ending": {
+    "ending_id": "critic_converted",
+    "label": "The Critic is converted",
+    "description": "The skeptic tries to break it, fails, and becomes its loudest fan.",
+    "decided_by": "Director",
+    "votes": {
+      "Dev": "fix_first",
+      "Growth": "fix_first",
+      "Critic": "critic_converted",
+      "Director": "critic_converted"
+    },
+    "weighted_tally": {
+      "fix_first": 2.6,
+      "critic_converted": 3.1
+    }
+  },
+  "total_target_duration_sec": 77.61,
+  "timing_note": "est_* values assume 2.6 words/sec; the Voice Spine's real timestamps override them.",
+  "scenes": [
+    {
+      "scene_id": "S1",
+      "beat": "hook",
+      "setting": "Launch stage, merge button glowing",
+      "est_start_sec": 0.0,
+      "est_duration_sec": 13.59,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.144
+        },
+        "Critic": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d01",
+        "d04"
+      ],
+      "lines": [
+        {
+          "line_id": "L01",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Stop scrolling. docs: partner handoff, pipeline method mandate, just landed, and it is big.",
+          "emotion": "excited",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": null,
+            "prop": "megaphone",
+            "from": {
+              "x": 0.4,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": -0.144
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 0.5,
+          "est_duration_sec": 5.38
+        },
+        {
+          "line_id": "L02",
+          "speaker_agent_id": "Dev",
+          "dialogue": "It is a merge, not a moon landing. Calm down.",
+          "emotion": "skeptical",
+          "pose": "talk",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Growth",
+            "prop": null,
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Growth"
+          },
+          "est_start_sec": 6.23,
+          "est_duration_sec": 3.85
+        },
+        {
+          "line_id": "L03",
+          "speaker_agent_id": "Director",
+          "dialogue": "Perfect tension. Roll camera, everyone in.",
+          "emotion": "proud",
+          "pose": "debate",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 10.43,
+          "est_duration_sec": 2.31
+        }
+      ]
+    },
+    {
+      "scene_id": "S2",
+      "beat": "setup",
+      "setting": "Around the glowing diff cube",
+      "est_start_sec": 13.59,
+      "est_duration_sec": 13.56,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.144
+        },
+        "Critic": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d02"
+      ],
+      "lines": [
+        {
+          "line_id": "L04",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Here is what changed: report.md, CLAUDE.md. Clean and tested.",
+          "emotion": "proud",
+          "pose": "inspect_code",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Critic",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 14.09,
+          "est_duration_sec": 3.46
+        },
+        {
+          "line_id": "L05",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Tested by whom? I have questions.",
+          "emotion": "skeptical",
+          "pose": "debate",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": "Dev",
+            "prop": null,
+            "from": {
+              "x": 0.62,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 17.9,
+          "est_duration_sec": 2.31
+        },
+        {
+          "line_id": "L06",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Questions are engagement. I love questions.",
+          "emotion": "excited",
+          "pose": "talk",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Critic",
+            "prop": null,
+            "from": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": -0.144
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": -0.144
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 20.56,
+          "est_duration_sec": 2.31
+        },
+        {
+          "line_id": "L07",
+          "speaker_agent_id": "Director",
+          "dialogue": "Dev, keep it simple. Growth, keep it honest.",
+          "emotion": "neutral",
+          "pose": "talk",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": null,
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": null
+          },
+          "est_start_sec": 23.22,
+          "est_duration_sec": 3.08
+        }
+      ]
+    },
+    {
+      "scene_id": "S3",
+      "beat": "conflict",
+      "setting": "Split stage, two camps",
+      "est_start_sec": 27.15,
+      "est_duration_sec": 12.4,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": 0.132
+        },
+        "Critic": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d03"
+      ],
+      "lines": [
+        {
+          "line_id": "L08",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Tagline: the feature that changes everything.",
+          "emotion": "excited",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": "Director",
+            "prop": null,
+            "from": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": -0.144
+            },
+            "to": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": 0.132
+            },
+            "look_at": "Director"
+          },
+          "est_start_sec": 27.65,
+          "est_duration_sec": 2.31
+        },
+        {
+          "line_id": "L09",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Changes everything? It changes exactly what the diff says.",
+          "emotion": "angry",
+          "pose": "debate",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Growth",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Growth"
+          },
+          "est_start_sec": 30.31,
+          "est_duration_sec": 3.46
+        },
+        {
+          "line_id": "L10",
+          "speaker_agent_id": "Critic",
+          "dialogue": "And I can break it. Watch.",
+          "emotion": "amused",
+          "pose": "inspect_code",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Dev",
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "to": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 34.12,
+          "est_duration_sec": 2.31
+        },
+        {
+          "line_id": "L11",
+          "speaker_agent_id": "Director",
+          "dialogue": "Hold that. Critic, show us.",
+          "emotion": "neutral",
+          "pose": "talk",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Critic",
+            "prop": null,
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 36.78,
+          "est_duration_sec": 1.92
+        }
+      ]
+    },
+    {
+      "scene_id": "S4",
+      "beat": "twist",
+      "setting": "Lights flicker red",
+      "est_start_sec": 39.55,
+      "est_duration_sec": 13.56,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": 0.021
+        },
+        "Critic": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "Director": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        }
+      },
+      "hud_decision_ids": [
+        "d05",
+        "d06",
+        "d07",
+        "d08"
+      ],
+      "lines": [
+        {
+          "line_id": "L12",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Plot twist: competitor ships a clone.",
+          "emotion": "amused",
+          "pose": "shocked",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Growth",
+            "prop": "bug_hammer",
+            "from": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "to": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "look_at": "Growth"
+          },
+          "est_start_sec": 40.05,
+          "est_duration_sec": 2.31
+        },
+        {
+          "line_id": "L13",
+          "speaker_agent_id": "Growth",
+          "dialogue": "That was not in the launch plan!",
+          "emotion": "worried",
+          "pose": "shocked",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": "Dev",
+            "prop": null,
+            "from": {
+              "x": 0.75,
+              "y": 0.78,
+              "z": 0.132
+            },
+            "to": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": 0.021
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 42.71,
+          "est_duration_sec": 2.69
+        },
+        {
+          "line_id": "L14",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Good. Now we find out if the code is real.",
+          "emotion": "proud",
+          "pose": "inspect_code",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Critic",
+            "prop": "git_diff_cube",
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 45.75,
+          "est_duration_sec": 3.85
+        },
+        {
+          "line_id": "L15",
+          "speaker_agent_id": "Director",
+          "dialogue": "This is the scene. Nobody leaves.",
+          "emotion": "excited",
+          "pose": "debate",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": null
+          },
+          "est_start_sec": 49.95,
+          "est_duration_sec": 2.31
+        }
+      ]
+    },
+    {
+      "scene_id": "S5",
+      "beat": "resolution",
+      "setting": "Spotlight centre stage",
+      "est_start_sec": 53.11,
+      "est_duration_sec": 14.7,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": 0.021
+        },
+        "Critic": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "Director": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.101
+        }
+      },
+      "hud_decision_ids": [
+        "d09",
+        "d10",
+        "d11",
+        "d12",
+        "d13",
+        "d14"
+      ],
+      "lines": [
+        {
+          "line_id": "L16",
+          "speaker_agent_id": "Director",
+          "dialogue": "The room has voted. We end on the critic is converted.",
+          "emotion": "proud",
+          "pose": "talk",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": null,
+            "prop": null,
+            "from": {
+              "x": 0.84,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.101
+            },
+            "look_at": null
+          },
+          "est_start_sec": 53.61,
+          "est_duration_sec": 4.23
+        },
+        {
+          "line_id": "L17",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Then we say what it does, and nothing more.",
+          "emotion": "neutral",
+          "pose": "talk",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Director",
+            "prop": null,
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Director"
+          },
+          "est_start_sec": 58.19,
+          "est_duration_sec": 3.46
+        },
+        {
+          "line_id": "L18",
+          "speaker_agent_id": "Critic",
+          "dialogue": "Fine. It survived me. Barely.",
+          "emotion": "amused",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Dev",
+            "prop": null,
+            "from": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "to": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": -0.074
+            },
+            "look_at": "Dev"
+          },
+          "est_start_sec": 62.0,
+          "est_duration_sec": 1.92
+        },
+        {
+          "line_id": "L19",
+          "speaker_agent_id": "Growth",
+          "dialogue": "Honest and exciting. I can sell that.",
+          "emotion": "excited",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "interact",
+            "target_agent": "Critic",
+            "prop": "megaphone",
+            "from": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": 0.021
+            },
+            "to": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": 0.021
+            },
+            "look_at": "Critic"
+          },
+          "est_start_sec": 64.27,
+          "est_duration_sec": 2.69
+        }
+      ]
+    },
+    {
+      "scene_id": "S6",
+      "beat": "cta",
+      "setting": "All four in frame, logo up",
+      "est_start_sec": 67.81,
+      "est_duration_sec": 9.8,
+      "positions_at_end": {
+        "Dev": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "Growth": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.05
+        },
+        "Critic": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "Director": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.101
+        }
+      },
+      "hud_decision_ids": [
+        "d14"
+      ],
+      "lines": [
+        {
+          "line_id": "L20",
+          "speaker_agent_id": "Growth",
+          "dialogue": "docs: partner handoff, pipeline method mandate,. Live today. Go try it.",
+          "emotion": "excited",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "move_to",
+            "target_agent": null,
+            "prop": "megaphone",
+            "from": {
+              "x": 0.27,
+              "y": 0.78,
+              "z": 0.021
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.05
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 68.31,
+          "est_duration_sec": 4.23
+        },
+        {
+          "line_id": "L21",
+          "speaker_agent_id": "Director",
+          "dialogue": "Cut. That is a wrap.",
+          "emotion": "proud",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "gesture",
+            "target_agent": null,
+            "prop": "clapperboard",
+            "from": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.101
+            },
+            "to": {
+              "x": 0.5,
+              "y": 0.78,
+              "z": 0.101
+            },
+            "look_at": "camera"
+          },
+          "est_start_sec": 72.89,
+          "est_duration_sec": 1.92
+        },
+        {
+          "line_id": "L22",
+          "speaker_agent_id": "Dev",
+          "dialogue": "Ship it.",
+          "emotion": "proud",
+          "pose": "celebrate",
+          "character_action": {
+            "type": "look_at",
+            "target_agent": "Growth",
+            "prop": null,
+            "from": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "to": {
+              "x": 0.18,
+              "y": 0.78,
+              "z": 0.0
+            },
+            "look_at": "Growth"
+          },
+          "est_start_sec": 75.16,
+          "est_duration_sec": 1.6
+        }
+      ]
+    }
+  ]
+}

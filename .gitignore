@@ -47,3 +47,8 @@ tools/colab_multivoice/refs/
 *.stackdump
 
 .bruin.yml
+# Pipeline run outputs (samples are committed under bruin-pipeline/contracts/)
+output/
+
+logs/runs
+logs/*.log
