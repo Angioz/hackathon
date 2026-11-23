@@ -7,7 +7,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-MAX_DIFF_CHARS = 4000
+MAX_DIFF_CHARS = 7000
 SHA_RE = re.compile(r"^[0-9a-fA-F]{4,40}$|^HEAD(~\d+)?$")
 
 
@@ -29,9 +29,18 @@ def from_git(repo: Path, ref: str = "HEAD") -> dict:
     title = _git(repo, "log", "-1", "--format=%s", sha).strip()
     body = _git(repo, "log", "-1", "--format=%b", sha).strip()
     author = _git(repo, "log", "-1", "--format=%an", sha).strip()
-    files = [f for f in _git(repo, "show", "--name-only", "--format=", sha).splitlines() if f]
-    stat = _git(repo, "show", "--stat", "--format=", sha).strip()
-    patch = _git(repo, "show", "--format=", "--unified=1", sha)
+    parents = _git(repo, "rev-list", "--parents", "-n", "1", sha).split()[1:]
+    if len(parents) > 1:  # merge commit: describe what the merged branch brought in
+        base = parents[0]
+        files = [f for f in _git(repo, "diff", "--name-only", base, sha).splitlines() if f]
+        stat = _git(repo, "diff", "--stat", base, sha).strip()
+        patch = _git(repo, "diff", "--unified=1", base, sha)
+        merged = _git(repo, "log", "--format=- %s%n%b", f"{base}..{parents[1]}").strip()
+        body = f"{body}\nMerged commits:\n{merged}".strip()
+    else:
+        files = [f for f in _git(repo, "show", "--name-only", "--format=", sha).splitlines() if f]
+        stat = _git(repo, "show", "--stat", "--format=", sha).strip()
+        patch = _git(repo, "show", "--format=", "--unified=1", sha)
     return {
         "run_id": new_run_id(sha),
         "source": "git_cli",

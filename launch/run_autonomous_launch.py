@@ -54,7 +54,7 @@ def main() -> int:
     ap.add_argument("--repo", default=str(ROOT), help="git repo whose merge we film")
     ap.add_argument("--event-json")
     ap.add_argument("--event-type", choices=["push", "pull_request"])
-    ap.add_argument("--brain", choices=["auto", "claude", "offline"])
+    ap.add_argument("--brain", choices=["auto", "bruin", "llm", "offline"])
     ap.add_argument("--runner", choices=["auto", "bruin", "local"], default="auto")
     ap.add_argument("--publish", choices=["dry-run", "live"], default="dry-run")
     ap.add_argument("--label", help="also copy outputs to output/<label>/ (e.g. run_1, run_2)")

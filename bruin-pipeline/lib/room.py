@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import random
+from concurrent.futures import ThreadPoolExecutor
 
 import brain
 from cast import (ACTION_TYPES, AGENT_BY_ID, AGENT_IDS, AGENTS, EMOTIONS,
@@ -44,7 +45,7 @@ def feature_brief(f: dict) -> str:
     files = ", ".join(f.get("changed_files", [])[:12]) or "(not listed)"
     return (f"COMMIT {f['commit_sha'][:7]} by {f.get('author', '?')}\nTITLE: {f['title']}\n"
             f"BODY: {f.get('body') or '-'}\nFILES: {files}\nSTAT: {f.get('diff_summary', '')}\n"
-            f"DIFF EXCERPT:\n{(f.get('diff_excerpt') or '')[:2500]}")
+            f"DIFF EXCERPT:\n{(f.get('diff_excerpt') or '')[:7000]}")
 
 
 def memory_hint(mem: dict) -> str:
@@ -74,9 +75,17 @@ class Room:
                 f"{memory_hint(self.memory[agent_id])}\n\nROOM SO FAR:\n{self.transcript()}\n\nTASK: {task}")
         ctx = {"rng": self.rng, "feature": self.feature, "agent": agent, "options": choices,
                "memory_hint": self.memory[agent_id]["memory_reflection"], **stub}
-        result, used = brain.think(kind, persona(agent), user, turn_schema(choices), ctx)
-        result["brain"] = used
+        result, used = brain.think(kind, persona(agent), user, turn_schema(choices), ctx, agent_id)
+        result["llm_mode"] = used
         return result
+
+    def ask_many(self, jobs: list[tuple]) -> list[dict]:
+        """Run independent turns (same round) concurrently when a live brain is used."""
+        if brain.mode() == "offline":
+            return [self.ask(*j[:4], **(j[4] if len(j) > 4 else {})) for j in jobs]
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            futs = [pool.submit(self.ask, *j[:4], **(j[4] if len(j) > 4 else {})) for j in jobs]
+            return [f.result() for f in futs]
 
     def log(self, rnd: int, agent_id: str, action_type: str, r: dict, *, twist=False, accepted=True) -> dict:
         assert action_type in ACTION_TYPES
@@ -87,7 +96,7 @@ class Room:
              "reasoning_why": r["reasoning_why"].strip(), "dialogue": r.get("dialogue", "").strip(),
              "emotion": r.get("emotion", "neutral"), "stance": r.get("stance", "neutral"),
              "choice": r.get("choice", ""), "plot_twist_flag": twist, "accepted": accepted,
-             "brain": r.get("brain", "rule"),
+             "llm_mode": r.get("llm_mode", "rule"),
              "memory_refs": json.dumps({"memory_run": self.memory[agent_id]["run_id"]})}
         self.decisions.append(d)
         return d
@@ -96,9 +105,9 @@ class Room:
         # Round 1 - pitches: each agent argues for a framing.
         order = AGENT_IDS[:]
         self.rng.shuffle(order)
-        for aid in order:
-            r = self.ask(aid, "pitch", "Pitch how the film should open and frame this feature. "
-                         "Name one agent you support or oppose (target_agent + stance).", [])
+        task = ("Pitch how the film should open and frame this feature. "
+                "Name one agent you support or oppose (target_agent + stance).")
+        for aid, r in zip(order, self.ask_many([(aid, "pitch", task, []) for aid in order])):
             self.log(1, aid, "pitch", r)
 
         # Round 2 - Critic injects a twist; studio memory bans recently used twists.
@@ -110,10 +119,11 @@ class Room:
                      "Pick the one that best exposes a real weakness of this feature.", twist_opts)
         twist = TWIST_BY_ID[r["choice"] if r["choice"] in twist_opts else twist_opts[0]]
         self.log(2, "Critic", "propose_twist", r, twist=True)
-        for aid in [a for a in AGENT_IDS if a != "Critic"]:
-            r = self.ask(aid, "react_twist", f"The Critic proposes the twist '{twist['label']}': "
-                         f"{twist['description']} Support or oppose it, in character.", [],
-                         twist=twist)
+        reactors = [a for a in AGENT_IDS if a != "Critic"]
+        task = (f"The Critic proposes the twist '{twist['label']}': "
+                f"{twist['description']} Support or oppose it, in character.")
+        for aid, r in zip(reactors, self.ask_many([(a, "react_twist", task, [], {"twist": twist})
+                                                   for a in reactors])):
             r["stance"] = r["stance"] if r["stance"] in ("support", "oppose") else "support"
             self.log(2, aid, "react_twist", r, twist=True)
 
@@ -124,14 +134,14 @@ class Room:
             self.log(3, "Director", "studio_rule", {
                 "decision_summary": f"Ban last film's ending ({ENDING_BY_ID[last_endings[0]]['label']}).",
                 "reasoning_why": "Agent memory shows we used it last run; repeating it would make "
-                                 "this film a rerun.", "dialogue": "", "brain": "rule"})
+                                 "this film a rerun.", "dialogue": "", "llm_mode": "rule"})
 
         # Round 3 - everyone votes on the ending.
         menu = "; ".join(f"{e}: {ENDING_BY_ID[e]['description']}" for e in end_opts)
         votes = {}
-        for aid in AGENT_IDS:
-            r = self.ask(aid, "vote_ending", f"The twist is '{twist['label']}'. Vote for the ending "
-                         f"from: {menu}. Argue for it in character.", end_opts)
+        task = (f"The twist is '{twist['label']}'. Vote for the ending "
+                f"from: {menu}. Argue for it in character.")
+        for aid, r in zip(AGENT_IDS, self.ask_many([(a, "vote_ending", task, end_opts) for a in AGENT_IDS])):
             votes[aid] = r["choice"] if r["choice"] in end_opts else end_opts[0]
             r["choice"] = votes[aid]
             self.log(3, aid, "vote_ending", r)

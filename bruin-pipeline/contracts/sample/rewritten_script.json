@@ -1,28 +1,28 @@
 {
   "schema_version": "1.0.0",
-  "run_id": "run_20261123T213956_af9eb87_ca55",
-  "title": "docs: partner handoff, pipeline method mandate,: The Launch Room",
+  "run_id": "run_20261123T225226_ee441a6_599b",
+  "title": "Smart Scroll: What the Diff Can Prove",
   "source": "bruin-pipeline/export_pipeline_inputs",
   "human_gate": "none (zero-HITL; replaces Stage 18 gate G-3)",
   "voices": {
     "Dev": "male_1_calm",
-    "Growth": "female_1_bright",
+    "Growth": "male_2_bright",
     "Critic": "female_2_dry",
-    "Director": "male_2_deep"
+    "Director": "female_1_deep"
   },
-  "word_count": 164,
-  "full_text": "Growth: Stop scrolling. docs: partner handoff, pipeline method mandate, just landed, and it is big.\nDev: It is a merge, not a moon landing. Calm down.\nDirector: Perfect tension. Roll camera, everyone in.\nDev: Here is what changed: report.md, CLAUDE.md. Clean and tested.\nCritic: Tested by whom? I have questions.\nGrowth: Questions are engagement. I love questions.\nDirector: Dev, keep it simple. Growth, keep it honest.\nGrowth: Tagline: the feature that changes everything.\nDev: Changes everything? It changes exactly what the diff says.\nCritic: And I can break it. Watch.\nDirector: Hold that. Critic, show us.\nCritic: Plot twist: competitor ships a clone.\nGrowth: That was not in the launch plan!\nDev: Good. Now we find out if the code is real.\nDirector: This is the scene. Nobody leaves.\nDirector: The room has voted. We end on the critic is converted.\nDev: Then we say what it does, and nothing more.\nCritic: Fine. It survived me. Barely.\nGrowth: Honest and exciting. I can sell that.\nGrowth: docs: partner handoff, pipeline method mandate,. Live today. Go try it.\nDirector: Cut. That is a wrap.\nDev: Ship it.",
+  "word_count": 243,
+  "full_text": "Growth: Paragraph forty. No map. No exit. Ever been lost inside a long article?\nCritic: Every day. Usually right before the point.\nDirector: Cut! Freeze the lost reader. Now, Dev, what did we actually ship?\nDev: One file, one changed line. index.html. Commit says a reading progress bar.\nDev: Plus links to four sections. Jump to any of them.\nGrowth: Smart Scroll! Smart! That's the headline right there!\nDev: Smart is the branch name. No AI. No personalization. Just a bar and links.\nGrowth: Never get lost in a long read again. Billboards!\nCritic: Never? The diff is truncated at doctype. We can't even see the script.\nDev: Correct. Old line styled the bar at width zero. New markup is cut off.\nDirector: So we show the bar and the links. Nothing more. Next scene.\nCritic: First user. I skip everything and jump straight to oh-four, The Future.\nGrowth: That's not misuse! Jumping to sections is the feature!\nCritic: Fine. Then does the bar keep up after the jump? Prove it.\nDev: I can't. The jump to oh-four is real. The bar's response isn't shown.\nDirector: Freeze on section oh-four. Bar visible. We ship, and we say it plainly.\nDev: Shipped: a progress bar and four section links. Unproven: tracking after a direct jump.\nCritic: Honest. I hate how much I like that.\nGrowth: Fine. Trust is a headline too. Smaller billboard.\nGrowth: Long read ahead? Watch your progress, jump to any section.\nCritic: And if you deep-link to oh-four, tell us what the bar does.\nDirector: That's a wrap. Make room for what matters.",
   "lines": [
     {
       "line_id": "L01",
       "scene_id": "S1",
       "beat": "hook",
       "speaker_agent_id": "Growth",
-      "voice_profile": "female_1_bright",
-      "text": "Stop scrolling. docs: partner handoff, pipeline method mandate, just landed, and it is big.",
+      "voice_profile": "male_2_bright",
+      "text": "Paragraph forty. No map. No exit. Ever been lost inside a long article?",
       "emotion": "excited",
       "character_action": {
-        "type": "move_to",
+        "type": "gesture",
         "target_agent": null,
         "prop": "megaphone",
         "from": {
@@ -31,9 +31,9 @@
           "z": 0.0
         },
         "to": {
-          "x": 0.5,
+          "x": 0.4,
           "y": 0.78,
-          "z": -0.144
+          "z": 0.0
         },
         "look_at": "camera"
       }
@@ -42,21 +42,21 @@
       "line_id": "L02",
       "scene_id": "S1",
       "beat": "hook",
-      "speaker_agent_id": "Dev",
-      "voice_profile": "male_1_calm",
-      "text": "It is a merge, not a moon landing. Calm down.",
-      "emotion": "skeptical",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Every day. Usually right before the point.",
+      "emotion": "amused",
       "character_action": {
         "type": "look_at",
         "target_agent": "Growth",
-        "prop": null,
+        "prop": "bug_hammer",
         "from": {
-          "x": 0.18,
+          "x": 0.62,
           "y": 0.78,
           "z": 0.0
         },
         "to": {
-          "x": 0.18,
+          "x": 0.62,
           "y": 0.78,
           "z": 0.0
         },
@@ -68,12 +68,12 @@
       "scene_id": "S1",
       "beat": "hook",
       "speaker_agent_id": "Director",
-      "voice_profile": "male_2_deep",
-      "text": "Perfect tension. Roll camera, everyone in.",
-      "emotion": "proud",
+      "voice_profile": "female_1_deep",
+      "text": "Cut! Freeze the lost reader. Now, Dev, what did we actually ship?",
+      "emotion": "excited",
       "character_action": {
         "type": "gesture",
-        "target_agent": null,
+        "target_agent": "Dev",
         "prop": "clapperboard",
         "from": {
           "x": 0.84,
@@ -85,7 +85,7 @@
           "y": 0.78,
           "z": 0.0
         },
-        "look_at": "camera"
+        "look_at": "Dev"
       }
     },
     {
@@ -94,11 +94,11 @@
       "beat": "setup",
       "speaker_agent_id": "Dev",
       "voice_profile": "male_1_calm",
-      "text": "Here is what changed: report.md, CLAUDE.md. Clean and tested.",
-      "emotion": "proud",
+      "text": "One file, one changed line. index.html. Commit says a reading progress bar.",
+      "emotion": "neutral",
       "character_action": {
         "type": "interact",
-        "target_agent": "Critic",
+        "target_agent": "Director",
         "prop": "git_diff_cube",
         "from": {
           "x": 0.18,
@@ -110,32 +110,32 @@
           "y": 0.78,
           "z": 0.0
         },
-        "look_at": "Critic"
+        "look_at": "Director"
       }
     },
     {
       "line_id": "L05",
       "scene_id": "S2",
       "beat": "setup",
-      "speaker_agent_id": "Critic",
-      "voice_profile": "female_2_dry",
-      "text": "Tested by whom? I have questions.",
-      "emotion": "skeptical",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Plus links to four sections. Jump to any of them.",
+      "emotion": "proud",
       "character_action": {
-        "type": "move_to",
-        "target_agent": "Dev",
-        "prop": null,
+        "type": "gesture",
+        "target_agent": "Director",
+        "prop": "git_diff_cube",
         "from": {
-          "x": 0.62,
+          "x": 0.18,
           "y": 0.78,
           "z": 0.0
         },
         "to": {
-          "x": 0.27,
+          "x": 0.18,
           "y": 0.78,
-          "z": -0.074
+          "z": 0.0
         },
-        "look_at": "Dev"
+        "look_at": "Director"
       }
     },
     {
@@ -143,49 +143,49 @@
       "scene_id": "S2",
       "beat": "setup",
       "speaker_agent_id": "Growth",
-      "voice_profile": "female_1_bright",
-      "text": "Questions are engagement. I love questions.",
+      "voice_profile": "male_2_bright",
+      "text": "Smart Scroll! Smart! That's the headline right there!",
       "emotion": "excited",
       "character_action": {
-        "type": "look_at",
-        "target_agent": "Critic",
-        "prop": null,
+        "type": "gesture",
+        "target_agent": "Dev",
+        "prop": "megaphone",
         "from": {
-          "x": 0.5,
+          "x": 0.4,
           "y": 0.78,
-          "z": -0.144
+          "z": 0.0
         },
         "to": {
-          "x": 0.5,
+          "x": 0.4,
           "y": 0.78,
-          "z": -0.144
+          "z": 0.0
         },
-        "look_at": "Critic"
+        "look_at": "Dev"
       }
     },
     {
       "line_id": "L07",
       "scene_id": "S2",
       "beat": "setup",
-      "speaker_agent_id": "Director",
-      "voice_profile": "male_2_deep",
-      "text": "Dev, keep it simple. Growth, keep it honest.",
-      "emotion": "neutral",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Smart is the branch name. No AI. No personalization. Just a bar and links.",
+      "emotion": "skeptical",
       "character_action": {
-        "type": "gesture",
-        "target_agent": null,
-        "prop": null,
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": "git_diff_cube",
         "from": {
-          "x": 0.84,
+          "x": 0.18,
           "y": 0.78,
           "z": 0.0
         },
         "to": {
-          "x": 0.84,
+          "x": 0.18,
           "y": 0.78,
           "z": 0.0
         },
-        "look_at": null
+        "look_at": "Growth"
       }
     },
     {
@@ -193,22 +193,22 @@
       "scene_id": "S3",
       "beat": "conflict",
       "speaker_agent_id": "Growth",
-      "voice_profile": "female_1_bright",
-      "text": "Tagline: the feature that changes everything.",
+      "voice_profile": "male_2_bright",
+      "text": "Never get lost in a long read again. Billboards!",
       "emotion": "excited",
       "character_action": {
         "type": "move_to",
         "target_agent": "Director",
-        "prop": null,
+        "prop": "megaphone",
         "from": {
-          "x": 0.5,
+          "x": 0.4,
           "y": 0.78,
-          "z": -0.144
+          "z": 0.0
         },
         "to": {
           "x": 0.75,
           "y": 0.78,
-          "z": 0.132
+          "z": -0.148
         },
         "look_at": "Director"
       }
@@ -217,13 +217,38 @@
       "line_id": "L09",
       "scene_id": "S3",
       "beat": "conflict",
-      "speaker_agent_id": "Dev",
-      "voice_profile": "male_1_calm",
-      "text": "Changes everything? It changes exactly what the diff says.",
-      "emotion": "angry",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Never? The diff is truncated at doctype. We can't even see the script.",
+      "emotion": "skeptical",
       "character_action": {
         "type": "interact",
-        "target_agent": "Growth",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L10",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Correct. Old line styled the bar at width zero. New markup is cut off.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
         "prop": "git_diff_cube",
         "from": {
           "x": 0.18,
@@ -235,32 +260,7 @@
           "y": 0.78,
           "z": 0.0
         },
-        "look_at": "Growth"
-      }
-    },
-    {
-      "line_id": "L10",
-      "scene_id": "S3",
-      "beat": "conflict",
-      "speaker_agent_id": "Critic",
-      "voice_profile": "female_2_dry",
-      "text": "And I can break it. Watch.",
-      "emotion": "amused",
-      "character_action": {
-        "type": "interact",
-        "target_agent": "Dev",
-        "prop": "bug_hammer",
-        "from": {
-          "x": 0.27,
-          "y": 0.78,
-          "z": -0.074
-        },
-        "to": {
-          "x": 0.27,
-          "y": 0.78,
-          "z": -0.074
-        },
-        "look_at": "Dev"
+        "look_at": "Critic"
       }
     },
     {
@@ -268,109 +268,9 @@
       "scene_id": "S3",
       "beat": "conflict",
       "speaker_agent_id": "Director",
-      "voice_profile": "male_2_deep",
-      "text": "Hold that. Critic, show us.",
+      "voice_profile": "female_1_deep",
+      "text": "So we show the bar and the links. Nothing more. Next scene.",
       "emotion": "neutral",
-      "character_action": {
-        "type": "look_at",
-        "target_agent": "Critic",
-        "prop": null,
-        "from": {
-          "x": 0.84,
-          "y": 0.78,
-          "z": 0.0
-        },
-        "to": {
-          "x": 0.84,
-          "y": 0.78,
-          "z": 0.0
-        },
-        "look_at": "Critic"
-      }
-    },
-    {
-      "line_id": "L12",
-      "scene_id": "S4",
-      "beat": "twist",
-      "speaker_agent_id": "Critic",
-      "voice_profile": "female_2_dry",
-      "text": "Plot twist: competitor ships a clone.",
-      "emotion": "amused",
-      "character_action": {
-        "type": "interact",
-        "target_agent": "Growth",
-        "prop": "bug_hammer",
-        "from": {
-          "x": 0.27,
-          "y": 0.78,
-          "z": -0.074
-        },
-        "to": {
-          "x": 0.27,
-          "y": 0.78,
-          "z": -0.074
-        },
-        "look_at": "Growth"
-      }
-    },
-    {
-      "line_id": "L13",
-      "scene_id": "S4",
-      "beat": "twist",
-      "speaker_agent_id": "Growth",
-      "voice_profile": "female_1_bright",
-      "text": "That was not in the launch plan!",
-      "emotion": "worried",
-      "character_action": {
-        "type": "move_to",
-        "target_agent": "Dev",
-        "prop": null,
-        "from": {
-          "x": 0.75,
-          "y": 0.78,
-          "z": 0.132
-        },
-        "to": {
-          "x": 0.27,
-          "y": 0.78,
-          "z": 0.021
-        },
-        "look_at": "Dev"
-      }
-    },
-    {
-      "line_id": "L14",
-      "scene_id": "S4",
-      "beat": "twist",
-      "speaker_agent_id": "Dev",
-      "voice_profile": "male_1_calm",
-      "text": "Good. Now we find out if the code is real.",
-      "emotion": "proud",
-      "character_action": {
-        "type": "interact",
-        "target_agent": "Critic",
-        "prop": "git_diff_cube",
-        "from": {
-          "x": 0.18,
-          "y": 0.78,
-          "z": 0.0
-        },
-        "to": {
-          "x": 0.18,
-          "y": 0.78,
-          "z": 0.0
-        },
-        "look_at": "Critic"
-      }
-    },
-    {
-      "line_id": "L15",
-      "scene_id": "S4",
-      "beat": "twist",
-      "speaker_agent_id": "Director",
-      "voice_profile": "male_2_deep",
-      "text": "This is the scene. Nobody leaves.",
-      "emotion": "excited",
       "character_action": {
         "type": "gesture",
         "target_agent": null,
@@ -389,26 +289,126 @@
       }
     },
     {
-      "line_id": "L16",
-      "scene_id": "S5",
-      "beat": "resolution",
-      "speaker_agent_id": "Director",
-      "voice_profile": "male_2_deep",
-      "text": "The room has voted. We end on the critic is converted.",
-      "emotion": "proud",
+      "line_id": "L12",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "First user. I skip everything and jump straight to oh-four, The Future.",
+      "emotion": "amused",
       "character_action": {
         "type": "move_to",
         "target_agent": null,
-        "prop": null,
+        "prop": "bug_hammer",
         "from": {
-          "x": 0.84,
+          "x": 0.62,
           "y": 0.78,
           "z": 0.0
         },
         "to": {
           "x": 0.5,
           "y": 0.78,
-          "z": 0.101
+          "z": 0.085
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L13",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "That's not misuse! Jumping to sections is the feature!",
+      "emotion": "angry",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.148
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.148
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L14",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Fine. Then does the bar keep up after the jump? Prove it.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.085
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.085
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L15",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "I can't. The jump to oh-four is real. The bar's response isn't shown.",
+      "emotion": "worried",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L16",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Freeze on section oh-four. Bar visible. We ship, and we say it plainly.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
         },
         "look_at": null
       }
@@ -419,12 +419,12 @@
       "beat": "resolution",
       "speaker_agent_id": "Dev",
       "voice_profile": "male_1_calm",
-      "text": "Then we say what it does, and nothing more.",
+      "text": "Shipped: a progress bar and four section links. Unproven: tracking after a direct jump.",
       "emotion": "neutral",
       "character_action": {
-        "type": "look_at",
+        "type": "interact",
         "target_agent": "Director",
-        "prop": null,
+        "prop": "git_diff_cube",
         "from": {
           "x": 0.18,
           "y": 0.78,
@@ -444,21 +444,21 @@
       "beat": "resolution",
       "speaker_agent_id": "Critic",
       "voice_profile": "female_2_dry",
-      "text": "Fine. It survived me. Barely.",
+      "text": "Honest. I hate how much I like that.",
       "emotion": "amused",
       "character_action": {
-        "type": "interact",
+        "type": "look_at",
         "target_agent": "Dev",
-        "prop": null,
+        "prop": "bug_hammer",
         "from": {
-          "x": 0.27,
+          "x": 0.5,
           "y": 0.78,
-          "z": -0.074
+          "z": 0.085
         },
         "to": {
-          "x": 0.27,
+          "x": 0.5,
           "y": 0.78,
-          "z": -0.074
+          "z": 0.085
         },
         "look_at": "Dev"
       }
@@ -468,24 +468,24 @@
       "scene_id": "S5",
       "beat": "resolution",
       "speaker_agent_id": "Growth",
-      "voice_profile": "female_1_bright",
-      "text": "Honest and exciting. I can sell that.",
-      "emotion": "excited",
+      "voice_profile": "male_2_bright",
+      "text": "Fine. Trust is a headline too. Smaller billboard.",
+      "emotion": "amused",
       "character_action": {
-        "type": "interact",
-        "target_agent": "Critic",
+        "type": "gesture",
+        "target_agent": null,
         "prop": "megaphone",
         "from": {
-          "x": 0.27,
+          "x": 0.75,
           "y": 0.78,
-          "z": 0.021
+          "z": -0.148
         },
         "to": {
-          "x": 0.27,
+          "x": 0.75,
           "y": 0.78,
-          "z": 0.021
+          "z": -0.148
         },
-        "look_at": "Critic"
+        "look_at": null
       }
     },
     {
@@ -493,22 +493,22 @@
       "scene_id": "S6",
       "beat": "cta",
       "speaker_agent_id": "Growth",
-      "voice_profile": "female_1_bright",
-      "text": "docs: partner handoff, pipeline method mandate,. Live today. Go try it.",
+      "voice_profile": "male_2_bright",
+      "text": "Long read ahead? Watch your progress, jump to any section.",
       "emotion": "excited",
       "character_action": {
         "type": "move_to",
         "target_agent": null,
         "prop": "megaphone",
         "from": {
-          "x": 0.27,
+          "x": 0.75,
           "y": 0.78,
-          "z": 0.021
+          "z": -0.148
         },
         "to": {
           "x": 0.5,
           "y": 0.78,
-          "z": 0.05
+          "z": -0.088
         },
         "look_at": "camera"
       }
@@ -517,23 +517,23 @@
       "line_id": "L21",
       "scene_id": "S6",
       "beat": "cta",
-      "speaker_agent_id": "Director",
-      "voice_profile": "male_2_deep",
-      "text": "Cut. That is a wrap.",
-      "emotion": "proud",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "And if you deep-link to oh-four, tell us what the bar does.",
+      "emotion": "amused",
       "character_action": {
         "type": "gesture",
         "target_agent": null,
-        "prop": "clapperboard",
+        "prop": "bug_hammer",
         "from": {
           "x": 0.5,
           "y": 0.78,
-          "z": 0.101
+          "z": 0.085
         },
         "to": {
           "x": 0.5,
           "y": 0.78,
-          "z": 0.101
+          "z": 0.085
         },
         "look_at": "camera"
       }
@@ -542,25 +542,25 @@
       "line_id": "L22",
       "scene_id": "S6",
       "beat": "cta",
-      "speaker_agent_id": "Dev",
-      "voice_profile": "male_1_calm",
-      "text": "Ship it.",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "That's a wrap. Make room for what matters.",
       "emotion": "proud",
       "character_action": {
-        "type": "look_at",
-        "target_agent": "Growth",
-        "prop": null,
+        "type": "interact",
+        "target_agent": null,
+        "prop": "clapperboard",
         "from": {
-          "x": 0.18,
+          "x": 0.84,
           "y": 0.78,
           "z": 0.0
         },
         "to": {
-          "x": 0.18,
+          "x": 0.84,
           "y": 0.78,
           "z": 0.0
         },
-        "look_at": "Growth"
+        "look_at": "camera"
       }
     }
   ]

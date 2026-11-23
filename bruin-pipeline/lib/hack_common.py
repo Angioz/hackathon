@@ -49,7 +49,7 @@ def current_run_id(con) -> str:
 
 
 def run_dir(run_id: str) -> Path:
-    path = OUTPUT_DIR / "runs" / run_id
+    path = OUTPUT_DIR / run_id
     path.mkdir(parents=True, exist_ok=True)
     return path
 
