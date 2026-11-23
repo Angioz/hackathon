@@ -40,3 +40,7 @@ Thumbs.db
 # Pipeline run outputs (samples are committed under bruin-pipeline/contracts/)
 output/
 .serena/
+
+.bruin.yml
+logs/runs
+logs/*.log
