@@ -6,6 +6,7 @@ import random
 from concurrent.futures import ThreadPoolExecutor
 
 import brain
+import live
 from cast import (ACTION_TYPES, AGENT_BY_ID, AGENT_IDS, AGENTS, EMOTIONS,
                   ENDING_BY_ID, ENDINGS, TWIST_BY_ID, TWISTS)
 
@@ -99,10 +100,14 @@ class Room:
              "llm_mode": r.get("llm_mode", "rule"),
              "memory_refs": json.dumps({"memory_run": self.memory[agent_id]["run_id"]})}
         self.decisions.append(d)
+        live.emit("decision", **{k: d[k] for k in ("decision_id", "round", "agent_id", "action_type",
+                  "target_agent", "decision_summary", "reasoning_why", "dialogue", "emotion", "stance",
+                  "choice", "plot_twist_flag", "llm_mode")})
         return d
 
     def simulate(self) -> dict:
         # Round 1 - pitches: each agent argues for a framing.
+        live.emit("round", round=1, label="Pitch: how should we launch this?")
         order = AGENT_IDS[:]
         self.rng.shuffle(order)
         task = ("Pitch how the film should open and frame this feature. "
@@ -111,6 +116,7 @@ class Room:
             self.log(1, aid, "pitch", r)
 
         # Round 2 - Critic injects a twist; studio memory bans recently used twists.
+        live.emit("round", round=2, label="Plot twist: the Critic strikes")
         recent = [t for m in self.memory.values() for t in m["preferred_twist_history"][-2:]]
         twist_opts = [t["twist_id"] for t in TWISTS if t["twist_id"] not in recent] or \
             [t["twist_id"] for t in TWISTS]
@@ -137,6 +143,7 @@ class Room:
                                  "this film a rerun.", "dialogue": "", "llm_mode": "rule"})
 
         # Round 3 - everyone votes on the ending.
+        live.emit("round", round=3, label="Vote: how does it end?")
         menu = "; ".join(f"{e}: {ENDING_BY_ID[e]['description']}" for e in end_opts)
         votes = {}
         task = (f"The twist is '{twist['label']}'. Vote for the ending "
@@ -147,6 +154,7 @@ class Room:
             self.log(3, aid, "vote_ending", r)
 
         # Round 4 - Director arbitrates; vote weight = 1 + Director's trust in the voter.
+        live.emit("round", round=4, label="The Director decides")
         trust = self.memory["Director"]["alliance_weights"]
         tally: dict[str, float] = {}
         for aid, eid in votes.items():

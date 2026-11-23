@@ -12,6 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "lib"))
 import brain  # noqa: E402
+import live  # noqa: E402
 import bruin_brain  # noqa: E402
 import hack_common as hc  # noqa: E402
 import room as rm  # noqa: E402
@@ -62,6 +63,10 @@ def main() -> None:
                 bruin_brain.remember(m["agent_id"], m["memory_reflection"])
             except Exception as exc:  # noqa: BLE001 - DuckDB memory is the source of truth
                 print(f"[room] Bruin memory write failed for {m['agent_id']}: {exc}")
+    live.emit("story", title=bible["title"], logline=bible["logline"],
+              twist=bible["plot_twist"]["label"], ending=bible["ending"]["label"],
+              duration=bible["total_target_duration_sec"], memory=[
+                  {"agent_id": m["agent_id"], "reflection": m["memory_reflection"]} for m in new_memory])
     print(f"[room] decisions={len(room.decisions)} twist={outcome['twist']['twist_id']} "
           f"ending={outcome['ending']['ending_id']} duration~{bible['total_target_duration_sec']}s "
           f"llm_modes={bible['llm_modes']} took={time.time() - started:.1f}s")

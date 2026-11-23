@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -21,6 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "bruin-pipeline" / "lib"))
 import hack_common as hc  # noqa: E402
+import live  # noqa: E402
 import payload as pl  # noqa: E402
 import publisher  # noqa: E402
 
@@ -35,6 +37,28 @@ def find_bruin() -> str | None:
         if cand.exists():
             return str(cand)
     return None
+
+
+BRUIN_LINE = re.compile(r"^\[[\d:]+\]\s+(Running|Finished|Failed):\s+(\S+)")
+
+
+def run_streamed(cmd: list[str]) -> None:
+    """Run the pipeline, echo its output, and turn Bruin's step/check lines into live events."""
+    proc = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                            text=True, encoding="utf-8", errors="replace", bufsize=1)
+    for line in proc.stdout:
+        print(line, end="", flush=True)
+        m = BRUIN_LINE.match(line.strip())
+        if m:
+            status, name = m.group(1).lower(), m.group(2)
+            asset, _, check = name.partition(":")
+            if check:
+                live.emit("check", asset=asset, check=check.replace("custom-check:", ""), status=status)
+            else:
+                live.emit("step", asset=asset, status=status)
+    if proc.wait():
+        live.emit("run_failed", reason="bruin run failed")
+        raise subprocess.CalledProcessError(proc.returncode, cmd)
 
 
 def step(name: str, timings: dict):
@@ -61,6 +85,8 @@ def main() -> int:
     ap.add_argument("--fresh", action="store_true",
                     help="wipe agent memory + run history (local DuckDB) before this run")
     args = ap.parse_args()
+    for stream in (sys.stdout, sys.stderr):  # Bruin prints symbols (e.g. a check mark) that cp1252 can't encode
+        stream.reconfigure(encoding="utf-8", errors="replace")
     hc.load_env()
     if args.fresh and hc.DB_PATH.suffix == ".duckdb" and hc.DB_PATH.exists():
         hc.DB_PATH.unlink()
@@ -87,6 +113,9 @@ def main() -> int:
             else:
                 feature = pl.from_git(Path(args.repo), args.commit)
             hc.write_json(hc.PENDING_PAYLOAD, feature)
+            live.reset(run_id=feature["run_id"], commit_sha=feature["commit_sha"], title=feature["title"],
+                       author=feature.get("author", ""), changed_files=feature.get("changed_files", []),
+                       source=feature.get("source", ""))
             print(f"run_id={feature['run_id']} commit={feature['commit_sha'][:7]} title={feature['title']!r}")
 
         with step("2. bruin pipeline", timings):
@@ -96,7 +125,7 @@ def main() -> int:
             cmd = ([bruin, "run", str(ROOT / "bruin-pipeline")] if bruin
                    else [sys.executable, str(ROOT / "bruin-pipeline" / "run_local.py")])
             print("runner:", "bruin" if bruin else "local fallback (Bruin CLI not found)")
-            subprocess.run(cmd, check=True, cwd=ROOT)
+            run_streamed(cmd)
         run_dir = hc.run_dir(feature["run_id"])
 
         with step("3. render", timings):
@@ -115,6 +144,9 @@ def main() -> int:
                     "timings_sec": timings, "render": "done" if (run_dir / "final_video.mp4").exists() else "skipped",
                     "artifacts": sorted(p.name for p in run_dir.iterdir())}
         hc.write_json(run_dir / "run_manifest.json", manifest)
+        live.emit("run_done", run_id=feature["run_id"], seconds=round(sum(timings.values()), 1),
+                  publish=receipt["delivery_status"])
+        live.archive(feature["run_id"])
         hc.publish_latest(feature["run_id"])
         if args.label:
             dst = hc.OUTPUT_DIR / args.label
