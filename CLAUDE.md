@@ -191,6 +191,12 @@ Type checking and test suites verify code correctness, not feature correctness. 
 
 ---
 
+## VIDEO METHOD (HARD)
+- All video work runs through the `content-production-pipeline-local` stage skills (`~\projects\content-production-pipeline-local\.claude\skills\`: 00-pipeline-entry, 00-setup, 08, 10, 11, 12, 13, 14, 15, 18, 19.5, 20-visual-story-arc, 20.5-director, 26-voice, 34-visualization). No freestyle.
+- Planning here: invoke the needed stage skill individually and follow its method.
+- Via `/jarvis-foreman`: the ticket names the pipeline path + stage skill.
+- Voice = Stage 26 on Colab Chatterbox; verify Colab is up before any render or demo.
+
 ## PROJECT-SPECIFIC SECTION (customize per project)
 
 ```
