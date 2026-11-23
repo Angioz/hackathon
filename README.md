@@ -33,7 +33,7 @@ Every decision is written to the `decision_log` table with **what** was decided 
 
 | Requirement | How we meet it | Evidence |
 |---|---|---|
-| Bruin (mandatory sponsor) | 5-asset Bruin pipeline (4 Python + 1 SQL) on DuckDB; `bruin validate` and `bruin run` pass (5/5 assets, 13/13 quality checks). Synced to Bruin Cloud (5 assets, no validation errors). The 4 characters also exist as Bruin Cloud agents (backup brain). | [`bruin-pipeline/`](bruin-pipeline/), [Cloud sync proof](docs/evidence/bruin-cloud.txt) |
+| Bruin (mandatory sponsor) | 5-asset Bruin pipeline (4 Python + 1 SQL) on DuckDB; `bruin validate` and `bruin run` pass (5/5 assets, 13/13 quality checks). Synced to Bruin Cloud (5 assets, no validation errors). The 4 characters also exist as Bruin Cloud agents (backup brain). | [`bruin-pipeline/`](bruin-pipeline/), [Cloud sync proof](docs/evidence/bruin-cloud.txt), [Bruin Cloud lineage](docs/evidence/bruin-lineage.png) |
 | At least 3 agents with distinct roles, goals, personalities | 4 agents with opposing goals and secret goals | [`bruin-pipeline/lib/cast.py`](bruin-pipeline/lib/cast.py), DuckDB `agents` |
 | Agents decide story, twist and ending | 4-round writers' room; every turn is a live Claude Opus 5.5 call (via Runware), recorded per decision as `llm_mode` | [`room.py`](bruin-pipeline/lib/room.py), [run 1 decision log](docs/evidence/run_1/decision_log.json) |
 | Decision log: what and why | `decision_log` table + `decision_log.json`, with Bruin checks for non-empty `reasoning_why`, a plot twist, and at least 3 agents | [`assets/story_quality_checks.sql`](bruin-pipeline/assets/story_quality_checks.sql), [sample](bruin-pipeline/contracts/sample/decision_log.json) |
