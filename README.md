@@ -35,7 +35,7 @@ Every decision is written to the `decision_log` table with **what** was decided 
 |---|---|---|
 | Bruin (mandatory sponsor) | 5-asset Bruin pipeline (4 Python + 1 SQL) on DuckDB; `bruin validate` and `bruin run` pass (5/5 assets, 13/13 quality checks). Synced to Bruin Cloud (5 assets, no validation errors). The 4 characters also exist as Bruin Cloud agents (backup brain). | [`bruin-pipeline/`](bruin-pipeline/), [Cloud sync proof](docs/evidence/bruin-cloud.txt), [Bruin Cloud lineage](docs/evidence/bruin-lineage.png) |
 | At least 3 agents with distinct roles, goals, personalities | 4 agents with opposing goals and secret goals | [`bruin-pipeline/lib/cast.py`](bruin-pipeline/lib/cast.py), DuckDB `agents` |
-| Agents decide story, twist and ending | 4-round writers' room; every turn is a live Claude Opus 5.5 call (via Runware), recorded per decision as `llm_mode` | [`room.py`](bruin-pipeline/lib/room.py), [run 1 decision log](docs/evidence/run_1/decision_log.json) |
+| Agents decide story, twist and ending | 4-round writers' room; every turn is a live LLM call (DeepSeek v4.1 Flash via Runware; runs 1 and 2 used Claude Opus 5.5), recorded per decision as `llm_mode`. Watch it live on the demo screen | [`room.py`](bruin-pipeline/lib/room.py), [run 1 decision log](docs/evidence/run_1/decision_log.json), [live screen](docs/evidence/live-screen-final.png) |
 | Decision log: what and why | `decision_log` table + `decision_log.json`, with Bruin checks for non-empty `reasoning_why`, a plot twist, and at least 3 agents | [`assets/story_quality_checks.sql`](bruin-pipeline/assets/story_quality_checks.sql), [sample](bruin-pipeline/contracts/sample/decision_log.json) |
 | Different runs, different outcomes | Memory bans recent twists and the last ending; trust weights shift the vote. Same commit, two runs: different twist **and** ending (tested) | [Run comparison](#run-comparison), [side-by-side viewer screenshot](docs/evidence/decision-log-run1-vs-run2.png), `tests/test_outputs.py::test_run1_and_run2_differ` |
 | Agent memory and adaptive behaviour (bonus) | `agent_memory` rows per run: reflection, alliance weights, twist and ending history. Visible in run 2: the Director cites her trust in Dev (0.75) and avoids run 1's ending | [run 2 decision log](docs/evidence/run_2/decision_log.json) |
@@ -51,7 +51,7 @@ Requirements: Python 3.11+, Node, [Bruin CLI](https://getbruin.com/docs/bruin/ge
 
 ```bash
 # .env.local (git-ignored). Without these, a template stand-in brain is used (llm_mode "offline").
-#   LLM_BASE_URL=https://api.runware.ai/v1   LLM_API_KEY=...   LLM_MODEL=anthropic:claude@opus-5.5
+#   LLM_BASE_URL=https://api.runware.ai/v1   LLM_API_KEY=...   LLM_MODEL=deepseek-v4-1-flash
 #   BRUIN_CLOUD_API_KEY=...   (backup brain: py launch/setup_bruin_agents.py)
 #   ELEVENLABS_API_KEY=...    (voices: py voice/synthesize_voices.py)
 
@@ -64,7 +64,8 @@ py launch/run_autonomous_launch.py --commit HEAD --label run_2
 # The demo: a real merge fires the pipeline
 py scripts/create_demo_repo.py --reset && py scripts/install_post_merge.py
 git -C demo-app/.demo-repo merge --no-ff feat/smart-scroll -m "Merge feat/smart-scroll"
-cd demo-app && npm run dev        # http://localhost:3000 and /decision-log (run 1 vs run 2)
+cd demo-app && npm run dev        # localhost:3000/live (watch the room live), /decision-log (run 1 vs run 2)
+#   offline fallback: localhost:3000/live?replay=golden
 
 # Tests (contract, why, agents, twist, length, divergence)
 py -m pytest tests -q
@@ -79,7 +80,7 @@ The publisher defaults to **dry run** and only posts to an allow-listed channel 
 
 ## Run comparison
 
-Same merge commit (`ee441a6`, the Smart Scroll merge in the demo repo), every decision made by Claude Opus 5.5:
+Same merge commit (`ee441a6`, the Smart Scroll merge in the demo repo), every decision made by Claude Opus 5.5 (the live demo now runs DeepSeek v4.1 Flash, about 60 s per run):
 
 | | Run 1 (fired by `git merge`) | Run 2 (CLI, same commit) |
 |---|---|---|
