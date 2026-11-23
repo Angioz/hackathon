@@ -1,0 +1,92 @@
+# Bruin Cloud evidence (2026-11-23T22:57Z)
+
+$ bruin cloud projects list
++----------------------------+-----------+-----------------------------------------+--------+
+| ID                         | NAME      | REPO URL                                | BRANCH |
++----------------------------+-----------+-----------------------------------------+--------+
+| 01m858dxkmp2da5evgjrs93w8n | hackathon | https://github.com/Angioz/hackathon.git | main   |
+| agenticsbejo4do            | agentic   |                                         |        |
++----------------------------+-----------+-----------------------------------------+--------+
+
+$ bruin cloud pipelines list --project-id 01m858dxkmp2da5evgjrs93w8n
++----------------------------+-----------------------------+----------+------------+--------+
+| PROJECT                    | NAME                        | SCHEDULE | START DATE | STATUS |
++----------------------------+-----------------------------+----------+------------+--------+
+| 01m858dxkmp2da5evgjrs93w8n | agentic-feature-launch-film |          |            | paused |
++----------------------------+-----------------------------+----------+------------+--------+
+
+$ bruin cloud pipelines errors
+No validation errors found.
+
+$ bruin cloud assets list --project-id 01m858dxkmp2da5evgjrs93w8n
++---------------------------+------------+-----------------------------+----------------------------+
+| NAME                      | TYPE       | PIPELINE                    | PROJECT                    |
++---------------------------+------------+-----------------------------+----------------------------+
+| export_pipeline_inputs    | python     | agentic-feature-launch-film | 01m858dxkmp2da5evgjrs93w8n |
+| hack.story_quality_checks | duckdb.sql | agentic-feature-launch-film | 01m858dxkmp2da5evgjrs93w8n |
+| ingest_feature_payload    | python     | agentic-feature-launch-film | 01m858dxkmp2da5evgjrs93w8n |
+| seed_agents_and_memory    | python     | agentic-feature-launch-film | 01m858dxkmp2da5evgjrs93w8n |
+| writers_room_sim          | python     | agentic-feature-launch-film | 01m858dxkmp2da5evgjrs93w8n |
++---------------------------+------------+-----------------------------+----------------------------+
+
+$ bruin lineage (local, full DAG)
+
+Lineage: 'ingest_feature_payload'
+
+Upstream Dependencies
+========================
+Asset has no upstream dependencies.
+
+
+Downstream Dependencies
+========================
+- seed_agents_and_memory (assets\seed_agents_and_memory.py)
+
+
+Lineage: 'seed_agents_and_memory'
+
+Upstream Dependencies
+========================
+- ingest_feature_payload (assets\ingest_feature_payload.py)
+
+Total: 1
+
+
+Downstream Dependencies
+========================
+
+Lineage: 'writers_room_sim'
+
+Upstream Dependencies
+========================
+- seed_agents_and_memory (assets\seed_agents_and_memory.py)
+
+Total: 1
+
+
+Downstream Dependencies
+========================
+
+Lineage: 'hack.story_quality_checks'
+
+Upstream Dependencies
+========================
+- writers_room_sim (assets\writers_room_sim.py)
+
+Total: 1
+
+
+Downstream Dependencies
+========================
+
+Lineage: 'export_pipeline_inputs'
+
+Upstream Dependencies
+========================
+- hack.story_quality_checks (assets\story_quality_checks.sql)
+
+Total: 1
+
+
+Downstream Dependencies
+========================
