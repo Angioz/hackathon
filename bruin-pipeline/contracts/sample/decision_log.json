@@ -1,0 +1,313 @@
+{
+  "run_id": "run_20261123T213956_af9eb87_ca55",
+  "decisions": [
+    {
+      "decision_id": "d01",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 1,
+      "beat_id": "r1_critic_pitch",
+      "agent_id": "Critic",
+      "action_type": "pitch",
+      "target_agent": "Director",
+      "decision_summary": "Lead with doubt; earn the payoff later.",
+      "reasoning_why": "Stress-test the feature, expose edge cases, inject the mid-film plot twist. Memory says: Run af9eb87_4ac9: I voted triumphant_launch; the room chose triumphant_launch after the user_misuse twist. I won that fight. I now trust Dev most and Dev least..",
+      "dialogue": "Cute. I give it ten seconds before something breaks.",
+      "emotion": "excited",
+      "stance": "support",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d02",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 1,
+      "beat_id": "r1_director_pitch",
+      "agent_id": "Director",
+      "action_type": "pitch",
+      "target_agent": "Dev",
+      "decision_summary": "Cold open on the merge button, then cut to the room.",
+      "reasoning_why": "Pacing inside 75 to 105 seconds, strong visuals, a decisive ending. Memory says: Run af9eb87_4ac9: I voted triumphant_launch; the room chose triumphant_launch after the user_misuse twist. I won that fight. I now trust Critic most and Growth least..",
+      "dialogue": "Places, everyone. This merge is our opening scene.",
+      "emotion": "excited",
+      "stance": "support",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d03",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 1,
+      "beat_id": "r1_growth_pitch",
+      "agent_id": "Growth",
+      "action_type": "pitch",
+      "target_agent": "Director",
+      "decision_summary": "Make the first line a promise: this saves you hours.",
+      "reasoning_why": "A dramatic viral hook, bold transformation claims, high emotional stakes. Memory says: Run af9eb87_4ac9: I voted pivot_reframe; the room chose triumphant_launch after the user_misuse twist. I lost that fight and will push harder. I now trust Dev most and Director least..",
+      "dialogue": "Picture it: docs: partner handoff, pipeline method mandate,, and the whole internet notices!",
+      "emotion": "proud",
+      "stance": "support",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d04",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 1,
+      "beat_id": "r1_dev_pitch",
+      "agent_id": "Dev",
+      "action_type": "pitch",
+      "target_agent": "Director",
+      "decision_summary": "Show the code path first; the hype can wait.",
+      "reasoning_why": "Technical accuracy and architecture clarity. Zero hype. Memory says: Run af9eb87_4ac9: I voted triumphant_launch; the room chose triumphant_launch after the user_misuse twist. I won that fight. I now trust Growth most and Director least..",
+      "dialogue": "Before anyone says revolutionary, look at report.md, CLAUDE.md.",
+      "emotion": "skeptical",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d05",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 2,
+      "beat_id": "r2_critic_propose_twist",
+      "agent_id": "Critic",
+      "action_type": "propose_twist",
+      "target_agent": "Growth",
+      "decision_summary": "Inject twist: Competitor ships a clone.",
+      "reasoning_why": "A rival announces the same feature an hour earlier; the team must show what is really different. It tests docs: partner handoff, pipeline method mandate, where the pitch was weakest.",
+      "dialogue": "Plot twist: competitor ships a clone. Now what?",
+      "emotion": "amused",
+      "stance": "oppose",
+      "choice": "competitor_clone",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d06",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 2,
+      "beat_id": "r2_dev_react_twist",
+      "agent_id": "Dev",
+      "action_type": "react_twist",
+      "target_agent": "Critic",
+      "decision_summary": "Oppose the Competitor ships a clone twist.",
+      "reasoning_why": "It distracts from what the code really does.",
+      "dialogue": "No. That twist makes us look reckless.",
+      "emotion": "worried",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d07",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 2,
+      "beat_id": "r2_growth_react_twist",
+      "agent_id": "Growth",
+      "action_type": "react_twist",
+      "target_agent": "Critic",
+      "decision_summary": "Oppose the Competitor ships a clone twist.",
+      "reasoning_why": "It distracts from what the code really does.",
+      "dialogue": "No. That twist makes us look reckless.",
+      "emotion": "worried",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d08",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 2,
+      "beat_id": "r2_director_react_twist",
+      "agent_id": "Director",
+      "action_type": "react_twist",
+      "target_agent": "Critic",
+      "decision_summary": "Oppose the Competitor ships a clone twist.",
+      "reasoning_why": "It distracts from what the code really does.",
+      "dialogue": "No. That twist makes us look reckless.",
+      "emotion": "worried",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d09",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 3,
+      "beat_id": "r3_director_studio_rule",
+      "agent_id": "Director",
+      "action_type": "studio_rule",
+      "target_agent": "none",
+      "decision_summary": "Ban last film's ending (Triumphant launch).",
+      "reasoning_why": "Agent memory shows we used it last run; repeating it would make this film a rerun.",
+      "dialogue": "",
+      "emotion": "neutral",
+      "stance": "neutral",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "rule",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d10",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 3,
+      "beat_id": "r3_dev_vote_ending",
+      "agent_id": "Dev",
+      "action_type": "vote_ending",
+      "target_agent": "Director",
+      "decision_summary": "Vote for ending: Delay to fix first.",
+      "reasoning_why": "The team holds the launch one day to fix what the twist exposed. That fits my goal: Technical accuracy and architecture clarity. Zero hype.",
+      "dialogue": "My vote? Delay to fix first.",
+      "emotion": "proud",
+      "stance": "support",
+      "choice": "fix_first",
+      "plot_twist_flag": false,
+      "accepted": false,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d11",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 3,
+      "beat_id": "r3_growth_vote_ending",
+      "agent_id": "Growth",
+      "action_type": "vote_ending",
+      "target_agent": "Director",
+      "decision_summary": "Vote for ending: Delay to fix first.",
+      "reasoning_why": "The team holds the launch one day to fix what the twist exposed. That fits my goal: A dramatic viral hook, bold transformation claims, high emotional stakes.",
+      "dialogue": "My vote? Delay to fix first.",
+      "emotion": "proud",
+      "stance": "support",
+      "choice": "fix_first",
+      "plot_twist_flag": false,
+      "accepted": false,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d12",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 3,
+      "beat_id": "r3_critic_vote_ending",
+      "agent_id": "Critic",
+      "action_type": "vote_ending",
+      "target_agent": "Director",
+      "decision_summary": "Vote for ending: The Critic is converted.",
+      "reasoning_why": "The skeptic tries to break it, fails, and becomes its loudest fan. That fits my goal: Stress-test the feature, expose edge cases, inject the mid-film plot twist.",
+      "dialogue": "My vote? The Critic is converted.",
+      "emotion": "proud",
+      "stance": "support",
+      "choice": "critic_converted",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d13",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 3,
+      "beat_id": "r3_director_vote_ending",
+      "agent_id": "Director",
+      "action_type": "vote_ending",
+      "target_agent": "Director",
+      "decision_summary": "Vote for ending: The Critic is converted.",
+      "reasoning_why": "The skeptic tries to break it, fails, and becomes its loudest fan. That fits my goal: Pacing inside 75 to 105 seconds, strong visuals, a decisive ending.",
+      "dialogue": "My vote? The Critic is converted.",
+      "emotion": "proud",
+      "stance": "support",
+      "choice": "critic_converted",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    },
+    {
+      "decision_id": "d14",
+      "run_id": "run_20261123T213956_af9eb87_ca55",
+      "round": 4,
+      "beat_id": "r4_director_arbitrate",
+      "agent_id": "Director",
+      "action_type": "arbitrate",
+      "target_agent": "none",
+      "decision_summary": "Final ending: The Critic is converted.",
+      "reasoning_why": "Weighted vote favoured it (critic_converted=3.10, fix_first=2.60) and it differs from last run.",
+      "dialogue": "Decision made. We end on: the critic is converted.",
+      "emotion": "proud",
+      "stance": "neutral",
+      "choice": "critic_converted",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "brain": "offline",
+      "memory_refs": {
+        "memory_run": "run_20261123T213953_af9eb87_4ac9"
+      },
+      "created_at": "2026-11-23T21:39:57+00:00"
+    }
+  ]
+}

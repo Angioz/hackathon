@@ -1,0 +1,567 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_20261123T213956_af9eb87_ca55",
+  "title": "docs: partner handoff, pipeline method mandate,: The Launch Room",
+  "source": "bruin-pipeline/export_pipeline_inputs",
+  "human_gate": "none (zero-HITL; replaces Stage 18 gate G-3)",
+  "voices": {
+    "Dev": "male_1_calm",
+    "Growth": "female_1_bright",
+    "Critic": "female_2_dry",
+    "Director": "male_2_deep"
+  },
+  "word_count": 164,
+  "full_text": "Growth: Stop scrolling. docs: partner handoff, pipeline method mandate, just landed, and it is big.\nDev: It is a merge, not a moon landing. Calm down.\nDirector: Perfect tension. Roll camera, everyone in.\nDev: Here is what changed: report.md, CLAUDE.md. Clean and tested.\nCritic: Tested by whom? I have questions.\nGrowth: Questions are engagement. I love questions.\nDirector: Dev, keep it simple. Growth, keep it honest.\nGrowth: Tagline: the feature that changes everything.\nDev: Changes everything? It changes exactly what the diff says.\nCritic: And I can break it. Watch.\nDirector: Hold that. Critic, show us.\nCritic: Plot twist: competitor ships a clone.\nGrowth: That was not in the launch plan!\nDev: Good. Now we find out if the code is real.\nDirector: This is the scene. Nobody leaves.\nDirector: The room has voted. We end on the critic is converted.\nDev: Then we say what it does, and nothing more.\nCritic: Fine. It survived me. Barely.\nGrowth: Honest and exciting. I can sell that.\nGrowth: docs: partner handoff, pipeline method mandate,. Live today. Go try it.\nDirector: Cut. That is a wrap.\nDev: Ship it.",
+  "lines": [
+    {
+      "line_id": "L01",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "female_1_bright",
+      "text": "Stop scrolling. docs: partner handoff, pipeline method mandate, just landed, and it is big.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.144
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L02",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "It is a merge, not a moon landing. Calm down.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": null,
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L03",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Director",
+      "voice_profile": "male_2_deep",
+      "text": "Perfect tension. Roll camera, everyone in.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L04",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Here is what changed: report.md, CLAUDE.md. Clean and tested.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L05",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Tested by whom? I have questions.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": "Dev",
+        "prop": null,
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L06",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "female_1_bright",
+      "text": "Questions are engagement. I love questions.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": null,
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.144
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.144
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L07",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Director",
+      "voice_profile": "male_2_deep",
+      "text": "Dev, keep it simple. Growth, keep it honest.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": null,
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L08",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "female_1_bright",
+      "text": "Tagline: the feature that changes everything.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": "Director",
+        "prop": null,
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": -0.144
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": 0.132
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L09",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Changes everything? It changes exactly what the diff says.",
+      "emotion": "angry",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Growth",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L10",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "And I can break it. Watch.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "to": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L11",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Director",
+      "voice_profile": "male_2_deep",
+      "text": "Hold that. Critic, show us.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": null,
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L12",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Plot twist: competitor ships a clone.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Growth",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "to": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L13",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "female_1_bright",
+      "text": "That was not in the launch plan!",
+      "emotion": "worried",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": "Dev",
+        "prop": null,
+        "from": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": 0.132
+        },
+        "to": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": 0.021
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L14",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Good. Now we find out if the code is real.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L15",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Director",
+      "voice_profile": "male_2_deep",
+      "text": "This is the scene. Nobody leaves.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L16",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Director",
+      "voice_profile": "male_2_deep",
+      "text": "The room has voted. We end on the critic is converted.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": null,
+        "prop": null,
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.101
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L17",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Then we say what it does, and nothing more.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Director",
+        "prop": null,
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L18",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Fine. It survived me. Barely.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": null,
+        "from": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "to": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": -0.074
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L19",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "female_1_bright",
+      "text": "Honest and exciting. I can sell that.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": 0.021
+        },
+        "to": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": 0.021
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L20",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "female_1_bright",
+      "text": "docs: partner handoff, pipeline method mandate,. Live today. Go try it.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.27,
+          "y": 0.78,
+          "z": 0.021
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.05
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L21",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Director",
+      "voice_profile": "male_2_deep",
+      "text": "Cut. That is a wrap.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.101
+        },
+        "to": {
+          "x": 0.5,
+          "y": 0.78,
+          "z": 0.101
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L22",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Ship it.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": null,
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    }
+  ]
+}

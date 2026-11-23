@@ -36,3 +36,7 @@ Thumbs.db
 *.swo
 .vscode/
 .idea/
+
+# Pipeline run outputs (samples are committed under bruin-pipeline/contracts/)
+output/
+.serena/
