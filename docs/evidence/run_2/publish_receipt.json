@@ -8,7 +8,7 @@
   ],
   "rejected_channels": [],
   "caption": "Smart Scroll: Nothing to Hit\n\nA skeptic hunts a hidden dependency in a one-line merge, finds only a progress bar and section links, and becomes their loudest fan.\n\nPlot twist chosen by the Critic agent: Hidden dependency. Ending decided by the Director agent: The Critic is converted.\nCommit ee441a6. Written by 4 AI agents in a Bruin pipeline, zero humans.\n#BuildInPublic #AIagents #Bruin",
-  "video_path": "C:\\Users\\ChrisKrpt\\Projects\\Hackathon\\output\\run_20261123T225347_ee441a6_cbc9\\final_video.mp4",
+  "video_path": "output/run_20261123T225347_ee441a6_cbc9/final_video.mp4",
   "video_exists": false,
   "delivery_status": "dry_run",
   "http_status": null

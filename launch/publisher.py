@@ -31,7 +31,9 @@ def publish(run_dir: Path, mode: str = "dry-run") -> dict:
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "run_id": bible["run_id"], "commit_sha": bible["commit_sha"], "mode": mode,
         "target_channels": channels, "rejected_channels": sorted(set(wanted) - set(channels)),
-        "caption": caption(bible), "video_path": str(video), "video_exists": video.exists(),
+        # relative to the repo (output/<run_id>/...) so receipts never carry a personal home path
+        "caption": caption(bible), "video_path": os.path.relpath(video, run_dir.parents[1]).replace("\\", "/"),
+        "video_exists": video.exists(),
         "delivery_status": "dry_run", "http_status": None,
     }
     if mode == "live":

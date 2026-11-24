@@ -196,7 +196,7 @@ Type checking and test suites verify code correctness, not feature correctness. 
 - FATAL HALT: this Hack session NEVER writes a script, scene, visual, storyboard or film code itself (no LLM-room script, no hand-built Remotion film).
 - MUST: every creative job runs as a `/jarvis-foreman` sub-session inside `content-production-pipeline-local`, its ticket naming the stage skill: script = `3d-explainer-script-writer` + `18-script`; visuals = `19.5`, `20-visual-story-arc`, `20.5-director`, `34-visualization`.
 - This session only dispatches, verifies on disk, and wires the result into the demo (merge trigger, Bruin, decision log).
-- Voice = ElevenLabs (owner decision 2026-11-23), fed to the pipeline in its `full_script_audio.wav` + `voice_words.json` format.
+- Voice = recorded by the owner on an outside voice service from the pipeline-exported per-character script; the pipeline stitches the takes.
 
 ## PROJECT-SPECIFIC SECTION (customize per project)
 

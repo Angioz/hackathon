@@ -54,3 +54,18 @@ logs/runs
 logs/*.log
 voice/.cache/
 demo-app/.demo-repo/
+_site/
+
+# Secrets & personal files: never commit (keys live only in each laptop's .env.local)
+*.p12
+*.pfx
+*.token
+*credentials*.json
+secrets/
+.mcp.json
+.claude/settings.local.json
+CLAUDE.local.md
+.npmrc
+.pypirc
+id_rsa*
+id_ed25519*
