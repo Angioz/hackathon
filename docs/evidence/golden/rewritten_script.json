@@ -1,0 +1,592 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "run_20261123T234744_ee441a6_cc54",
+  "title": "The Six-Pixel Bar",
+  "source": "bruin-pipeline/export_pipeline_inputs",
+  "human_gate": "none (zero-HITL; replaces Stage 18 gate G-3)",
+  "voices": {
+    "Dev": "male_1_calm",
+    "Growth": "male_2_bright",
+    "Critic": "female_2_dry",
+    "Director": "female_1_deep"
+  },
+  "word_count": 239,
+  "full_text": "Director: Open on the empty six-pixel bar. No words yet, just the scroll.\nDev: One line changed: a header bar and four anchor links.\nGrowth: Readers never lose their place again! This is reading intelligence!\nDev: The bar width is scrollTop over scrollHeight minus clientHeight. That is all.\nCritic: No progressbar role, no aria-valuenow. Screen readers get nothing.\nDirector: A small honest gift. Build upward from the bar, nothing more.\nGrowth: And four jump links: Attention, Rhythm, Clarity, The future!\nCritic: Your claim says no reader lost again, ever. I will break that.\nGrowth: Fix_first throws away a launch for nothing. Rotating is an edge case.\nDev: The bar goes stale, not lying. Say exactly what is true.\nDirector: Hold. I ban last film's pivot ending. No reruns here.\nCritic: Reader rotates mid-article. Resize fires. No scroll event. Bar freezes.\nDev: Support the twist, but rename it: a missing resize listener.\nGrowth: That is a beat two problem, not frame one. I oppose.\nDirector: Same frozen bar, cleaner label: a hidden dependency, not user error.\nDirector: Weighted tally: honest caveat, three point four five. It wins.\nDev: Ship it, and say the bar updates only on scroll.\nCritic: Say aloud: resize or rotation leaves it frozen at a stale width.\nGrowth: We launch loud, then mention the rotate thing once, quietly.\nDirector: It ships with the caveat said out loud. Trust wins.\nDev: Next commit adds the resize listener. One line.\nGrowth: Read Smart Scroll. Jump to any section. Scroll again after rotating.\nCritic: View the writers' room. Bring your own hammer.",
+  "lines": [
+    {
+      "line_id": "L01",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Open on the empty six-pixel bar. No words yet, just the scroll.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L02",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "One line changed: a header bar and four anchor links.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Director",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L03",
+      "scene_id": "S1",
+      "beat": "hook",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Readers never lose their place again! This is reading intelligence!",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Dev",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L04",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "The bar width is scrollTop over scrollHeight minus clientHeight. That is all.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L05",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "No progressbar role, no aria-valuenow. Screen readers get nothing.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L06",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "A small honest gift. Build upward from the bar, nothing more.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": null
+      }
+    },
+    {
+      "line_id": "L07",
+      "scene_id": "S2",
+      "beat": "setup",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "And four jump links: Attention, Rhythm, Clarity, The future!",
+      "emotion": "excited",
+      "character_action": {
+        "type": "move_to",
+        "target_agent": "Director",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.4,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L08",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Your claim says no reader lost again, ever. I will break that.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Growth",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L09",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Fix_first throws away a launch for nothing. Rotating is an edge case.",
+      "emotion": "angry",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Critic",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L10",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "The bar goes stale, not lying. Say exactly what is true.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L11",
+      "scene_id": "S3",
+      "beat": "conflict",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Hold. I ban last film's pivot ending. No reruns here.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Growth",
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    },
+    {
+      "line_id": "L12",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Reader rotates mid-article. Resize fires. No scroll event. Bar freezes.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Dev",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L13",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Support the twist, but rename it: a missing resize listener.",
+      "emotion": "skeptical",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Critic",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L14",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "That is a beat two problem, not frame one. I oppose.",
+      "emotion": "worried",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Director",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L15",
+      "scene_id": "S4",
+      "beat": "twist",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Same frozen bar, cleaner label: a hidden dependency, not user error.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Critic",
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Critic"
+      }
+    },
+    {
+      "line_id": "L16",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "Weighted tally: honest caveat, three point four five. It wins.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Dev",
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L17",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Ship it, and say the bar updates only on scroll.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Director",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L18",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "Say aloud: resize or rotation leaves it frozen at a stale width.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Director",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L19",
+      "scene_id": "S5",
+      "beat": "resolution",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "We launch loud, then mention the rotate thing once, quietly.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": "Dev",
+        "prop": "megaphone",
+        "from": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "look_at": "Dev"
+      }
+    },
+    {
+      "line_id": "L20",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Director",
+      "voice_profile": "female_1_deep",
+      "text": "It ships with the caveat said out loud. Trust wins.",
+      "emotion": "proud",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "clapperboard",
+        "from": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.84,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L21",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Dev",
+      "voice_profile": "male_1_calm",
+      "text": "Next commit adds the resize listener. One line.",
+      "emotion": "neutral",
+      "character_action": {
+        "type": "look_at",
+        "target_agent": "Director",
+        "prop": "git_diff_cube",
+        "from": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.18,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Director"
+      }
+    },
+    {
+      "line_id": "L22",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Growth",
+      "voice_profile": "male_2_bright",
+      "text": "Read Smart Scroll. Jump to any section. Scroll again after rotating.",
+      "emotion": "excited",
+      "character_action": {
+        "type": "gesture",
+        "target_agent": null,
+        "prop": "megaphone",
+        "from": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "to": {
+          "x": 0.75,
+          "y": 0.78,
+          "z": -0.01
+        },
+        "look_at": "camera"
+      }
+    },
+    {
+      "line_id": "L23",
+      "scene_id": "S6",
+      "beat": "cta",
+      "speaker_agent_id": "Critic",
+      "voice_profile": "female_2_dry",
+      "text": "View the writers' room. Bring your own hammer.",
+      "emotion": "amused",
+      "character_action": {
+        "type": "interact",
+        "target_agent": "Growth",
+        "prop": "bug_hammer",
+        "from": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "to": {
+          "x": 0.62,
+          "y": 0.78,
+          "z": 0.0
+        },
+        "look_at": "Growth"
+      }
+    }
+  ]
+}

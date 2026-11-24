@@ -21,6 +21,8 @@ import stub_brain
 
 LLM_TIMEOUT_SEC = 25          # one agent turn
 LLM_SCRIPT_TIMEOUT_SEC = 120  # the Director writing the whole script is a much longer answer
+LLM_MAX_TOKENS = 4000         # reasoning models (e.g. deepseek-v4-1-flash) need >= 3000 to think and answer
+LLM_SCRIPT_MAX_TOKENS = 8000
 
 
 def mode() -> str:
@@ -43,11 +45,13 @@ def model_label() -> str:
     return {"bruin": "bruin-cloud-agents", "llm": os.environ.get("LLM_MODEL", "?")}.get(m, "stub")
 
 
-def _llm(system: str, user: str, schema: dict, timeout: float = LLM_TIMEOUT_SEC) -> dict:
+def _llm(system: str, user: str, schema: dict, timeout: float = LLM_TIMEOUT_SEC,
+         max_tokens: int = LLM_MAX_TOKENS) -> dict:
     url = os.environ["LLM_BASE_URL"].rstrip("/") + "/chat/completions"
     body = {
         "model": os.environ["LLM_MODEL"],
-        "messages": [{"role": "system", "content": system + " Reply with JSON only."},
+        "max_tokens": max_tokens,
+        "messages": [{"role": "system", "content": system + " Reply with JSON only. Use plain ASCII punctuation (no em dashes or smart quotes)."},
                      {"role": "user", "content": user}],
         "response_format": {"type": "json_schema",
                             "json_schema": {"name": "turn", "schema": schema, "strict": True}},
@@ -58,7 +62,21 @@ def _llm(system: str, user: str, schema: dict, timeout: float = LLM_TIMEOUT_SEC)
         data = json.loads(resp.read())
     text = data["choices"][0]["message"]["content"] or ""
     text = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-    return json.loads(text)
+    return clean(json.loads(text))
+
+
+def clean(value):
+    """Replace mangled characters some models emit (U+FFFD) and smart punctuation."""
+    if isinstance(value, str):
+        for bad, good in (("�", " - "), ("—", " - "), ("–", "-"), ("’", "'"),
+                          ("‘", "'"), ("“", '"'), ("”", '"')):
+            value = value.replace(bad, good)
+        return " ".join(value.split())
+    if isinstance(value, list):
+        return [clean(v) for v in value]
+    if isinstance(value, dict):
+        return {k: clean(v) for k, v in value.items()}
+    return value
 
 
 def conforms(value, schema: dict) -> bool:
@@ -94,7 +112,8 @@ def think(kind: str, system: str, user: str, schema: dict, stub_ctx: dict,
             try:
                 result = (bruin_brain.ask(aid, system, user, schema) if live == "bruin"
                           else _llm(system, user, schema,
-                                     LLM_SCRIPT_TIMEOUT_SEC if kind == "script" else LLM_TIMEOUT_SEC))
+                                     LLM_SCRIPT_TIMEOUT_SEC if kind == "script" else LLM_TIMEOUT_SEC,
+                                     LLM_SCRIPT_MAX_TOKENS if kind == "script" else LLM_MAX_TOKENS))
                 if conforms(result, schema):
                     return result, live
                 last_err = "output did not match schema"

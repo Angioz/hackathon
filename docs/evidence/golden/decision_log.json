@@ -1,0 +1,313 @@
+{
+  "run_id": "run_20261123T234744_ee441a6_cc54",
+  "decisions": [
+    {
+      "decision_id": "d01",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 1,
+      "beat_id": "r1_dev_pitch",
+      "agent_id": "Dev",
+      "action_type": "pitch",
+      "target_agent": "Growth",
+      "decision_summary": "Open on the actual one-line diff and frame Smart Scroll as a scroll-width progress bar plus plain anchor links, nothing else.",
+      "reasoning_why": "The diff adds only a header bar whose width tracks scroll percentage and a nav of #anchor links; no sticky nav, no smooth scroll, no reading-time logic exists in the code. Growth will want cinematic language about guided reading, which the merged code does not support, so I oppose it and back an honest, diff-first frame.",
+      "dialogue": "Open on the diff: one line changed. Progress bar, anchor links. Nothing else.",
+      "emotion": "skeptical",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d02",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 1,
+      "beat_id": "r1_critic_pitch",
+      "agent_id": "Critic",
+      "action_type": "pitch",
+      "target_agent": "Growth",
+      "decision_summary": "Open the film on a window resize that freezes the progress bar mid-lie, then let the room fight over whether that is a bug or a feature.",
+      "reasoning_why": "Goal: prove an ignored edge case on camera. The diff only listens for 'scroll'; nothing listens for 'resize', so after any viewport change the green bar keeps a stale width until the user scrolls again. There is also no role=progressbar or aria-valuenow, so the 'readers see how far they are' claim silently excludes screen readers. My memory says I lost the honest_caveat vote last run; this time the caveat is the cold open, not a footnote. I trust Growth least, and Growth will sell the bar as universal progress.",
+      "dialogue": "Open on a resize: bar freezes, lying to readers. Growth sells progress nobody hears.",
+      "emotion": "amused",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d03",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 1,
+      "beat_id": "r1_growth_pitch",
+      "agent_id": "Growth",
+      "action_type": "pitch",
+      "target_agent": "Dev",
+      "decision_summary": "Open on the scroll-driven progress bar filling in real time, framed as readers never losing their place again, and side with the Director against the Dev's 'it's just anchor links' framing.",
+      "reasoning_why": "The diff shows a #bar whose width is computed from scrollTop and a nav linking four section ids, so a live progress bar is a real, filmable visual, and my job is to put the biggest defensible claim in line one; the Dev will want to call this merely additive nav markup and shrink the hook, which kills the trailer, while the Director is the agent I trust (0.45) to hold a bold frame.",
+      "dialogue": "Open on a bar filling as you read: no reader lost again, ever.",
+      "emotion": "excited",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d04",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 1,
+      "beat_id": "r1_director_pitch",
+      "agent_id": "Director",
+      "action_type": "pitch",
+      "target_agent": "Growth",
+      "decision_summary": "Open on the empty six-pixel bar at the top of the page, letting the reader's scroll fill it green before a single word of feature language lands.",
+      "reasoning_why": "The diff shows exactly three additions: a header holding #bar, a static nav of anchor links to four sections, and a tiny script setting bar width from scrollTop. That is a small, honest gift, not a platform. Last run I voted triumphant_launch and lost to pivot_reframe, so this time I start the film at the smallest true unit, the bar itself, and build the whole 75 to 105 seconds upward from there. Growth will try to call this reading intelligence; the diff does not support that, so I oppose them now, at the open, before the frame hardens.",
+      "dialogue": "Open tight on an empty six-pixel bar. Reading fills it. Growth will oversell; I won't.",
+      "emotion": "excited",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d05",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 2,
+      "beat_id": "r2_critic_propose_twist",
+      "agent_id": "Critic",
+      "action_type": "propose_twist",
+      "target_agent": "Growth",
+      "decision_summary": "Pick user_misuse: the first real reader rotates or pinch-zooms mid-article, resize fires no scroll event, and the bar freezes at a stale percentage.",
+      "reasoning_why": "The diff binds progress() only to 'scroll' with no resize listener, so width is computed from a scrollTop/scrollHeight-clientHeight ratio that goes stale the moment layout or zoom changes; iOS overscroll even pushes scrollTop negative, shrinking the bar backwards. Growth's 'no reader lost again, ever' claim dies right there, and per memory I am done letting oversell win.",
+      "dialogue": "Reader rotates the phone mid-article. No scroll event fires. Bar freezes, still lying.",
+      "emotion": "amused",
+      "stance": "oppose",
+      "choice": "user_misuse",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d06",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 2,
+      "beat_id": "r2_dev_react_twist",
+      "agent_id": "Dev",
+      "action_type": "react_twist",
+      "target_agent": "Critic",
+      "decision_summary": "Support the twist, but rename it: this is a missing resize listener, not user misuse.",
+      "reasoning_why": "The diff binds progress() only to 'scroll'. Rotating or zooming changes scrollHeight and clientHeight, so the stored width goes stale until the next scroll event -- the bar reports a percentage that no longer matches the page. That is a genuine defect in the merged code, not a hypothetical. But framing it as 'user misuse' blames the reader for an event we simply never handled; the ||0 fallback only guards divide-by-zero, not resizes. Per my goal, I need the film to say exactly what is true: the bar can be stale, not that it lies continuously, and nothing about 'no reader lost again' is supported.",
+      "dialogue": "Support. Resize never fires scroll; the bar holds a stale width. Missing listener.",
+      "emotion": "skeptical",
+      "stance": "support",
+      "choice": "",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d07",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 2,
+      "beat_id": "r2_growth_react_twist",
+      "agent_id": "Growth",
+      "action_type": "react_twist",
+      "target_agent": "Critic",
+      "decision_summary": "I oppose opening on the user_misuse freeze, demanding frame one be the bar filling instead.",
+      "reasoning_why": "My goal is the biggest claim in the opening line, and a frozen bar buries it. The diff only binds a scroll listener with no resize handler, so the freeze is real, but it is a beat two problem, not frame one. Memory says I lost the last run and must push harder, and user_misuse is already a spent twist from past runs.",
+      "dialogue": "Open on the bar filling, not freezing. Progress is the headline, bug off frame one.",
+      "emotion": "excited",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d08",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 2,
+      "beat_id": "r2_director_react_twist",
+      "agent_id": "Director",
+      "action_type": "react_twist",
+      "target_agent": "Critic",
+      "decision_summary": "Oppose the Critic's 'user_misuse' label and reframe the same frozen-bar moment as a hidden dependency: the script only listens for scroll, never resize.",
+      "reasoning_why": "My goal is a decisive ending that never repeats last run, and the room is coasting toward pivot_reframe again. The diff proves the real gap: addEventListener('scroll',progress) with no resize listener, so a rotate or zoom stalls the bar with no user error at all. User_misuse already appeared in past twists, so reusing the label is lazy; the substance is a genuine code gap I can open on, and it hands the film a clean, earned fix rather than an ambiguous shrug.",
+      "dialogue": "User misuse? No. The code never listened for resize. Blame the script, not the reader.",
+      "emotion": "skeptical",
+      "stance": "oppose",
+      "choice": "",
+      "plot_twist_flag": true,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d09",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 3,
+      "beat_id": "r3_director_studio_rule",
+      "agent_id": "Director",
+      "action_type": "studio_rule",
+      "target_agent": "none",
+      "decision_summary": "Ban last film's ending (Pivot the story).",
+      "reasoning_why": "Agent memory shows we used it last run; repeating it would make this film a rerun.",
+      "dialogue": "",
+      "emotion": "neutral",
+      "stance": "neutral",
+      "choice": "",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "rule",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d10",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 3,
+      "beat_id": "r3_dev_vote_ending",
+      "agent_id": "Dev",
+      "action_type": "vote_ending",
+      "target_agent": "Growth",
+      "decision_summary": "Ship it, but say out loud the bar only updates on scroll, so it goes stale on resize or zoom.",
+      "reasoning_why": "The diff shows one listener: addEventListener('scroll', progress). No resize handler exists, so the stale-bar twist is a real limitation of the merged code. My goal forbids the film claiming live accuracy it does not have; honest_caveat is the only ending that lets us show the freeze and still ship the anchor links, which do work.",
+      "dialogue": "Ship it, but say the truth: scroll only, so resize leaves a stale bar.",
+      "emotion": "skeptical",
+      "stance": "support",
+      "choice": "honest_caveat",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d11",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 3,
+      "beat_id": "r3_growth_vote_ending",
+      "agent_id": "Growth",
+      "action_type": "vote_ending",
+      "target_agent": "Director",
+      "decision_summary": "Vote triumphant_launch: the bar fills on every scroll, the jump links work, and the frozen-on-rotate edge case is not a reason to delay a launch.",
+      "reasoning_why": "My goal is the biggest claim in frame one, and the diff supports a loud one: on scroll the bar width tracks scrollTop, and four anchor links jump to sections. Rotating mid-read is an edge case, not a broken product, so fix_first throws away a launch for nothing. Last run I voted this and lost; I push harder now, and the banned pivot ending is already off the table.",
+      "dialogue": "Ship it loud. Bar fills as they scroll. Rotate wrong, that is on them.",
+      "emotion": "excited",
+      "stance": "support",
+      "choice": "triumphant_launch",
+      "plot_twist_flag": false,
+      "accepted": false,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d12",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 3,
+      "beat_id": "r3_critic_vote_ending",
+      "agent_id": "Critic",
+      "action_type": "vote_ending",
+      "target_agent": "Growth",
+      "decision_summary": "Ship Smart Scroll, but say out loud that a resize or rotation leaves the six-pixel bar frozen at a stale width.",
+      "reasoning_why": "I lost this exact fight on run ee441a6_8403 and the room pivoted instead; the diff only adds addEventListener('scroll',progress), so nothing listens for resize, and the Director already banned last film's pivot ending, leaving honest_caveat on the table.",
+      "dialogue": "Rotate the phone: resize fires, scroll never does, bar lies. Ship with that said.",
+      "emotion": "skeptical",
+      "stance": "oppose",
+      "choice": "honest_caveat",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d13",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 3,
+      "beat_id": "r3_director_vote_ending",
+      "agent_id": "Director",
+      "action_type": "vote_ending",
+      "target_agent": "Dev",
+      "decision_summary": "I kill the triumphant launch and hold the film one beat: the ending is fix_first, because the diff proves the bar can lie.",
+      "reasoning_why": "The twist is confirmed by the code itself: one scroll listener, zero resize listener, so rotation freezes the bar at a stale width. A triumphant_launch ending would force me to claim the bar never lies, which the diff flatly contradicts, and honest_caveat and critic_converted are already spent endings from past runs. My memory says I pushed triumphant last run and lost; I will not repeat a fantasy. Dev is my most trusted hand, so the fix goes to Dev, and we hold one day.",
+      "dialogue": "Hold the launch one day. Ship a resize listener, not a shrug.",
+      "emotion": "angry",
+      "stance": "oppose",
+      "choice": "fix_first",
+      "plot_twist_flag": false,
+      "accepted": false,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    },
+    {
+      "decision_id": "d14",
+      "run_id": "run_20261123T234744_ee441a6_cc54",
+      "round": 4,
+      "beat_id": "r4_director_arbitrate",
+      "agent_id": "Director",
+      "action_type": "arbitrate",
+      "target_agent": "Dev",
+      "decision_summary": "I call the ending honest_caveat, because the weighted tally puts it at 3.45 against 1.50 for fix_first and 1.45 for triumphant_launch.",
+      "reasoning_why": "Dev and Critic both voted to ship with the resize truth said aloud, and my trust weighting (Dev 1.00, Growth 0.45) stacks that to 3.45, more than fix_first and triumphant_launch combined. My fix_first push only reached 1.50; I wanted the listener, the math wants the caveat. It is also not last run's pivot_reframe, so the ending stays fresh, and the diff only proves scroll listening, never resize, so the caveat is earned, not hedged.",
+      "dialogue": "Tally says caveat, three forty-five. I wanted fix_first; math wins. Ship honest.",
+      "emotion": "proud",
+      "stance": "support",
+      "choice": "honest_caveat",
+      "plot_twist_flag": false,
+      "accepted": true,
+      "llm_mode": "llm",
+      "memory_refs": {
+        "memory_run": "run_20261123T234301_ee441a6_8403"
+      },
+      "created_at": "2026-11-23T23:48:39+00:00"
+    }
+  ]
+}

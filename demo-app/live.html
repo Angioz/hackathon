@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writers' Room Live</title>
+<style>
+  :root{--bg:#0b1018;--panel:#131b27;--card:#1a2433;--line:#26344a;--text:#eef2f8;--muted:#93a3b8;
+        --gold:#ffbd69;--ok:#4ade80;--run:#60a5fa;--bad:#f87171;
+        --Dev:#22D3EE;--Growth:#FF6B5B;--Critic:#A3E635;--Director:#DC2626}
+  *{box-sizing:border-box}
+  html{line-height:1.45}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,"Segoe UI",sans-serif;font-size:16px;line-height:1.45;height:100vh;overflow:hidden}
+  header{display:flex;align-items:center;gap:20px;padding:16px 28px;border-bottom:1px solid var(--line)}
+  .merge{flex:1;min-width:0}
+  h1,h2,.round,.count,.avatar,.idle{line-height:1.3}
+  .merge h1{margin:0;font-size:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .merge .meta{color:var(--muted);font-size:14px}
+  .stages{display:flex;gap:8px}
+  .stage{padding:8px 14px;border-radius:999px;background:var(--card);color:var(--muted);font-weight:600;font-size:14px;white-space:nowrap}
+  .stage.on{background:var(--run);color:#06121f}.stage.done{background:var(--ok);color:#06121f}
+  main{display:grid;grid-template-columns:240px 1fr 330px;gap:18px;padding:18px 28px 8px;height:calc(100vh - 92px - 30px)}
+  section{background:var(--panel);border-radius:16px;padding:16px;overflow:hidden;display:flex;flex-direction:column;min-height:0}
+  h2{margin:0 0 12px;font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+  .agent{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;margin-bottom:10px;background:var(--card);
+         border:2px solid transparent;transition:border-color .3s,transform .3s,background .3s}
+  .agent.speaking{border-color:var(--c);transform:translateX(6px);background:#223047}
+  .avatar{width:48px;height:48px;border-radius:50%;background:var(--c);color:#06121f;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+  .agent b{display:block}.agent span{color:var(--muted);font-size:13px}
+  .bubble{font-size:13px;color:var(--text);margin-top:4px;font-style:italic;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .round{font-size:22px;font-weight:700;margin-bottom:10px;min-height:32px}
+  .round em{color:var(--muted);font-style:normal;font-size:14px;margin-right:8px}
+  #feed{overflow-y:auto;flex:1;padding-right:6px}
+  .card{background:var(--card);border-left:5px solid var(--c);border-radius:10px;padding:12px 14px;margin-bottom:10px;animation:in .45s ease-out}
+  .card .who{font-weight:700;color:var(--c)}.card .act{color:var(--muted);font-size:13px;margin-left:8px}
+  .card p{margin:6px 0 0}.card .why{color:#c1cede;font-size:14px}.card .why b{color:var(--muted)}
+  .card.twist{border:2px solid var(--gold);border-left-width:5px;background:#2a2618}
+  .card.twist .tag{color:var(--gold);font-weight:800;margin-left:8px}
+  @keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .steps div{display:flex;justify-content:space-between;padding:7px 10px;border-radius:8px;margin-bottom:6px;background:var(--card);font-family:ui-monospace,Consolas,monospace;font-size:13px}
+  .st{font-weight:700}.st.running{color:var(--run)}.st.finished{color:var(--ok)}.st.failed{color:var(--bad)}.st.pending{color:var(--muted)}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:10px 0}
+  .chk{font-size:11.5px;padding:5px 7px;border-radius:6px;background:var(--card);color:var(--muted);font-family:ui-monospace,Consolas,monospace;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .chk.finished{color:var(--ok)}.chk.failed{color:var(--bad)}
+  .count{font-size:30px;font-weight:800}.count small{font-size:14px;color:var(--muted);font-weight:500}
+  .result{margin-top:auto;background:var(--card);border-radius:12px;padding:12px;border:2px solid var(--line)}
+  .result.ready{border-color:var(--ok)}
+  .result div{margin:3px 0}.result b{color:var(--muted);font-weight:600}
+  .idle{display:grid;place-items:center;height:100%;color:var(--muted);font-size:20px;text-align:center}
+  footer{height:30px;padding:0 28px;color:var(--muted);font-size:12px;text-align:right}
+</style>
+</head>
+<body>
+<header>
+  <div class="merge"><h1 id="title">Waiting for a merge</h1><div class="meta" id="meta">Merge a feature in the demo repo to start the writers' room</div></div>
+  <div class="stages">
+    <div class="stage" id="s-merge">Merge</div><div class="stage" id="s-agents">Agents argue</div>
+    <div class="stage" id="s-checks">Bruin checks</div><div class="stage" id="s-story">Story ready</div>
+  </div>
+</header>
+<main>
+  <section><h2>The writers' room</h2><div id="cast"></div></section>
+  <section><div class="round" id="round"></div><div id="feed"><div class="idle">No run yet.<br>Merge <code>feat/smart-scroll</code> in the demo repo.</div></div></section>
+  <section>
+    <h2>Bruin pipeline</h2>
+    <div class="steps" id="steps"></div>
+    <div class="count" id="count">0<small> / 13 quality checks passed</small></div>
+    <div class="checks" id="checks"></div>
+    <div class="result" id="result"><b>Waiting for the room's decision...</b></div>
+  </section>
+</main>
+<footer id="foot"></footer>
+<script>
+const CAST=[["Dev","Staff Engineer"],["Growth","Hype Marketer"],["Critic","Chaos QA"],["Director","Showrunner"]];
+const STEPS=["ingest_feature_payload","seed_agents_and_memory","writers_room_sim","hack.story_quality_checks","export_pipeline_inputs"];
+const ACT={pitch:"pitches",propose_twist:"injects a twist",react_twist:"reacts to the twist",vote_ending:"votes",arbitrate:"decides the ending",studio_rule:"enforces memory"};
+const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let state;
+function resetUI(){
+  state={checks:{},steps:{},run:null};
+  $("cast").innerHTML=CAST.map(([id,role])=>`<div class="agent" id="a-${id}" style="--c:var(--${id})"><div class="avatar">${id[0]}</div><div><b>${id}</b><span>${role}</span><div class="bubble" id="b-${id}"></div></div></div>`).join("");
+  $("steps").innerHTML=STEPS.map(s=>`<div><span>${s}</span><span class="st pending" id="st-${s}">pending</span></div>`).join("");
+  $("checks").innerHTML="";$("count").innerHTML='0<small> / 13 quality checks passed</small>';
+  $("result").className="result";$("result").innerHTML="<b>Waiting for the room's decision...</b>";
+  $("round").innerHTML="";["merge","agents","checks","story"].forEach(s=>$("s-"+s).className="stage");
+}
+function stage(name,cls){$("s-"+name).className="stage "+cls}
+function speak(id){document.querySelectorAll(".agent").forEach(a=>a.classList.remove("speaking"));const a=$("a-"+id);if(a)a.classList.add("speaking")}
+function apply(e){
+  if(e.type==="run_start"){resetUI();state.run=e.run_id;$("feed").innerHTML="";
+    $("title").textContent=e.title||"Merge detected";
+    $("meta").textContent="Merged commit "+(e.commit_sha||"").slice(0,7)+(e.author?" by "+e.author:"")+" · "+(e.changed_files||[]).join(", ");stage("merge","done");stage("agents","on");}
+  else if(e.type==="round"){$("round").innerHTML=`<em>Round ${e.round}</em>${esc(e.label)}`}
+  else if(e.type==="decision"){speak(e.agent_id);if(e.dialogue)$("b-"+e.agent_id).textContent="“"+e.dialogue+"”";
+    const twist=e.plot_twist_flag&&e.action_type==="propose_twist";
+    const card=document.createElement("article");card.className="card"+(twist?" twist":"");card.style.setProperty("--c",`var(--${e.agent_id})`);
+    card.innerHTML=`<span class="who">${esc(e.agent_id)}</span><span class="act">${esc(ACT[e.action_type]||e.action_type)}${e.target_agent&&e.target_agent!=="none"?" · "+esc(e.stance||"")+" "+esc(e.target_agent):""}</span>${twist?'<span class="tag">✦ PLOT TWIST</span>':""}<p>${esc(e.decision_summary)}</p><p class="why"><b>Why:</b> ${esc(e.reasoning_why)}</p>`;
+    $("feed").prepend(card);$("feed").scrollTop=0;}
+  else if(e.type==="step"){const el=$("st-"+e.asset);if(el){el.textContent=e.status;el.className="st "+e.status}
+    if(e.asset==="hack.story_quality_checks"&&e.status==="running"){stage("agents","done");stage("checks","on");speak("none")}
+    if(e.asset==="export_pipeline_inputs"&&e.status==="finished"){stage("checks","done");stage("story","done")}}
+  else if(e.type==="check"){state.checks[e.check]=e.status;
+    $("checks").innerHTML=Object.entries(state.checks).map(([k,v])=>`<div class="chk ${v}" title="${esc(k)}">${v==="finished"?"✓":v==="failed"?"✗":"…"} ${esc(k)}</div>`).join("");
+    const n=Object.values(state.checks).filter(v=>v==="finished").length;$("count").innerHTML=`${n}<small> / 13 quality checks passed</small>`;}
+  else if(e.type==="story"){$("result").className="result ready";
+    $("result").innerHTML=`<div style="font-weight:800;font-size:17px">${esc(e.title)}</div><div><b>Twist:</b> ${esc(e.twist)}</div><div><b>Ending:</b> ${esc(e.ending)}</div><div><b>Film:</b> about ${Math.round(e.duration)} s</div><div style="color:var(--muted);font-size:13px;margin-top:6px">Memory updated for all 4 agents for the next run.</div>`;}
+  else if(e.type==="run_done"){stage("story","done");$("foot").textContent=`${e.run_id} · ${e.seconds} s end to end · publish: ${e.publish}`;speak("none")}
+  else if(e.type==="run_failed"){$("round").innerHTML='<span style="color:var(--bad)">Pipeline stopped: '+esc(e.reason)+'</span>'}
+}
+resetUI();
+const params=new URLSearchParams(location.search), replay=params.get("replay"), speed=+(params.get("speed")||1);
+if(replay){
+  fetch("/api/live?run="+encodeURIComponent(replay)).then(r=>r.json()).then(({events})=>{
+    if(!events.length){$("feed").innerHTML='<div class="idle">No recorded events for '+esc(replay)+'</div>';return}
+    $("foot").textContent="Replay of "+replay;let i=0;
+    const next=()=>{if(i>=events.length)return;const e=events[i++];apply(e);
+      const gap=i<events.length?Math.min(3500,Math.max(120,(events[i].t-e.t)*1000))/speed:0;setTimeout(next,gap)};next();});
+}else{
+  let since=0;
+  const poll=()=>fetch("/api/live?since="+since).then(r=>r.json()).then(({events,total})=>{if(total<since){since=0;resetUI()}events.forEach(apply);since+=events.length}).catch(()=>{}).finally(()=>setTimeout(poll,700));
+  poll();
+}
+</script>
+</body>
+</html>
