@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MergeCut: every merge becomes a launch film</title>
+<title>MergeCut: ship a feature, get a launch film</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -83,11 +83,19 @@
   .rail li i{width:26px;height:26px;flex:none;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;font:500 11px/1 "JetBrains Mono",monospace;font-style:normal;transition:background .3s,color .3s,border-color .3s}
   .rail li.seen{color:var(--ink-dim)}.rail li.seen i{border-color:var(--teal);color:var(--teal)}
   .rail li.now{color:var(--ink)}.rail li.now i{background:var(--teal);color:var(--teal-ink);border-color:var(--teal)}
-  .step{min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:24px 0}
+  .step{min-height:58vh;display:flex;flex-direction:column;justify-content:center;padding:24px 0}
   .step .k{font:500 13px/1 "JetBrains Mono",monospace;color:var(--teal)}
   .step h3{font:700 clamp(26px,3.2vw,40px)/1.1 "Inter Tight",sans-serif;letter-spacing:-.03em;margin:14px 0 10px}
   .step > p{color:var(--ink-dim);max-width:56ch;margin:0 0 26px}
-  .vis{border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2);padding:clamp(18px,3vw,30px)}
+  .vis{border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2);padding:clamp(18px,3vw,30px);min-height:190px;display:flex;flex-direction:column;justify-content:center}
+  .rail li{position:relative}
+  .rail li:not(:last-child)::after{content:"";position:absolute;left:12.5px;top:38px;height:16px;width:1px;background:var(--line-2);transition:background .3s}
+  .rail li.seen::after{background:var(--teal)}
+  .film{position:relative}
+  .bigplay{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;inset:0;display:grid;place-items:center;background:rgba(11,9,8,.35);transition:opacity .3s}
+  .bigplay b{width:84px;height:84px;border-radius:50%;background:var(--teal);color:var(--teal-ink);display:grid;place-items:center;font-size:28px;box-shadow:0 10px 40px rgba(46,230,200,.35);transition:transform .2s}
+  .bigplay:hover b{transform:scale(1.06)}.bigplay:focus-visible b{outline:3px solid var(--ink);outline-offset:4px}
+  .film.playing .bigplay{opacity:0;pointer-events:none}
   .js .vis [data-a]{opacity:0;transform:translateY(10px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(var(--d,0) * 1ms)}
   .js .step.in .vis [data-a]{opacity:1;transform:none}
   .term{font:500 15px/1.9 "JetBrains Mono",monospace;margin:0}
@@ -168,6 +176,83 @@
     .bar .btn.ghost{display:none}.hero .cta{flex-direction:column}
     section.block{padding:80px 0}
   }
+
+  /* Step 5 stamp */
+  .stampbox{position:relative;align-items:flex-start}
+  .storycard{padding:18px 20px;border-radius:12px;border:1px solid var(--line-2);background:var(--bg);max-width:420px}
+  .storycard .mono{font-size:12px;color:var(--ink-mute)}
+  .storycard strong{display:block;font:600 21px/1.25 "Inter Tight",sans-serif;margin:8px 0 4px}
+  .storycard p{margin:0;color:var(--ink-dim);font-size:15px}
+  .stamp{position:absolute;right:clamp(16px,5vw,60px);top:50%;margin-top:-26px;padding:12px 20px;border:2px solid var(--teal);border-radius:12px;color:var(--teal);font:700 20px/1 "Inter Tight",sans-serif;letter-spacing:.02em;transform:rotate(-8deg);box-shadow:0 0 30px rgba(46,230,200,.35),inset 0 0 18px rgba(46,230,200,.15);background:rgba(18,14,12,.6)}
+  .js .step.in .stamp{animation:stamp .55s cubic-bezier(.2,1.6,.4,1) .7s both}
+  @keyframes stamp{from{opacity:0;transform:rotate(-8deg) scale(2.2)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+
+  /* Trust pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+  .pillar{position:relative;padding:28px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2);overflow:hidden}
+  .pillar .pi{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#14241f;border:1px solid #2e6c5e;color:var(--teal);font-size:18px}
+  .pillar h3{font:600 21px/1.2 "Inter Tight",sans-serif;margin:18px 0 8px}
+  .pillar p{margin:0;color:var(--ink-dim);font-size:15.5px}
+  .run h3{margin-top:0}
+
+  /* Premium: hero glow follows the pointer */
+  .hero{position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,70%) var(--my,10%),rgba(46,230,200,.10),transparent 60%);transition:background .2s}
+  .hero .wrap{position:relative}
+  .js h1 .w{display:inline-block;opacity:0;transform:translateY(.45em);animation:rise .8s var(--ease) both;animation-delay:calc(var(--i) * 70ms + 100ms)}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* Premium: Merge button pulse, ripple, filling steps */
+  .pr:not(.merged) .merge{animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(46,230,200,.45)}50%{box-shadow:0 0 0 14px rgba(46,230,200,0)}}
+  .merge{position:relative;overflow:hidden}
+  .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:ripple .7s ease-out forwards;pointer-events:none}
+  @keyframes ripple{to{transform:scale(4);opacity:0}}
+  .pipe li{background-image:linear-gradient(90deg,#14241f,#14241f);background-repeat:no-repeat;background-size:0 100%;transition:border-color .3s,color .3s,background-size .45s var(--ease)}
+  .pipe li.lit{background-color:transparent;background-size:100% 100%}
+
+  /* Premium: walkthrough cards slide up with a shimmer; rail fills and glows */
+  .js .step .vis{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease);position:relative;overflow:hidden}
+  .js .step.in .vis{opacity:1;transform:none}
+  .vis::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.07) 50%,transparent 70%);transform:translateX(-100%)}
+  .js .step.in .vis::after{animation:shimmer 1.4s var(--ease) .3s}
+  @keyframes shimmer{to{transform:translateX(100%)}}
+  .rail li.now i{box-shadow:0 0 0 6px rgba(46,230,200,.15),0 0 22px rgba(46,230,200,.55)}
+
+  /* Premium: debate bubbles bounce in after typing dots; twist flashes gold */
+  .say div{position:relative}
+  .js .vis .say[data-a]{transform:translateY(14px) scale(.92)}
+  .js .step.in .vis .say[data-a]{transition:opacity .45s var(--ease),transform .55s cubic-bezier(.34,1.56,.64,1);transition-delay:calc(var(--d,0) * 1ms)}
+  .dots{display:none}
+  .js .say .dots{display:flex;gap:4px;position:absolute;left:14px;bottom:13px}
+  .dots i{width:6px;height:6px;border-radius:50%;background:var(--ink-mute);animation:blink 1s infinite}
+  .dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+  @keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+  .js .say .txt{opacity:0}
+  .js .step.in .say .dots{animation:gone .2s calc(var(--d,0) * 1ms + 750ms) forwards}
+  .js .step.in .say .txt{animation:txtin .35s calc(var(--d,0) * 1ms + 800ms) forwards}
+  @keyframes gone{to{opacity:0;visibility:hidden}}
+  @keyframes txtin{to{opacity:1}}
+  .js .step.in .say.twist div{animation:gold 1.2s ease-out calc(var(--d,0) * 1ms + 900ms)}
+  @keyframes gold{0%{box-shadow:0 0 0 0 rgba(255,194,122,0)}30%{box-shadow:0 0 28px 4px rgba(255,194,122,.55)}100%{box-shadow:0 0 0 0 rgba(255,194,122,0)}}
+  .js .vote span:nth-child(2) i{transition:width 1.2s cubic-bezier(.34,1.3,.64,1) .3s}
+  .js .render i{transition:transform 1.8s cubic-bezier(.34,1.15,.64,1) .2s}
+
+  /* Premium: 3D tilt with a light reflection; breathing play button; film zoom */
+  .tilt{transform-style:preserve-3d;will-change:transform}
+  .tilt::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(360px circle at var(--lx,50%) var(--ly,50%),rgba(255,255,255,.07),transparent 55%);opacity:0;transition:opacity .3s;z-index:1}
+  .tilt:hover::before{opacity:1}
+  .agent,.run{position:relative}
+  .bigplay b{animation:breathe 2.6s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 10px 40px rgba(46,230,200,.35)}50%{transform:scale(1.07);box-shadow:0 10px 60px rgba(46,230,200,.6)}}
+  .film.playing{animation:zoomin .6s var(--ease)}
+  @keyframes zoomin{from{transform:scale(.96)}to{transform:none}}
+
+  @media(max-width:760px){.pillars{grid-template-columns:1fr}.stamp{position:static;margin:16px 0 0;align-self:flex-start}.stampbox{flex-direction:column}}
+  @media(prefers-reduced-motion:reduce){
+    .js h1 .w,.js .step .vis,.js .step.in .stamp,.pr .merge,.bigplay b,.film.playing,.js .step.in .say.twist div{animation:none!important;opacity:1!important;transform:none!important;transition:none!important}
+    .js .step .vis::after{display:none}.js .say .dots{display:none}.js .say .txt{opacity:1;animation:none}
+  }
 </style>
 </head>
 <body>
@@ -176,12 +261,11 @@
   <div class="wrap bar">
     <a class="logo" href="#top"><i>&#9654;</i>MergeCut</a>
     <nav class="sections" aria-label="Sections">
-      <a href="#demo">Demo</a><a href="#how">How it works</a><a href="#agents">The agents</a><a href="#bruin">Bruin</a><a href="#runs">Two runs</a>
+      <a href="#demo">Demo</a><a href="#how">How it works</a><a href="#agents">The team</a><a href="#bruin">Trust</a><a href="#runs">Always fresh</a>
     </nav>
     <div class="right">
-      <span class="pill">Track 1 · Agent film</span>
       <a class="btn ghost" href="https://github.com/Angioz/hackathon">GitHub</a>
-      <a class="btn primary" href="live/">Watch the room</a>
+      <a class="btn primary" href="live/">See it in action</a>
     </div>
   </div>
 </header>
@@ -189,24 +273,24 @@
 <main id="top">
   <section class="hero" id="demo">
     <div class="wrap">
-      <h1>Every merge becomes a launch film</h1>
-      <p class="lede">Ship a feature and four AI agents argue about how to launch it: they pick a plot twist, vote on an ending and log why. Bruin checks every decision before it reaches the film. No human in the loop.</p>
-      <div class="cta"><a class="btn primary" href="live/">Watch the writers' room</a><a class="btn ghost" href="#how">See how it works &rarr;</a></div>
+      <h1>Ship a feature. Get a launch film.</h1>
+      <p class="lede">Every time your team ships something new, MergeCut turns it into a short animated film that's ready to post. No marketing team. No editing. No waiting.</p>
+      <div class="cta"><a class="btn primary" href="live/">See it in action</a><a class="btn ghost" href="#how">How it works &rarr;</a></div>
 
       <div class="demo">
         <div class="pr" id="pr">
-          <div class="pr-top"><span class="tag">Staged replay of run 1</span><span class="pr-repo">demo-app &middot; pull request</span></div>
+          <div class="pr-top"><span class="tag">Demo</span><span class="pr-repo">MergeCut</span></div>
           <div class="pr-body">
-            <span class="pr-state" id="prState">&#9679; Open</span>
-            <h3>Smart Scroll: a reading bar and jump-to-section links</h3>
-            <p class="pr-branch">feat/smart-scroll &rarr; main</p>
-            <ul class="pr-checks"><li>Checks passed</li><li>Ready to merge</li></ul>
-            <button type="button" class="merge" id="mergeBtn">Merge pull request</button>
+            <span class="pr-state" id="prState">&#9679; New feature</span>
+            <h3>Smart Scroll</h3>
+            <p class="pr-branch">A reading bar and quick links for long articles</p>
+            <ul class="pr-checks"><li>Tested</li><li>Ready to ship</li></ul>
+            <button type="button" class="merge" id="mergeBtn">Merge</button>
           </div>
-          <ol class="pipe" aria-label="Bruin pipeline">
-            <li>ingest</li><li>agents + memory</li><li>writers' room</li><li>quality checks</li><li>export</li>
+          <ol class="pipe" aria-label="What happens next">
+            <li>Reading the feature</li><li>Agents debate</li><li>Story checked</li><li>Film made</li><li>Ready to post</li>
           </ol>
-          <p class="pipe-note" aria-live="polite">Merged. The Bruin pipeline is running with no human in the loop. <a href="#how">Follow the run &darr;</a></p>
+          <p class="pipe-note" aria-live="polite">Merged. Your launch film is on its way. <a href="#how">See how &darr;</a></p>
         </div>
       </div>
     </div>
@@ -214,122 +298,118 @@
 
   <section class="block" id="how">
     <div class="wrap">
-      <h2>From merge to film in about a minute</h2>
-      <p class="sub">One merge starts a Bruin pipeline. Nothing waits for a person. Scroll to follow run 1, step by step.</p>
+      <h2>One click. One film.</h2>
+      <p class="sub">Here's what happens after you hit merge.</p>
       <div class="story">
         <ol class="rail" aria-hidden="true">
-          <li><i>1</i>Merge lands</li><li><i>2</i>Bruin starts</li><li><i>3</i>Agents argue</li><li><i>4</i>Director decides</li>
-          <li><i>5</i>Bruin checks</li><li><i>6</i>Film ready</li><li><i>7</i>Ready to publish</li>
+          <li><i>1</i>You ship</li><li><i>2</i>Your AI team starts</li><li><i>3</i>They argue it out</li><li><i>4</i>The call</li>
+          <li><i>5</i>Approved</li><li><i>6</i>Film made</li><li><i>7</i>Ready to post</li>
         </ol>
         <div>
           <article class="step">
-            <span class="k">01 / Merge lands</span>
-            <h3>A feature ships.</h3>
-            <p>Smart Scroll is merged into main. That merge is the only thing a person does.</p>
-            <div class="vis"><p class="term"><span data-a><span class="dim">$</span> git merge feat/smart-scroll</span><br><span data-a style="--d:500"><span class="ok">&#10003;</span> merged into main</span><br><span data-a style="--d:900" class="dim">&rarr; starting the Bruin pipeline&hellip;</span></p></div>
+            <span class="k">01</span>
+            <h3>You ship.</h3>
+            <p>Merge the feature. That's your only job.</p>
+            <div class="vis"><p class="term"><span data-a><span class="ok">&#10003;</span> Smart Scroll merged</span><br><span data-a style="--d:600" class="dim">&rarr; MergeCut takes it from here&hellip;</span></p></div>
           </article>
           <article class="step">
-            <span class="k">02 / Bruin starts</span>
-            <h3>Five steps light up.</h3>
-            <p>Bruin runs the whole room as one pipeline, synced to Bruin Cloud.</p>
-            <div class="vis"><ol class="nodes"><li data-a>ingest</li><li data-a style="--d:250">agents + memory</li><li data-a style="--d:500">writers' room</li><li data-a style="--d:750">quality checks</li><li data-a style="--d:1000">export</li></ol></div>
+            <span class="k">02</span>
+            <h3>Your AI team gets to work.</h3>
+            <p>MergeCut reads what changed and briefs four AI agents.</p>
+            <div class="vis"><ol class="nodes"><li data-a>Read the feature</li><li data-a style="--d:250">Brief the agents</li><li data-a style="--d:500">Debate</li><li data-a style="--d:750">Check</li><li data-a style="--d:1000">Make the film</li></ol></div>
           </article>
           <article class="step">
-            <span class="k">03 / Agents argue</span>
-            <h3>Four goals. One good argument.</h3>
-            <p>Each agent wants something different. The Critic finds the twist in the code.</p>
+            <span class="k">03</span>
+            <h3>They argue it out.</h3>
+            <p>Each agent wants something different, so the story gets sharper. The Critic spots the twist: readers use the feature in a way no one planned.</p>
             <div class="vis room">
-              <div class="say" data-a style="--c:var(--Dev)"><span class="av">D</span><div><b>Dev</b>&ldquo;Ship it, but say the truth: scroll only.&rdquo;</div></div>
-              <div class="say" data-a style="--c:var(--Growth);--d:300"><span class="av">G</span><div><b>Growth</b>&ldquo;Ship it loud. The bar fills as they scroll.&rdquo;</div></div>
-              <div class="say twist" data-a style="--c:var(--Critic);--d:600"><span class="av">C</span><div><b>Critic</b>The twist: users use it wrong.</div></div>
-              <div class="say" data-a style="--c:var(--Director);--d:900"><span class="av">D</span><div><b>Director</b>&ldquo;The tally says caveat. The math wins.&rdquo;</div></div>
+              <div class="say" data-a style="--c:var(--Dev)"><span class="av">D</span><div><b>Dev</b><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="txt">&ldquo;Ship it, but say the truth: scroll only.&rdquo;</span></div></div>
+              <div class="say" data-a style="--c:var(--Growth);--d:300"><span class="av">G</span><div><b>Growth</b><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="txt">&ldquo;Ship it loud. The bar fills as they scroll.&rdquo;</span></div></div>
+              <div class="say twist" data-a style="--c:var(--Critic);--d:600"><span class="av">C</span><div><b>Critic</b><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="txt">The twist: users use it wrong.</span></div></div>
+              <div class="say" data-a style="--c:var(--Director);--d:900"><span class="av">&#9733;</span><div><b>Director</b><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="txt">&ldquo;The tally says caveat. The math wins.&rdquo;</span></div></div>
             </div>
           </article>
           <article class="step">
-            <span class="k">04 / Director decides</span>
-            <h3>The call, with the reason logged.</h3>
-            <p>Votes are weighted by trust. Every decision is written down with why.</p>
+            <span class="k">04</span>
+            <h3>The Director makes the call.</h3>
+            <p>Votes count by trust, and every choice comes with a reason you can read.</p>
             <div class="vis">
-              <p class="call" data-a>Honest launch with a caveat</p>
+              <p class="call" data-a>Verdict: an honest launch</p>
               <div class="votes">
-                <div class="vote"><span>Caveat</span><span><i style="--w:100%"></i></span><span>4.5</span></div>
-                <div class="vote"><span>Hype</span><span><i style="--w:33%"></i></span><span>1.5</span></div>
+                <div class="vote"><span>Honest</span><span><i style="--w:100%"></i></span><span data-count="4.5">4.5</span></div>
+                <div class="vote"><span>Hype</span><span><i style="--w:33%"></i></span><span data-count="1.5">1.5</span></div>
               </div>
             </div>
           </article>
           <article class="step">
-            <span class="k">05 / Bruin checks</span>
-            <h3>13 checks. All green.</h3>
-            <p>Every decision has a reason, at least three agents decided, a twist exists, the film length fits. One failure and nothing reaches the film.</p>
-            <div class="vis"><ol class="grid13">
-              <li data-a>&#10003;</li><li data-a style="--d:80">&#10003;</li><li data-a style="--d:160">&#10003;</li><li data-a style="--d:240">&#10003;</li><li data-a style="--d:320">&#10003;</li><li data-a style="--d:400">&#10003;</li><li data-a style="--d:480">&#10003;</li><li data-a style="--d:560">&#10003;</li><li data-a style="--d:640">&#10003;</li><li data-a style="--d:720">&#10003;</li><li data-a style="--d:800">&#10003;</li><li data-a style="--d:880">&#10003;</li><li data-a style="--d:960">&#10003;</li>
-            </ol><p class="count" data-a style="--d:1100">13 / 13 passed</p></div>
+            <span class="k">05</span>
+            <h3>Every word earns its place.</h3>
+            <p>Your AI team double-checks every choice, so the film says only what your feature truly does: bold, honest, on brand.</p>
+            <div class="vis stampbox"><div class="storycard" data-a><span class="mono">The story</span><strong>Smart Scroll, told honestly</strong><p>Bold, honest, on brand.</p></div><span class="stamp" data-a style="--d:700">&#10003; Approved</span></div>
           </article>
           <article class="step">
-            <span class="k">06 / Film ready</span>
-            <h3>The story becomes a film.</h3>
-            <p>Our video pipeline writes, voices and renders it, with the four agents as the characters.</p>
-            <div class="vis"><div class="filmcard"><strong>Launch film ready</strong><span class="mono" style="color:var(--ink-mute)">47 s &middot; four voices</span></div><div class="render"><i></i></div></div>
+            <span class="k">06</span>
+            <h3>Your film is made.</h3>
+            <p>Written, voiced and animated, starring the four agents.</p>
+            <div class="vis"><div class="filmcard"><strong>Your launch film is ready</strong></div><div class="render"><i></i></div></div>
           </article>
           <article class="step">
-            <span class="k">07 / Ready to publish</span>
-            <h3>From shipped code to a story worth sharing.</h3>
-            <p>The film is handed off as a social post, ready to bring in users.</p>
-            <div class="vis post" data-a><span class="mono">Social post &middot; illustration</span><strong>Scheduled. New users incoming</strong><p>The launch film, ready to share. Nothing was posted in this replay.</p></div>
+            <span class="k">07</span>
+            <h3>Ready to post.</h3>
+            <p>Straight to your channels, built to bring people back for what's new.</p>
+            <div class="vis post" data-a><strong>Ready to post</strong><p>Your new feature, told as a story people want to watch.</p></div>
           </article>
         </div>
       </div>
       <div class="finale" id="film">
-        <h3>Here is the film it made.</h3>
-        <p>The Smart Scroll launch film, made by the pipeline from run 1. Press play for sound.</p>
-        <div class="film"><video src="assets/launch-film.mp4" poster="assets/launch-film-poster.jpg" controls playsinline preload="metadata" aria-label="The Smart Scroll launch film: four agents explain the reading bar and the section links"></video></div>
+        <h3>Watch the film it made.</h3>
+        <p>Smart Scroll's launch film, made by MergeCut. Press play for sound.</p>
+        <div class="film" id="filmBox"><video id="finaleFilm" src="assets/launch-film.mp4" poster="assets/launch-film-poster.jpg" playsinline preload="metadata" aria-label="Smart Scroll's launch film, made by MergeCut"></video><button type="button" class="bigplay" id="bigPlay" aria-label="Play the film"><b>&#9654;</b></button></div>
       </div>
     </div>
   </section>
 
   <section class="block" id="agents">
     <div class="wrap">
-      <h2>Four agents with goals that collide</h2>
-      <p class="sub">They disagree on purpose. Each one remembers the last run, so the next film comes out different.</p>
+      <h2>Meet your AI launch team.</h2>
+      <p class="sub">Four personalities that never agree, and that's the point. They remember every past launch, so no two films are the same.</p>
       <div class="cast">
-        <article class="agent reveal" style="--c:var(--Dev)"><div class="av">D</div><div><h3>Dev</h3><span class="role">Staff engineer</span><p>Technical accuracy, zero hype. Refuses any claim the diff can't prove.</p><q>Ship it, but say the truth: scroll only.</q></div></article>
-        <article class="agent reveal" style="--c:var(--Growth)"><div class="av">G</div><div><h3>Growth</h3><span class="role">Hype marketer</span><p>Wants the boldest true line in the first second.</p><q>Ship it loud. The bar fills as they scroll.</q></div></article>
-        <article class="agent reveal" style="--c:var(--Critic)"><div class="av">C</div><div><h3>Critic</h3><span class="role">Chaos QA</span><p>Hunts the edge case and turns it into the plot twist.</p><q>Rotate the phone: resize fires, scroll never does.</q></div></article>
-        <article class="agent reveal" style="--c:var(--Director)"><div class="av">D</div><div><h3>Director</h3><span class="role">Showrunner</span><p>Keeps it under two minutes and decides the ending, weighting votes by trust.</p><q>The tally says caveat. The math wins.</q></div></article>
+        <article class="agent reveal" style="--c:var(--Dev)"><div class="av">D</div><div><h3>Dev</h3><span class="role">The engineer</span><p>Only says what the feature really does.</p></div></article>
+        <article class="agent reveal" style="--c:var(--Growth)"><div class="av">G</div><div><h3>Growth</h3><span class="role">The marketer</span><p>Wants the boldest true line in the first second.</p></div></article>
+        <article class="agent reveal" style="--c:var(--Critic)"><div class="av">C</div><div><h3>Critic</h3><span class="role">The skeptic</span><p>Finds the catch and turns it into the plot twist.</p></div></article>
+        <article class="agent reveal" style="--c:var(--Director)"><div class="av">&#9733;</div><div><h3>Director</h3><span class="role">The showrunner</span><p>Keeps it tight and makes the final call.</p></div></article>
       </div>
     </div>
   </section>
 
   <section class="block" id="bruin">
-    <div class="wrap split">
-      <div>
-        <h2>Bruin is the referee</h2>
-        <p class="sub">The whole room runs as a five-step Bruin pipeline on DuckDB, synced to Bruin Cloud. If one check fails, nothing reaches the film.</p>
-        <p class="sub mono" style="font-size:14px;color:var(--ink-mute)">ingest &rarr; agents + memory &rarr; writers' room &rarr; quality checks &rarr; export</p>
+    <div class="wrap">
+      <h2>Your brand, in safe hands.</h2>
+      <p class="sub">MergeCut never invents features or oversells. Every film tells the truth about what you shipped, told in a way people want to watch.</p>
+      <div class="pillars">
+        <article class="pillar reveal"><span class="pi">&#10022;</span><h3>Honest by design</h3><p>Every film shows what your feature really does. Nothing more, nothing less.</p></article>
+        <article class="pillar reveal"><span class="pi">&#9670;</span><h3>On brand every time</h3><p>Bold where it counts, calm where it matters. Always in your voice.</p></article>
+        <article class="pillar reveal"><span class="pi">&#9654;</span><h3>Ready to post</h3><p>A finished film the moment you ship. No edits, no chasing, no waiting.</p></article>
       </div>
-      <ul class="checks reveal">
-        <li>Every decision has a reason</li><li>At least three distinct agents decided</li><li>A plot twist exists</li>
-        <li>The ending was decided</li><li>Film length is 60 to 180 seconds</li><li>Every decision ID is unique</li><li>&hellip;and seven more</li>
-      </ul>
     </div>
   </section>
 
   <section class="block" id="runs">
     <div class="wrap">
-      <h2>Same commit, two different films</h2>
-      <p class="sub">Run the room twice on the same merge. Memory bans the last ending and shifts who trusts whom. <a href="decision-log/" style="color:var(--teal)">Compare every decision &rarr;</a></p>
+      <h2>Same feature. A brand-new film.</h2>
+      <p class="sub">Ship the same feature twice and you get two different stories. MergeCut remembers what it did last time and tries something new. <a href="decision-log/" style="color:var(--teal)">See every decision side by side &rarr;</a></p>
       <div class="runs">
-        <article class="run reveal"><span class="mono">Run 1 · triggered by git merge</span><h3>What the Diff Can Prove</h3>
-          <dl><dt>Twist</dt><dd class="tw">Users use it wrong</dd><dt>Ending</dt><dd>Honest launch with a caveat</dd><dt>Film</dt><dd>91 s, four voices</dd></dl></article>
-        <article class="run reveal"><span class="mono">Run 2 · same commit</span><h3>Nothing to Hit</h3>
-          <dl><dt>Twist</dt><dd class="tw">Hidden dependency</dd><dt>Ending</dt><dd>The Critic is converted</dd><dt>Film</dt><dd>99 s, four voices</dd></dl></article>
+        <article class="run reveal"><h3>First film</h3>
+          <dl><dt>Twist</dt><dd class="tw">People use it the wrong way</dd><dt>Ending</dt><dd>An honest launch</dd><dt>Length</dt><dd>91 seconds</dd></dl></article>
+        <article class="run reveal"><h3>Second film</h3>
+          <dl><dt>Twist</dt><dd class="tw">A hidden catch</dd><dt>Ending</dt><dd>The Critic changes sides</dd><dt>Length</dt><dd>99 seconds</dd></dl></article>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap"><span>MergeCut · Multiplayer AI Hackathon 2026 · Track 1</span><span><a href="smart-scroll/" style="color:var(--ink-dim)">The Smart Scroll demo feature</a> · Built with Bruin, Runware and ElevenLabs</span></div>
+  <div class="wrap"><span>MergeCut · Built for the Multiplayer AI Hackathon 2026</span><span><a href="smart-scroll/" style="color:var(--ink-dim)">Try Smart Scroll</a></span></div>
 </footer>
 
 <script>
@@ -359,6 +439,36 @@
       setTimeout(() => { pr.classList.add('done'); if (jump) document.getElementById('how').scrollIntoView({behavior: still ? 'auto' : 'smooth'}); }, still ? 0 : 300 + nodes.length * 450 + 300);
     };
     btn.addEventListener('click', () => merge(true));
+  })();
+
+  // Film: big play button, then native controls.
+  (() => {
+    const box = document.getElementById('filmBox'), v = document.getElementById('finaleFilm');
+    document.getElementById('bigPlay').addEventListener('click', () => { v.controls = true; box.classList.add('playing'); v.play(); });
+  })();
+
+  // Premium motion (skipped for reduced motion; tilt only with a mouse).
+  (() => {
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches, fine = matchMedia('(pointer: fine)').matches;
+    const h1 = document.querySelector('.hero h1');
+    if (!still) h1.innerHTML = h1.textContent.split(' ').map((w, i) => '<span class="w" style="--i:' + i + '">' + w + '</span>').join(' ');
+    const hero = document.querySelector('.hero');
+    if (fine && !still) hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); hero.style.setProperty('--mx', (e.clientX - r.left) + 'px'); hero.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+    const btn = document.getElementById('mergeBtn');
+    btn.addEventListener('pointerdown', e => { if (still) return; const r = btn.getBoundingClientRect(), s = document.createElement('span'), d = Math.max(r.width, r.height);
+      s.className = 'ripple'; s.style.cssText = 'width:' + d + 'px;height:' + d + 'px;left:' + (e.clientX - r.left - d / 2) + 'px;top:' + (e.clientY - r.top - d / 2) + 'px'; btn.appendChild(s); setTimeout(() => s.remove(), 800); });
+    if (fine && !still) document.querySelectorAll('.agent,.run,.pillar,.film').forEach(el => {
+      el.classList.add('tilt');
+      el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        el.style.transition = 'transform .12s ease-out'; el.style.transform = 'perspective(900px) rotateX(' + ((.5 - y) * 6) + 'deg) rotateY(' + ((x - .5) * 6) + 'deg)';
+        el.style.setProperty('--lx', x * 100 + '%'); el.style.setProperty('--ly', y * 100 + '%'); });
+      el.addEventListener('pointerleave', () => { el.style.transition = 'transform .5s var(--ease)'; el.style.transform = ''; });
+    });
+    // Vote numbers count up when their step arrives.
+    new MutationObserver((ms, mo) => ms.forEach(m => { if (m.target.classList.contains('in') && m.target.querySelector('[data-count]')) {
+      m.target.querySelectorAll('[data-count]').forEach(n => { const end = +n.dataset.count; if (still) return; const t0 = performance.now();
+        const tick = now => { const p = Math.min(1, (now - t0) / 1200); n.textContent = (end * (1 - Math.pow(1 - p, 3))).toFixed(1); if (p < 1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); });
+      mo.disconnect(); } })).observe(document.querySelector('[data-count]').closest('.step'), {attributes: true, attributeFilter: ['class']});
   })();
 
   // Story: each step animates as it scrolls in; the rail tracks the current step.
