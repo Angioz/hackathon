@@ -71,12 +71,98 @@
   section.block{padding:112px 0;border-top:1px solid var(--line)}
   h2{font:700 clamp(32px,3.6vw,46px)/1.1 "Inter Tight",sans-serif;letter-spacing:-.03em;margin:0;max-width:20ch}
   .sub{color:var(--ink-dim);max-width:62ch;margin:18px 0 0}
-  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-  .step{padding:28px 24px 32px;border-right:1px solid var(--line);background:var(--bg-2)}
-  .step:last-child{border-right:0}
-  .step .mono{font-size:12px;color:var(--teal)}
-  .step h3{font:600 20px/1.25 "Inter Tight",sans-serif;margin:14px 0 8px;letter-spacing:-.01em}
-  .step p{margin:0;color:var(--ink-dim);font-size:15.5px}
+  /* An illustrated run, never a live merge or publishing action. */
+  .launch-flow{margin-top:48px;padding:8px;border:1px solid var(--line-2);border-radius:22px;background:var(--panel)}
+  .flow-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px 20px}
+  .flow-toolbar p{margin:0;color:var(--ink-dim);font-size:13px}
+  .flow-replay{flex-shrink:0;border:1px solid var(--line-2);background:var(--bg-2);color:var(--ink);font:500 14px/1.4 Inter,sans-serif;cursor:pointer;padding:11px 16px;border-radius:999px;transition:transform .2s var(--ease),border-color .2s var(--ease)}
+  .flow-replay:hover{border-color:var(--teal)}
+  .flow-replay:active{transform:scale(.97)}
+  .flow-replay:focus-visible{outline:2px solid var(--teal);outline-offset:4px}
+  .flow-body{display:grid;grid-template-columns:220px minmax(0,1fr);border:1px solid var(--line);border-radius:16px;background:var(--bg-2);overflow:hidden}
+  .flow-steps{list-style:none;margin:0;padding:26px 20px;display:grid;gap:0;border-right:1px solid var(--line)}
+  .flow-steps li{position:relative;display:flex;align-items:center;gap:12px;min-height:59px;color:var(--ink-dim);font-size:14px}
+  .flow-steps li:not(:last-child)::after{content:"";position:absolute;left:14px;top:44px;bottom:-15px;width:1px;background:var(--line-2)}
+  .flow-number{position:relative;display:grid;place-items:center;flex:0 0 29px;height:29px;border:1px solid var(--line-2);border-radius:50%;font:500 11px/1 "JetBrains Mono",monospace;background:var(--bg-2)}
+  .flow-steps .is-done .flow-number{color:var(--teal);border-color:#2e6c5e}
+  .flow-steps [aria-current="step"]{color:var(--ink)}
+  .flow-steps [aria-current="step"] .flow-number{background:var(--teal);border-color:var(--teal);color:var(--teal-ink)}
+  .flow-running .flow-steps [aria-current="step"]:not(:last-child) .flow-number::after{content:"";position:absolute;top:35px;left:12px;width:4px;height:4px;border-radius:50%;background:var(--teal);animation:flow-travel .9s var(--ease) infinite}
+  .flow-stage{min-width:0;display:grid;align-items:center;padding:36px clamp(22px,4vw,52px);min-height:466px;background:radial-gradient(ellipse at 100% 0%,#22312a 0%,transparent 65%)}
+  .flow-scene{min-width:0}
+  .flow-scene[hidden]{display:none}
+  .flow-running .flow-scene{animation:flow-enter .45s var(--ease) both}
+  .flow-kicker{color:var(--teal);font:500 12px/1.5 "JetBrains Mono",monospace;margin:0 0 12px}
+  .flow-scene h3{font:600 clamp(26px,3vw,36px)/1.12 "Inter Tight",sans-serif;letter-spacing:-.025em;margin:0 0 24px;max-width:23ch}
+  .flow-detail{color:var(--ink-dim);font-size:15px;margin:16px 0 0;max-width:48ch}
+  .flow-commit{display:flex;align-items:center;gap:18px;padding:24px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+  .flow-merge{width:44px;height:54px;flex-shrink:0;color:var(--teal)}
+  .flow-commit strong{display:block;font:500 clamp(13px,1.6vw,18px)/1.6 "JetBrains Mono",monospace;overflow-wrap:anywhere}
+  .flow-commit small{display:block;color:var(--ink-dim);font-size:13px;margin-top:4px}
+  .flow-pipeline{list-style:none;display:flex;align-items:stretch;gap:18px;margin:32px 0;padding:0}
+  .flow-pipeline li{position:relative;flex:1;min-width:0;border-top:2px solid var(--teal);padding-top:18px;font-size:13px;line-height:1.5}
+  .flow-pipeline li:not(:last-child)::after{content:"→";position:absolute;right:-15px;top:15px;color:var(--teal)}
+  .flow-running .flow-pipeline li{animation:flow-enter .4s var(--ease) both;animation-delay:var(--delay)}
+  .flow-room{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px}
+  .flow-voice{display:flex;align-items:flex-start;gap:10px;min-width:0}
+  .flow-avatar{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:9px;background:var(--c);color:var(--bg);font:700 15px/1 "Inter Tight",sans-serif}
+  .flow-bubble{position:relative;margin:0;padding:10px 12px;border:1px solid var(--line-2);border-radius:0 12px 12px;font-size:13px;line-height:1.5;background:var(--panel)}
+  .flow-bubble b{display:block;color:var(--c);font-size:12px;margin-bottom:4px}
+  .flow-bubble mark{background:transparent;color:#ffc27a}
+  .flow-running .flow-voice{animation:flow-enter .4s var(--ease) both;animation-delay:var(--delay)}
+  .flow-verdict{font-size:clamp(22px,2.4vw,30px);line-height:1.3;margin:0;padding:24px 0;border-block:1px solid var(--line-2)}
+  .flow-verdict strong{font-weight:500;color:#ffc27a}
+  .flow-verdict small{display:block;font-size:15px;color:var(--ink-dim);margin-top:18px}
+  .flow-vote{display:flex;gap:4px;height:6px;margin-top:24px}
+  .flow-vote span:first-child{flex:4.5;background:var(--teal)}
+  .flow-vote span:last-child{flex:1.5;background:var(--Growth)}
+  .flow-checks{list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:30px 0;padding:0}
+  .flow-checks li{display:grid;place-items:center;height:40px;border:1px solid #2e6c5e;border-radius:8px;color:var(--teal);background:#172721;font-size:20px}
+  .flow-running .flow-checks li{animation:flow-enter .25s var(--ease) both;animation-delay:calc(var(--i) * 65ms)}
+  .flow-film{min-width:0;padding:20px;border:1px solid var(--line-2);border-radius:12px;background:#100d0b}
+  .flow-frame{display:flex;justify-content:center;align-items:center;gap:10px;min-height:116px;border-bottom:1px solid var(--line);margin-bottom:14px}
+  .flow-frame .flow-avatar{flex:0 0 40px;height:40px;border-radius:50%}
+  .flow-film strong{display:block;font:600 20px/1.3 "Inter Tight",sans-serif}
+  .flow-film small{display:block;color:var(--ink-dim);font-size:12px;margin-top:6px}
+  .flow-render{height:3px;background:var(--line-2);margin-top:16px;overflow:hidden}
+  .flow-render span{display:block;height:100%;background:var(--teal);transform-origin:left}
+  .flow-running .flow-render span{animation:flow-render 1.2s var(--ease) both}
+  .flow-handoff{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);align-items:center;gap:14px}
+  .flow-handoff>.flow-film{padding:16px}
+  .flow-handoff .flow-frame{min-height:70px;gap:5px}
+  .flow-handoff .flow-avatar{flex-basis:24px;height:24px;font-size:11px}
+  .flow-handoff .flow-film strong{font-size:17px}
+  .flow-running .flow-handoff>.flow-film{animation:flow-handoff .6s var(--ease) both}
+  .flow-arrow{color:var(--teal);font-size:24px;text-align:center}
+  .flow-post{min-width:0;border:1px solid #2e6c5e;border-radius:12px;padding:20px;background:#17231d}
+  .flow-post .mono{font-size:11px;color:var(--teal)}
+  .flow-post strong{display:block;font:600 24px/1.15 "Inter Tight",sans-serif;margin:16px 0 10px}
+  .flow-post p{margin:0;font-size:14px;color:var(--ink-dim)}
+  .flow-running .flow-post{animation:flow-handoff .6s var(--ease) both}
+  .flow-summary{margin:18px 0 0;color:var(--ink-dim);font-size:13px}
+  .flow-summary span{color:#ffc27a}
+  .flow-status{margin:0;padding:16px 18px 8px;font-size:12px;color:var(--ink-dim)}
+  @keyframes flow-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @keyframes flow-travel{from{transform:translateY(0);opacity:1}to{transform:translateY(18px);opacity:0}}
+  @keyframes flow-render{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes flow-handoff{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+  @media(max-width:760px){
+    .flow-body{grid-template-columns:minmax(0,1fr)}
+    .flow-toolbar{padding:10px 10px 18px;align-items:flex-start}.flow-toolbar p{max-width:27ch;font-size:12px}
+    .flow-steps{grid-template-columns:repeat(7,minmax(0,1fr));padding:18px 14px;border-right:0;border-bottom:1px solid var(--line)}
+    .flow-steps li{min-height:29px;justify-content:center}.flow-steps li>span:last-child{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+    .flow-steps li:not(:last-child)::after{top:14px;left:calc(50% + 15px);right:calc(-50% + 15px);bottom:auto;width:auto;height:1px}
+    .flow-running .flow-steps [aria-current="step"]:not(:last-child) .flow-number::after{top:12px;left:34px;animation-name:flow-travel-mobile}
+    .flow-stage{min-height:490px;padding:28px 20px}
+    .flow-room{grid-template-columns:1fr;gap:12px}.flow-bubble{padding:8px 12px;flex:1}
+    .flow-pipeline{flex-direction:column;gap:10px;margin:20px 0}.flow-pipeline li{border-top:0;padding:8px 12px;border:1px solid #2e6c5e;border-radius:6px}
+    .flow-pipeline li:not(:last-child)::after{content:"↓";right:16px;top:auto;bottom:-15px;z-index:1}
+    .flow-handoff{grid-template-columns:minmax(0,1fr);gap:10px}.flow-handoff .flow-frame{display:none}.flow-arrow{font-size:18px;line-height:1;transform:rotate(90deg)}
+    .flow-post{padding:16px}.flow-post strong{margin-top:10px;font-size:23px}.flow-summary{font-size:12px}.flow-status{padding-inline:10px}
+    .flow-checks{grid-template-columns:repeat(5,minmax(0,1fr))}
+  }
+  @keyframes flow-travel-mobile{from{transform:translateX(0);opacity:1}to{transform:translateX(12px);opacity:0}}
+  @media(prefers-reduced-motion:reduce){.launch-flow *,.launch-flow *::after{animation:none!important;transition:none!important}}
 
   .cast{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px}
   .agent{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:26px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2)}
@@ -108,12 +194,10 @@
   @media (max-width:960px){
     nav.sections{display:none}.pill{display:none}
     .demo{grid-template-columns:1fr}
-    .steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}
     .cast,.runs,.split{grid-template-columns:1fr}.split{gap:40px}
   }
   @media (max-width:560px){
     .wrap{padding:0 18px}.hero{padding-top:64px}
-    .steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}
     .bar .btn.ghost{display:none}.hero .cta{flex-direction:column}
     section.block{padding:80px 0}
   }
@@ -164,11 +248,79 @@
     <div class="wrap">
       <h2>From merge to film in about a minute</h2>
       <p class="sub">One <span class="mono">git merge</span> starts a Bruin pipeline. Nothing waits for a person.</p>
-      <div class="steps">
-        <div class="step reveal"><span class="mono">01 · Merge</span><h3>Read the real change</h3><p>The trigger reads exactly what the merged branch added, so the film can never claim more than the code does.</p></div>
-        <div class="step reveal"><span class="mono">02 · Writers' room</span><h3>Four agents argue</h3><p>Four rounds: pitch, plot twist, vote, decision. Every choice is logged with what and why.</p></div>
-        <div class="step reveal"><span class="mono">03 · Bruin</span><h3>Thirteen checks</h3><p>No decision without a reason, a real twist, at least three agents, a film between one and three minutes.</p></div>
-        <div class="step reveal"><span class="mono">04 · Film</span><h3>Voiced and rendered</h3><p>The story goes to the video pipeline: four voices, 3D characters, a decision log on screen.</p></div>
+      <div class="launch-flow" id="launchFlow" role="group" aria-label="Merge to launch film illustrated replay">
+        <div class="flow-toolbar">
+          <p id="flowNote">Run 1, illustrated in 10 seconds.<br>No live merge or publishing.</p>
+          <button class="flow-replay" id="flowReplay" type="button" aria-describedby="flowNote" hidden>↻ Replay flow</button>
+        </div>
+        <div class="flow-body">
+          <ol class="flow-steps" aria-label="From merge to launch">
+            <li class="is-done"><span class="flow-number">01</span><span>Merge lands</span></li>
+            <li class="is-done"><span class="flow-number">02</span><span>Bruin starts</span></li>
+            <li class="is-done"><span class="flow-number">03</span><span>Agents argue</span></li>
+            <li class="is-done"><span class="flow-number">04</span><span>Decision logged</span></li>
+            <li class="is-done"><span class="flow-number">05</span><span>Bruin checks</span></li>
+            <li class="is-done"><span class="flow-number">06</span><span>Film ready</span></li>
+            <li aria-current="step"><span class="flow-number">07</span><span>Ready to publish</span></li>
+          </ol>
+          <div class="flow-stage">
+            <div class="flow-scene" hidden>
+              <p class="flow-kicker">01 / Merge</p><h3>One real change.<br>A whole new story.</h3>
+              <div class="flow-commit">
+                <svg class="flow-merge" viewBox="0 0 44 54" fill="none" aria-hidden="true"><path d="M11 12v30M33 12v6c0 12-22 8-22 20" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="8" r="4" stroke="currentColor" stroke-width="2"/><circle cx="33" cy="8" r="4" stroke="currentColor" stroke-width="2"/><circle cx="11" cy="46" r="4" stroke="currentColor" stroke-width="2"/></svg>
+                <div><strong>feat/smart-scroll merged</strong><small>Reading progress bar + section navigation</small></div>
+              </div>
+              <p class="flow-detail">The trigger reads what the branch actually added. The film starts with the facts.</p>
+            </div>
+            <div class="flow-scene" hidden>
+              <p class="flow-kicker">02 / Bruin starts</p><h3>The pipeline takes it from here.</h3>
+              <ol class="flow-pipeline" aria-label="Bruin pipeline">
+                <li style="--delay:0ms">Ingest</li><li style="--delay:180ms">Agents + memory</li><li style="--delay:360ms">Writers' room</li><li style="--delay:540ms">Quality checks</li><li style="--delay:720ms">Export</li>
+              </ol>
+              <p class="flow-detail">Five connected steps. Nothing waits for a person.</p>
+            </div>
+            <div class="flow-scene" hidden>
+              <p class="flow-kicker">03 / Writers' room</p><h3>Four goals. One good argument.</h3>
+              <div class="flow-room">
+                <div class="flow-voice" style="--c:var(--Dev);--delay:0ms"><span class="flow-avatar" aria-hidden="true">D</span><p class="flow-bubble"><b>Dev</b>“Ship it, but say the truth: scroll only.”</p></div>
+                <div class="flow-voice" style="--c:var(--Growth);--delay:250ms"><span class="flow-avatar" aria-hidden="true">G</span><p class="flow-bubble"><b>Growth</b>“Ship it loud. The bar fills as they scroll.”</p></div>
+                <div class="flow-voice" style="--c:var(--Critic);--delay:500ms"><span class="flow-avatar" aria-hidden="true">C</span><p class="flow-bubble"><b>Critic</b><mark>The twist: users use it wrong.</mark></p></div>
+                <div class="flow-voice" style="--c:var(--Director);--delay:750ms"><span class="flow-avatar" aria-hidden="true">D</span><p class="flow-bubble"><b>Director</b>“The tally says caveat. The math wins.”</p></div>
+              </div>
+            </div>
+            <div class="flow-scene" hidden>
+              <p class="flow-kicker">04 / Decision log</p><h3>The ending comes with a reason.</h3>
+              <p class="flow-verdict">Director: <strong>honest launch with a caveat.</strong><small>Why: weighted vote <b>4.5 vs 1.5</b></small></p>
+              <div class="flow-vote" aria-hidden="true"><span></span><span></span></div>
+              <p class="flow-detail">Every choice is logged with what and why.</p>
+            </div>
+            <div class="flow-scene" hidden>
+              <p class="flow-kicker">05 / Bruin checks</p><h3>13 checks.<br>Every one green.</h3>
+              <ol class="flow-checks" aria-label="13 quality checks passed">
+                <li style="--i:0" aria-label="Check 1 passed">✓</li><li style="--i:1" aria-label="Check 2 passed">✓</li><li style="--i:2" aria-label="Check 3 passed">✓</li><li style="--i:3" aria-label="Check 4 passed">✓</li><li style="--i:4" aria-label="Check 5 passed">✓</li><li style="--i:5" aria-label="Check 6 passed">✓</li><li style="--i:6" aria-label="Check 7 passed">✓</li><li style="--i:7" aria-label="Check 8 passed">✓</li><li style="--i:8" aria-label="Check 9 passed">✓</li><li style="--i:9" aria-label="Check 10 passed">✓</li><li style="--i:10" aria-label="Check 11 passed">✓</li><li style="--i:11" aria-label="Check 12 passed">✓</li><li style="--i:12" aria-label="Check 13 passed">✓</li>
+              </ol>
+              <p class="flow-detail">A real twist. An ending with a reason. A film between one and three minutes.</p>
+            </div>
+            <div class="flow-scene" hidden>
+              <p class="flow-kicker">06 / Export</p><h3>The argument becomes a film.</h3>
+              <div class="flow-film">
+                <div class="flow-frame" aria-hidden="true"><span class="flow-avatar" style="--c:var(--Dev)">D</span><span class="flow-avatar" style="--c:var(--Growth)">G</span><span class="flow-avatar" style="--c:var(--Critic)">C</span><span class="flow-avatar" style="--c:var(--Director)">D</span></div>
+                <strong>Launch film ready</strong><small>What the Diff Can Prove · 91 s · four voices</small>
+                <div class="flow-render" aria-hidden="true"><span></span></div>
+              </div>
+            </div>
+            <div class="flow-scene">
+              <p class="flow-kicker">07 / Ready to publish</p><h3>From shipped code<br>to a story worth sharing.</h3>
+              <div class="flow-handoff">
+                <div class="flow-film"><div class="flow-frame" aria-hidden="true"><span class="flow-avatar" style="--c:var(--Dev)">D</span><span class="flow-avatar" style="--c:var(--Growth)">G</span><span class="flow-avatar" style="--c:var(--Critic)">C</span><span class="flow-avatar" style="--c:var(--Director)">D</span></div><strong>Launch film ready</strong><small>91 s · four voices</small></div>
+                <span class="flow-arrow" aria-hidden="true">→</span>
+                <div class="flow-post"><span class="mono">Social post · illustration</span><strong>Scheduled.<br>New users incoming</strong><p>The launch film, ready to share.</p></div>
+              </div>
+              <p class="flow-summary">Run 1: <span>users use it wrong</span> → honest launch with a caveat. Weighted vote 4.5 vs 1.5. All 13 checks passed.</p>
+            </div>
+          </div>
+        </div>
+        <p class="flow-status" id="flowStatus" role="status">Illustrated replay · merge → Bruin → agents → decision → checks → film → social post.</p>
       </div>
     </div>
   </section>
@@ -239,6 +391,57 @@
     document.getElementById('scrub').style.width = b.dataset.w + '%';
   }));
   document.getElementById('scrub').style.width = '12%';
+
+  // The replay only changes this illustration; it never triggers a real run.
+  const flow = document.getElementById('launchFlow');
+  const flowScenes = [...flow.querySelectorAll('.flow-scene')];
+  const flowSteps = [...flow.querySelectorAll('.flow-steps li')];
+  const flowReplay = document.getElementById('flowReplay');
+  const flowStatus = document.getElementById('flowStatus');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let flowTimers = [];
+  function showFlowStep(step){
+    flowScenes.forEach((scene, i) => { scene.hidden = i !== step; });
+    flowSteps.forEach((item, i) => {
+      item.classList.toggle('is-done', i < step);
+      if (i === step) item.setAttribute('aria-current', 'step');
+      else item.removeAttribute('aria-current');
+    });
+  }
+  function finishFlow(){
+    flowTimers.forEach(clearTimeout);
+    flowTimers = [];
+    flow.classList.remove('flow-running');
+    showFlowStep(6);
+    flowStatus.textContent = reducedMotion.matches
+      ? 'Still view · all seven steps shown above. No live merge or publishing.'
+      : 'Replay complete · 13 checks passed. Film ready to share. No post was published.';
+  }
+  function playFlow(){
+    flowTimers.forEach(clearTimeout);
+    flowTimers = [];
+    if (reducedMotion.matches){ finishFlow(); return; }
+    flow.classList.add('flow-running');
+    flowStatus.textContent = 'Playing the illustrated run · about 10 seconds.';
+    showFlowStep(0);
+    [1100, 2500, 4700, 6200, 7600, 9000].forEach((delay, i) => {
+      flowTimers.push(setTimeout(() => showFlowStep(i + 1), delay));
+    });
+    flowTimers.push(setTimeout(finishFlow, 10000));
+  }
+  flowReplay.hidden = false;
+  flowReplay.addEventListener('click', playFlow);
+  const flowObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)){
+      flowObserver.disconnect();
+      playFlow();
+    }
+  }, {threshold:0.5});
+  if (reducedMotion.matches) finishFlow();
+  else flowObserver.observe(flow.querySelector('.flow-stage'));
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches){ flowObserver.disconnect(); finishFlow(); }
+  });
 
   // Reveal on scroll
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
