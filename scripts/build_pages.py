@@ -68,7 +68,8 @@ def main() -> None:
 
     # /smart-scroll/: the demo feature page
     (OUT / "smart-scroll").mkdir()
-    shutil.copy2(ROOT / "demo-app" / "index.html", OUT / "smart-scroll" / "index.html")
+    page = swap(read(ROOT / "demo-app" / "index.html"), 'href="/decision-log"', 'href="../decision-log/"', "index.html")
+    (OUT / "smart-scroll" / "index.html").write_text(page, encoding="utf-8")
 
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     files = sorted(str(p.relative_to(OUT)).replace("\\", "/") for p in OUT.rglob("*") if p.is_file())
