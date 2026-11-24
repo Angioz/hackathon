@@ -38,10 +38,12 @@ Thumbs.db
 .idea/
 
 # Hack local-only
-remotion-project/public
-tools/colab_multivoice/output/
-tools/colab_multivoice/refs/
 .foreman/
+.claude/
+.agents/
+_bmad/
+_bmad-output/
+.impeccable/
 .repowise/
 .serena/
 *.stackdump
