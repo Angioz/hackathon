@@ -1,4 +1,4 @@
-# Hack: the launch film that writes itself
+# MergeCut: the launch film that writes itself
 
 **Every merge to `main` becomes a 75-105 second animated launch film, written by four AI agents who argue about it.**
 
@@ -9,7 +9,7 @@ Multiplayer AI Hackathon, Track 1 (Agent Animated Film). No human in the loop at
 ```
 git merge -> Bruin pipeline (4 agents, 4 rounds, memory, decision log, quality checks)
           -> story_bible.json + decision_log.json + rewritten_script.json
-          -> 4 voices + animated Remotion film with an on-screen Decision Log
+          -> launch film written, voiced and rendered by our video pipeline, the 4 agents as characters
           -> auto-publisher receipt
 ```
 

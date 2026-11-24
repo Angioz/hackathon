@@ -62,7 +62,7 @@ def main() -> None:
     log = swap(log, "fetch('/api/runs')", "fetch('../data/runs.json')", "decision-log.html")
     log = swap(log, "fetch('/api/run?id='+encodeURIComponent(sel.value))",
                "fetch('../data/run-'+encodeURIComponent(sel.value)+'.json')", "decision-log.html")
-    log = swap(log, '<a href="/">← Smart Scroll</a>', '<a href="../">← Back to Hack</a>', "decision-log.html")
+    log = swap(log, '<a href="/">← Smart Scroll</a>', '<a href="../">← Back to MergeCut</a>', "decision-log.html")
     (OUT / "decision-log").mkdir()
     (OUT / "decision-log" / "index.html").write_text(log, encoding="utf-8")
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hack: every merge becomes a launch film</title>
+<title>MergeCut: every merge becomes a launch film</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -174,7 +174,7 @@
 <div id="progress" aria-hidden="true"></div>
 <header>
   <div class="wrap bar">
-    <a class="logo" href="#top"><i>&#9654;</i>Hack</a>
+    <a class="logo" href="#top"><i>&#9654;</i>MergeCut</a>
     <nav class="sections" aria-label="Sections">
       <a href="#demo">Demo</a><a href="#how">How it works</a><a href="#agents">The agents</a><a href="#bruin">Bruin</a><a href="#runs">Two runs</a>
     </nav>
@@ -329,7 +329,7 @@
 </main>
 
 <footer>
-  <div class="wrap"><span>Hack · Multiplayer AI Hackathon 2026 · Track 1</span><span><a href="smart-scroll/" style="color:var(--ink-dim)">The Smart Scroll demo feature</a> · Built with Bruin, Runware and ElevenLabs</span></div>
+  <div class="wrap"><span>MergeCut · Multiplayer AI Hackathon 2026 · Track 1</span><span><a href="smart-scroll/" style="color:var(--ink-dim)">The Smart Scroll demo feature</a> · Built with Bruin, Runware and ElevenLabs</span></div>
 </footer>
 
 <script>
@@ -350,16 +350,15 @@
   (() => {
     const pr = document.getElementById('pr'), btn = document.getElementById('mergeBtn');
     const nodes = [...pr.querySelectorAll('.pipe li')], still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let merged = false, auto;
+    let merged = false;
     const merge = jump => {
-      if (merged) return; merged = true; clearTimeout(auto);
+      if (merged) return; merged = true;
       pr.classList.add('merged'); btn.textContent = 'Merged'; btn.setAttribute('aria-disabled', 'true');
       document.getElementById('prState').innerHTML = '&#10003; Merged';
       nodes.forEach((n, i) => setTimeout(() => n.classList.add('lit'), still ? 0 : 300 + i * 450));
       setTimeout(() => { pr.classList.add('done'); if (jump) document.getElementById('how').scrollIntoView({behavior: still ? 'auto' : 'smooth'}); }, still ? 0 : 300 + nodes.length * 450 + 300);
     };
     btn.addEventListener('click', () => merge(true));
-    new IntersectionObserver((es, io) => { if (es[0].isIntersecting) { io.disconnect(); auto = setTimeout(() => merge(false), 4000); } }, {threshold: .6}).observe(pr);
   })();
 
   // Story: each step animates as it scrolls in; the rail tracks the current step.
