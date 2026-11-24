@@ -49,7 +49,7 @@
 
   /* Player + chapters */
   .demo{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;margin-top:56px}
-  .player{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#0b0908;aspect-ratio:16/9}
+  .player{display:block;position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#0b0908;aspect-ratio:16/9}
   .player img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
   .player .play{position:absolute;left:24px;bottom:24px;display:flex;align-items:center;gap:12px;padding:10px 16px 10px 10px;border-radius:999px;background:rgba(18,14,12,.86);border:1px solid var(--line-2);font-size:15px}
   .player .play b{width:34px;height:34px;border-radius:50%;background:var(--teal);display:grid;place-items:center;color:var(--teal-ink);font-size:13px}
@@ -130,7 +130,7 @@
     <div class="right">
       <span class="pill">Track 1 · Agent film</span>
       <a class="btn ghost" href="https://github.com/Angioz/hackathon">GitHub</a>
-      <a class="btn primary" href="#demo">Watch the room</a>
+      <a class="btn primary" href="live/">Watch the room</a>
     </div>
   </div>
 </header>
@@ -140,14 +140,14 @@
     <div class="wrap">
       <h1>Every merge becomes a launch film</h1>
       <p class="lede">Ship a feature and four AI agents argue about how to launch it: they pick a plot twist, vote on an ending and log why. Bruin checks every decision before it reaches the film. No human in the loop.</p>
-      <div class="cta"><a class="btn primary" href="#how">See how it works</a><a class="btn ghost" href="#runs">Same commit, two films &rarr;</a></div>
+      <div class="cta"><a class="btn primary" href="live/">Watch the writers' room</a><a class="btn ghost" href="#how">See how it works &rarr;</a></div>
 
       <div class="demo">
-        <figure class="player" style="margin:0">
+        <a class="player" href="live/" aria-label="Open the live writers' room replay">
           <img src="assets/live-screen.png" alt="The live writers' room screen: four agents, their decisions with reasons, and Bruin's 13 passing quality checks" width="1600" height="900">
           <div class="play"><b>&#9654;</b><span id="nowPlaying">The merge lands</span></div>
           <div class="scrub"><span id="scrub"></span></div>
-        </figure>
+        </a>
         <ol class="chapters" aria-label="Chapters">
           <li><button aria-current="true" data-w="12"><span class="n">01</span><span class="t">The merge lands</span><span class="d">0:06</span></button></li>
           <li><button data-w="34"><span class="n">02</span><span class="t">Four agents pitch the launch</span><span class="d">0:18</span></button></li>
@@ -203,7 +203,7 @@
   <section class="block" id="runs">
     <div class="wrap">
       <h2>Same commit, two different films</h2>
-      <p class="sub">Run the room twice on the same merge. Memory bans the last ending and shifts who trusts whom.</p>
+      <p class="sub">Run the room twice on the same merge. Memory bans the last ending and shifts who trusts whom. <a href="decision-log/" style="color:var(--teal)">Compare every decision &rarr;</a></p>
       <div class="runs">
         <article class="run reveal"><span class="mono">Run 1 · triggered by git merge</span><h3>What the Diff Can Prove</h3>
           <dl><dt>Twist</dt><dd class="tw">Users use it wrong</dd><dt>Ending</dt><dd>Honest launch with a caveat</dd><dt>Film</dt><dd>91 s, four voices</dd></dl></article>
@@ -215,7 +215,7 @@
 </main>
 
 <footer>
-  <div class="wrap"><span>Hack · Multiplayer AI Hackathon 2026 · Track 1</span><span>Built with Bruin, Runware and ElevenLabs</span></div>
+  <div class="wrap"><span>Hack · Multiplayer AI Hackathon 2026 · Track 1</span><span><a href="smart-scroll/" style="color:var(--ink-dim)">The Smart Scroll demo feature</a> · Built with Bruin, Runware and ElevenLabs</span></div>
 </footer>
 
 <script>

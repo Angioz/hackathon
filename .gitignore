@@ -54,3 +54,4 @@ logs/runs
 logs/*.log
 voice/.cache/
 demo-app/.demo-repo/
+_site/

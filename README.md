@@ -4,6 +4,8 @@
 
 Multiplayer AI Hackathon, Track 1 (Agent Animated Film). No human in the loop at runtime.
 
+**See it:** [angioz.github.io/hackathon](https://angioz.github.io/hackathon/): the [writers' room replay](https://angioz.github.io/hackathon/live/) of a real run, and [run 1 vs run 2](https://angioz.github.io/hackathon/decision-log/).
+
 ```
 git merge -> Bruin pipeline (4 agents, 4 rounds, memory, decision log, quality checks)
           -> story_bible.json + decision_log.json + rewritten_script.json
